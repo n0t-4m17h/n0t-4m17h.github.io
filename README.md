@@ -1,4 +1,4 @@
-# [n0t-4m17h.github.io](www.n0t-4m17h.github.io)
+# [n0t-4m17h.github.io](www.n0t-4m17h.github.io) || [not-amith.nr](not-amith.nr)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
