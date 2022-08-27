@@ -1,27 +1,39 @@
 import React from 'react';
-// import logo from './logo.svg';
+// import { useState, useEffect } from 'react';
 import './App.css';
+// import {makeStyles} from '@mui/material/styles';
+// import Button from '@mui/material/Button';
+// import PropTypes from "prop-types"
+
+import ButtonStuff from './components/ButtonStuff';
 
 function App() {
-  return (
-    <div className="App">
-      <h1>What it do flight crew, ftc</h1>
-      {/* <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Big man ting, <code>System.out.println(yeah?)</code>
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Hol up, ain't you Nathanial B?
-        </a>
-      </header>  */}
-    </div>
-  );
+	// useEffect(() => {alert("big man ting yeah")}, [counter]) // everytime the counter is altered, the first arg is ran
+	
+	function lineBreak() {
+		return (<div> <h4>{'\n'}</h4> </div>)
+	}
+
+	return (
+		<div className="App">
+			<h1>What's 9 + 10?</h1>
+
+			<ButtonStuff.CounterPlusMinus/>
+			{lineBreak()}
+			<ButtonStuff.ChangeColor/>
+
+			{lineBreak()}
+			{/* <lineBreak id={4}/> */}
+
+			<div className='Search'>
+				<input placeholder='Stock name' value='patti'
+					onChange={() => {}} />
+				<img src={null} alt='Search'
+					onClick={() => {}}/>
+			</div>
+			
+		</div>
+	);
 }
 
 export default App;

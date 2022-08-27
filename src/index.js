@@ -2,17 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 // This DOM library is what actually renders to the browser
 import App from './App';
-// import './index.css';
-// import reportWebVitals from './reportWebVitals';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  // <React.StrictMode>
-    <App />
-  // </React.StrictMode>
+    <React.StrictMode>
+        <App />
+    </React.StrictMode>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-// // reportWebVitals();
+
+// To measure performance in app, refer to early git commit "prep for fresh start"
