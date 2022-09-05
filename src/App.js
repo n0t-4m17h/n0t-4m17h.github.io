@@ -1,36 +1,28 @@
 import React from 'react';
-// import { useState, useEffect } from 'react';
 import './App.css';
 // import {makeStyles} from '@mui/material/styles';
-// import Button from '@mui/material/Button';
-// import PropTypes from "prop-types"
 
-import ButtonStuff from './components/ButtonStuff';
+import RandomStuff from './components/RandomStuff';
 
 function App() {
-	// useEffect(() => {alert("big man ting yeah")}, [counter]) // everytime the counter is altered, the first arg is ran
+	// useEffect(() => {alert("big man ting yeah")}, [counter]) // everytime the counter state is altered, the first arg is ran
 	
-	function lineBreak() {
-		return (<div> <h4>{'\n'}</h4> </div>)
-	}
-
+	const LineBreak = () => {return <div> <h4>{'\n'}</h4> </div>};
+	const PrintName = (props) => {return <h3>Hello there, {props.title}, it's {new Date().toLocaleTimeString()}</h3>};
+	const userName = "General Kenobi";
+	
 	return (
 		<div className="App">
 			<h1>What's 9 + 10?</h1>
+			<PrintName title={userName} />
 
-			<ButtonStuff.CounterPlusMinus/>
-			{lineBreak()}
-			<ButtonStuff.ChangeColor/>
+			<RandomStuff.CounterPlusMinus/>
 
-			{lineBreak()}
-			{/* <lineBreak id={4}/> */}
+			<LineBreak />
+			<RandomStuff.ChangeColor/>
 
-			<div className='Search'>
-				<input placeholder='Stock name' value='patti'
-					onChange={() => {}} />
-				<img src={null} alt='Search'
-					onClick={() => {}}/>
-			</div>
+			<LineBreak />
+			<RandomStuff.SearchBar/>
 			
 		</div>
 	);
