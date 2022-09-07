@@ -2,12 +2,15 @@ import React, {useState} from 'react'
 import Button from '@mui/material/Button';
 import { AddCircleOutline} from '@mui/icons-material';
 import RemoveCircleOutline from '@mui/icons-material/RemoveCircleOutline';
-
 import { ThemeProvider } from '@mui/material'; // read -> https://mui.com/material-ui/customization/theming/
 import { createTheme } from '@mui/material';
-import {Typography} from '@mui/material';
+import { Typography } from '@mui/material';
 import { green } from '@mui/material/colors';
 import { styled } from '@mui/material';
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 // TYPOGRAPHY RELATED
@@ -57,12 +60,13 @@ const sampleTheme = createTheme({
 });
 
 
-// the applied MUI Button transforms (see how below) upon mouseEnter and reverts upon mouseLeave
-const HoverButton = styled(Button)(({ theme }) => ({
+// the applied MUI Button transforms (see below 'hover') upon mouseEnter and reverts upon mouseLeave
+const TransHoverButton = styled(Button)(({ theme }) => ({
     cursor: 'pointer',
     backgroundColor: theme.palette.ceruleanBlue,
     // This 'transition' section allows for smooth movement
     transition: theme.transitions.create(['backgroundColor', 'transform'], {
+        // decide the speed of animation here
         duration: theme.transitions.duration.complex,
     }),    
     '&:hover': {
@@ -72,6 +76,18 @@ const HoverButton = styled(Button)(({ theme }) => ({
     }
 }));
 
+// Change MUI Button's text color to black
+const ColorHoverButton = styled(Button) `
+    :hover {
+        color: black;
+    } 
+`;
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
 
 function CounterPlusMinus() {
     const initCtr = 0;
@@ -79,7 +95,7 @@ function CounterPlusMinus() {
     return (
         // instead of a "<div> </div>", we can use a fragment ("<>...</>") here, since a div would just add to DOM's load. 
         <ThemeProvider theme={sampleTheme}>
-            <Button size="small" color="greens" variant="contained" startIcon={<AddCircleOutline />}
+            <ColorHoverButton size="small" color="greens" variant="contained" startIcon={<AddCircleOutline />}
                 onClick={
                     () => {
                         setCounter((prevCount) => prevCount + 1);
@@ -87,12 +103,12 @@ function CounterPlusMinus() {
                     }
                 } > 
                 PLUS
-            </Button>
+            </ColorHoverButton>
 
             {/* <big> {counter} </big> */}
             <Typography variant="caption"> {counter} </Typography>
 
-            <HoverButton size="small" color="ceruleanBlue" variant="contained" endIcon={<RemoveCircleOutline />}
+            <TransHoverButton size="small" color="ceruleanBlue" variant="contained" endIcon={<RemoveCircleOutline />}
                 onClick={
                     () => {
                         setCounter((prevCount) => prevCount - 1);
@@ -100,7 +116,7 @@ function CounterPlusMinus() {
                     }
                 }>
                 MINUS
-            </HoverButton>
+            </TransHoverButton>
         </ThemeProvider>
     );
 }
@@ -136,8 +152,9 @@ function SearchBar() {
 }
 
 
-
-
+///////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////
 const randomStuff = {
     CounterPlusMinus,
     ChangeColor,
