@@ -1,12 +1,12 @@
 import React, {useState} from 'react'
+
 import Button from '@mui/material/Button';
-import { AddCircleOutline} from '@mui/icons-material';
+import { AddCircleOutline } from '@mui/icons-material';
 import RemoveCircleOutline from '@mui/icons-material/RemoveCircleOutline';
-import { ThemeProvider } from '@mui/material'; // read -> https://mui.com/material-ui/customization/theming/
-import { createTheme } from '@mui/material';
-import { Typography } from '@mui/material';
+import { ThemeProvider, createTheme, Typography} from '@mui/material'; // read -> https://mui.com/material-ui/customization/theming/
 import { green } from '@mui/material/colors';
-import { styled } from '@mui/material';
+
+import RandomStyles from '../styles/RandomStyles';
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -29,7 +29,7 @@ const sampleTheme = createTheme({
             fontSize: 22,
             fontWeight: 'Bold',
             fontStyle: "italic",
-            color: "anger"
+            color: "red"
         },
         // for texts of variant type "button"
         button: {
@@ -60,29 +60,6 @@ const sampleTheme = createTheme({
 });
 
 
-// the applied MUI Button transforms (see below 'hover') upon mouseEnter and reverts upon mouseLeave
-const TransHoverButton = styled(Button)(({ theme }) => ({
-    cursor: 'pointer',
-    backgroundColor: theme.palette.ceruleanBlue,
-    // This 'transition' section allows for smooth movement
-    transition: theme.transitions.create(['backgroundColor', 'transform'], {
-        // decide the speed of animation here
-        duration: theme.transitions.duration.complex,
-    }),    
-    '&:hover': {
-        backgroundColor: theme.palette.steelBlue.main,
-        transform: "scale(1.1)"
-        // transform: "scale(1.2, 1.1) translate(25%, -25%) rotateX(3.14rad) rotateY(3.14rad)"
-    }
-}));
-
-// Change MUI Button's text color to black
-const ColorHoverButton = styled(Button) `
-    :hover {
-        color: black;
-    } 
-`;
-
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -95,7 +72,7 @@ function CounterPlusMinus() {
     return (
         // instead of a "<div> </div>", we can use a fragment ("<>...</>") here, since a div would just add to DOM's load. 
         <ThemeProvider theme={sampleTheme}>
-            <ColorHoverButton size="small" color="greens" variant="contained" startIcon={<AddCircleOutline />}
+            <RandomStyles.ColorHoverButton size="small" color="greens" variant="contained" startIcon={<AddCircleOutline />}
                 onClick={
                     () => {
                         setCounter((prevCount) => prevCount + 1);
@@ -103,12 +80,12 @@ function CounterPlusMinus() {
                     }
                 } > 
                 PLUS
-            </ColorHoverButton>
+            </RandomStyles.ColorHoverButton>
 
             {/* <big> {counter} </big> */}
             <Typography variant="caption"> {counter} </Typography>
 
-            <TransHoverButton size="small" color="ceruleanBlue" variant="contained" endIcon={<RemoveCircleOutline />}
+            <RandomStyles.TransHoverButton size="small" color="ceruleanBlue" variant="contained" endIcon={<RemoveCircleOutline />}
                 onClick={
                     () => {
                         setCounter((prevCount) => prevCount - 1);
@@ -116,7 +93,7 @@ function CounterPlusMinus() {
                     }
                 }>
                 MINUS
-            </TransHoverButton>
+            </RandomStyles.TransHoverButton>
         </ThemeProvider>
     );
 }
@@ -126,7 +103,7 @@ function ChangeColor() {
     const [color, setColor] = useState("secondary");
     return (
         // The 'color' variable here is determined by the color state above
-        <Button size="large" color={color} variant="contained"
+        <Button size="large" color={color} variant="contained" style={{border: '4px dashed white'}}
             onClick={
                 () => {
                     setColor((prevColor) => prevColor === "secondary" ? "error" : "secondary");

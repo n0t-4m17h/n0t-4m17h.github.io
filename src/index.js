@@ -1,6 +1,7 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
 // This DOM library is what actually renders to the browser
+import ReactDOM from 'react-dom/client';
+// import './index.css';
 import App from './App';
 
 
@@ -12,4 +13,4 @@ root.render(
 );
 
 
-// To measure performance in app, refer to early git commit "prep for fresh start"
+// To measure performance in app... (refer to early git commit "prep for fresh start")
