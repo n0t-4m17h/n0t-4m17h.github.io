@@ -1,7 +1,7 @@
 import React from 'react';
 // This DOM library is what actually renders to the browser
 import ReactDOM from 'react-dom/client';
-// import './index.css';
+import './index.css';
 import App from './App';
 
 

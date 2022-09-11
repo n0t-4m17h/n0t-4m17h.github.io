@@ -19,18 +19,20 @@ const Utility = () => {
             <h1 style={{ border: '5px solid pink', display: 'flex', justifyContent: 'center' }}> 
                 Utility Page 
             </h1>
-			<PrintName title={userName}/>
+			<div style={{marginLeft: '1%'}}>
+				<PrintName title={userName}/>
 
-			<RandomStuff.CounterPlusMinus/>
+				<RandomStuff.CounterPlusMinus/>
 
-			<RandomStyles.CenterDiv> My Div </RandomStyles.CenterDiv>
-			<LineBreak />
-			
-			<RandomStuff.ChangeColor/>
-			<LineBreak />
+				<RandomStyles.CenterDiv> My Div </RandomStyles.CenterDiv>
+				<LineBreak />
+				
+				<RandomStuff.ChangeColor/>
+				<LineBreak />
 
-			<LineBreak />
-			<RandomStuff.SearchBar/>
+				<LineBreak />
+				<RandomStuff.SearchBar/>
+			</div>
 		</div>       
     );
 }

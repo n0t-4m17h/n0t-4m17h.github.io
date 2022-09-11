@@ -78,7 +78,7 @@ function CounterPlusMinus() {
                         setCounter((prevCount) => prevCount + 1);
                         console.log("incrementing ctr");
                     }
-                } > 
+                }> 
                 PLUS
             </RandomStyles.ColorHoverButton>
 

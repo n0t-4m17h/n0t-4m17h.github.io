@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 // Page imports
 import Home from './pages/Home';
+import Projects from './pages/Projects';
 import Utility from './pages/Utility';
 
 // Components imports
@@ -19,7 +20,7 @@ function App() {
 				<Routes>
 					<Route exact path='/' element={<Home/>} />
 					<Route exact path='/utility' element={<Utility/>} />
-					{/* <Route exact path='/projects' component={Projects} /> */}
+					<Route exact path='/projects' element={<Projects/>} />
 				</Routes>
 			</Router>
 
