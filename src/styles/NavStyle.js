@@ -1,7 +1,8 @@
-import { styled } from '@mui/material';
+// Styling related to the Navigation Bar
+import { styled, IconButton } from '@mui/material';
 
 
-const NavContainer = styled('nav')({
+const NavContainerLEGACY = styled('nav')({
     height: '50px',
     width: '100%',
     display: 'flex', 
@@ -13,29 +14,47 @@ const NavContainer = styled('nav')({
     boxShadow: '3px 3px 3px blue'
 })
 
+
 const NavPages = styled('div')({
     // POSITIONING
     paddingLeft: '12.5px',
     paddingRight: '12.5px',
     fontSize: 20,
     display: 'flex',
-    // justifyContent: 'center',
+    justifyContent: 'center',
     alignItems: 'flex-end',
     marginLeft: '5%',
     width: '30px',
 
-    // LOOKS
-    color: 'white',
-    fontFamily: "Arial",
     // backgroundColor: 'red',
 })
 
-const PageLinkStyle = styled('p1')({fontSize: '18px', fontWeight: 'bold'});
+const PageLinkStyle = styled('p1')({
+    fontSize: '18px',
+    fontWeight: 'bold',
+    fontFamily: ["Arial"]
+});
+
+const TransIconButton = styled(IconButton)(({ theme }) => ({
+    cursor: 'pointer',
+    transition: theme.transitions.create(['transform'], {
+        duration: theme.transitions.duration.complex,
+    }),
+    '&:hover': {
+        transform: "rotate(3.14rad)",
+    },
+    // '&:checked': {
+    //     transform: "rotate(3.14rad)",
+    // }
+}));
+
+
 
 const NavStyles = {
-    NavContainer,
+    NavContainerLEGACY,
     NavPages,
     PageLinkStyle,
+    TransIconButton,
 }
 
 export default NavStyles;

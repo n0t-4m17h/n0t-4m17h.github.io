@@ -36,7 +36,7 @@ const TransHoverButton = styled(Button)(({ theme }) => ({
 
     '&:hover': {
         backgroundColor: theme.palette.steelBlue.main,
-        transform: "scale(1.1)"
+        transform: "scale(1.1)",
         // transform: "scale(1.2, 1.1) translate(25%, -25%) rotateX(3.14rad) rotateY(3.14rad)"
     }
 }));

@@ -1,5 +1,6 @@
 import React from 'react';
 
+import PageStyles from '../styles/PageStyle';
 import RandomStuff from '../components/RandomStuff';
 import RandomStyles from '../styles/RandomStyles';
 

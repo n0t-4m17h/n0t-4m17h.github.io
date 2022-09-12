@@ -1,4 +1,5 @@
 import React from 'react';
+import PageStyles from '../styles/PageStyle';
 
 const Home = () => {
 

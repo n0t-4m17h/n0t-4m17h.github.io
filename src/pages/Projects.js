@@ -5,6 +5,8 @@ import React from 'react';
 //                                     --> @ bottom of: https://mui.com/material-ui/react-button/ 
 // import ButtonBase from '@mui/material/ButtonBase';
 
+import PageStyles from '../styles/PageStyle';
+
 const Projects = () => {
 
     return (
