@@ -1,6 +1,6 @@
 // Styling related to the Navigation Bar
 import { styled, IconButton } from '@mui/material';
-
+import { Link } from 'react-router-dom'
 
 const NavContainerLEGACY = styled('nav')({
     height: '50px',
@@ -14,25 +14,32 @@ const NavContainerLEGACY = styled('nav')({
     boxShadow: '3px 3px 3px blue'
 })
 
+// ##########################################################
+/* add this to dissapear the pages for smaller windows
+    @media screen and (max-width: 768px) {
+        display: none;
+    }
+*/
 
 const NavPages = styled('div')({
-    // POSITIONING
-    paddingLeft: '12.5px',
-    paddingRight: '12.5px',
+    // // POSITIONING
+    // paddingLeft: '12.5px',
+    // paddingRight: '12.5px',
     fontSize: 20,
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'flex-end',
-    marginLeft: '5%',
-    width: '30px',
+    // marginLeft: '5%',
+    width: '50px',
 
     // backgroundColor: 'red',
 })
 
+
 const PageLinkStyle = styled('p1')({
-    fontSize: '18px',
+    fontSize: '23px',
     fontWeight: 'bold',
-    fontFamily: ["Arial"]
+    fontFamily: ["Arial"],
 });
 
 const TransIconButton = styled(IconButton)(({ theme }) => ({
@@ -47,6 +54,8 @@ const TransIconButton = styled(IconButton)(({ theme }) => ({
     //     transform: "rotate(3.14rad)",
     // }
 }));
+
+
 
 
 

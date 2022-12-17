@@ -15,7 +15,7 @@ const CenterDiv = styled('div')({
     padding: 3,
     border: '2px dashed blue',
     borderRadius: 14,
-    display: 'flex', 
+    display: 'center', 
     justifyContent: 'center', // centers the text, w/ 'display: flex'
     // height: '25px',
     width: '75px',
