@@ -20,7 +20,7 @@ const Utility = () => {
             <h1 style={{ border: '5px solid pink', display: 'flex', justifyContent: 'center' }}> 
                 Utility Page 
             </h1>
-			<div style={{marginLeft: '1%'}}>
+			<div style={{marginLeft: '1%', flex: 2}}>
 				<PrintName title={userName}/>
 
 				<RandomStuff.CounterPlusMinus/>

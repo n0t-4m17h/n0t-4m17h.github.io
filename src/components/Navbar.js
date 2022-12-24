@@ -1,29 +1,63 @@
-import React, {useState} from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
-import { AppBar, Toolbar, Stack, Grid, Button, useMediaQuery } from '@mui/material';
+import { AppBar, Toolbar, Stack, Grid, Button, ButtonBase, Menu, MenuItem } from '@mui/material';
 import Box from '@mui/system/Box'
+import { Zoom } from '@mui/material';
+
 import ExpandCircleDownIcon from '@mui/icons-material/ExpandCircleDown';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import HandymanIcon from '@mui/icons-material/Handyman';
+import HomeIcon from '@mui/icons-material/HomeRounded';
 import EngineeringIcon from '@mui/icons-material/Engineering';
-import HomeIcon from '@mui/icons-material/Home';
+import HandymanIcon from '@mui/icons-material/HandymanRounded';
+import CameraIcon from '@mui/icons-material/PartyModeRounded';
 
 import NavStyles from '../styles/NavStyle';
+
 import PrisonMike from '../assets/images/prison-mike.jpg'
 // import VividSydney from '../assets/images/vividSydney.jpg'
 // import NightCity from '../assets/images/city.jpg'
 import HarbourBridge from '../assets/images/bridge.png'
 
+
 const Navbar = () => {
-    const [clicked, setClicked] = useState(false); // for showing drop down MENU when required
-    const [menuBtn, setButton] = useState(true); // for showing drop down menu BUTTON on small windows only
+    //                   NAVBAR    SIDEBAR   SIDEBAR(2) PAGE(Light) PAGE(Dark) PAGE(MID)  MUI(Prim) SoftYellow CONSIDER-THIS
+    const VIP_COLORS = ["#153454", "#063970","#002884", "#0d539E", "#1E3247", "#204063", "#257DE8", "#EEEE9B", "#0a427e"];
+    const XTRA_COLORS = ["#111164", "#8f5a24", "#202062"]
+    const PAGE_LIST = ['Home', 'Projects', 'Utility', 'Gallery']
+    
 
-    const handleMenuClick = () => setClicked(!clicked); // open/close menu when clicked
+    // ######## The SideMenu state handling
+    const [clicked, setClicked] = useState(false); // for chaning the sidebar menu, when clicked
+    const handleMenuClick = () => setClicked(!clicked); // open/close SideMenu when clicked
+    
+    const [anchorEl, setAnchorEl] = useState(null); // "anchorEl" is used to set the position of the popup
+    const open = Boolean(anchorEl);
+    const handleClick = (event) => { 
+        setAnchorEl(event.currentTarget); // sets position just below the button, approx.
+        handleMenuClick(); // changes to ExpandMoreIcon
+    };
+    const handleClose = () => {
+        setAnchorEl(null);
+        handleMenuClick(); // reverts to ExpandCircleDownIcon
+    }
+    
 
-    const [utilityHovered, setUtilityHovered] = useState(false);
-    function handleUtilityHover() {
-        setUtilityHovered(!utilityHovered);
+    // ######## Used for changing NavMenu pages spacing relative to Window size
+    const [innerWidth, setWidth]   = useState(window.innerWidth);
+    const updateDimensions = () => {
+        setWidth(window.innerWidth);
+    }
+    useEffect(() => {
+        window.addEventListener("resize", updateDimensions);
+        return () => window.removeEventListener("resize", updateDimensions);
+    }, []);
+
+
+    // ######## The NavMenu icons state handling
+    const [homeHovered, setHomeHovered] = useState(false);
+    function handleHomeHover() {
+        setHomeHovered(!homeHovered);
     }
     
     const [projectsHovered, setProjectsHovered] = useState(false);
@@ -31,80 +65,136 @@ const Navbar = () => {
         setProjectsHovered(!projectsHovered);
     }
     
-    const [homeHovered, setHomeHovered] = useState(false);
-    function handleHomeHover() {
-        setHomeHovered(!homeHovered);
+    const [utilityHovered, setUtilityHovered] = useState(false);
+    function handleUtilityHover() {
+        setUtilityHovered(!utilityHovered);
     }
-
-    //                   NAVBAR    SIDEBAR   SIDEBAR(2) PAGE(Light) PAGE(Dark) PAGE(MID)  MUI(Prim) SoftYellow
-    const VIP_COLORS = ["#153454", "#063970","#002884", "#0d539E", "#1E3247", "#204063", "#257DE8", "#EEEE9B"];
     
+    const [galleryHovered, setGalleryHovered] = useState(false);
+    function handleGalleryHover() {
+        setGalleryHovered(!galleryHovered);
+    }
+    
+
+
     return (
         <div>
             <Box sx={{ flexGrow: 1 }}>
-                <AppBar position="static" 
-                        variant='outli' 
-                        color='transparent' 
-                        enableColorOnDark 
-                        sx={{ background: "#153454"}}> 
-                         {/* display: 'center' */}
-                    <Toolbar variant='regular' disableGutters>
+                <AppBar position="static" variant='elevation' color='transparent' enableColorOnDark sx={{ background: "#153454"}}> {/* display: 'center' */}
+                    <Toolbar variant='regular' disableGutters >
+
+                        {/* ########################### */}
+                        {/* ####### LHS Box (avatar + sidemenu) */}
                         <Stack component="NavbarLogo" direction="row" sx={{ justifyContent:"flex-start"}} >
                             <Box sx={{transitionDuration: '0.375s', '&:hover': {opacity: [0.7],}, }} > 
-                                <Link to='/' className='NavbarLogoLink'> 
-                                {/* this would preferrably be an animation of "AJK" */}
+                                <a href='https://youtu.be/a7RoP1LKMeM?t=112' target="_blank">
                                     <img src={PrisonMike} alt='AJK' style={{height: '55px', borderRadius: 35, border: '2px solid #EEEE9B', display: 'flex' }}/>
-                                </Link>
+                                </a>
                             </Box>
-                        
+                            
                             <NavStyles.TransIconButton color='primary' aria-label='MenuLogo' disableRipple='true' style={{color: "#EEEE9B"}}
-                                onClick={handleMenuClick}
-                                > 
-                                <menuBtn style={{display: 'flex'}}>
-                                    {clicked ? <ExpandMoreIcon style={{fontSize: '25px'}}/> : <ExpandCircleDownIcon style={{fontSize: '25px'}}/>}
-                                </menuBtn>
+                            >
+                                <ButtonBase disableRipple 
+                                    onClick={handleClick} 
+                                >
+                                    {clicked ? <ExpandMoreIcon style={{fontSize: '28px'}} /> : <ExpandCircleDownIcon style={{fontSize: '28px'}} />}
+                                </ButtonBase>
                             </NavStyles.TransIconButton>
+
+                            {/* ################### */}
+                            {/* #### SIDE MENU (dropdown pages) */}
+                            <Menu
+                                anchorEl={anchorEl}
+                                open={open}
+                                onClose={handleClose}
+                                TransitionComponent={Zoom}
+                                transitionDuration={300}
+                                sx={{filter: 'sepia(300%) hue-rotate(320deg) saturate(450%) drop-shadow(3px 3px 3px #ff9933) invert(95%)'}}
+                            >
+                                <Link to='/' className='NavbarLink' style={{ textDecoration: 'none' }} > {/* , rotate:["3.14rad"] */}
+                                    <MenuItem onClick={ handleClose } sx={{ color:"#111164", fontFamily:"monospace", fontWeight: 'bold', transitionDuration: '0.6s', '&:hover': {opacity: [0.5], }, }}> 
+                                        <HomeIcon style={{fontSize: '25px', marginRight: '5%'}} />
+                                        Home
+                                    </MenuItem>
+                                </Link>
+                                <Link to='/projects' className='NavbarLink' style={{ textDecoration: 'none' }} >
+                                    <MenuItem onClick={ handleClose } sx={{ color:"#111164", fontFamily:"monospace", fontWeight: 'bold', transitionDuration: '0.6s', '&:hover': {opacity: [0.5], }, }}> 
+                                        <EngineeringIcon style={{fontSize: '25px', marginRight: '5%'}} />
+                                        Projects
+                                    </MenuItem>
+                                </Link>
+                                <Link to='/utility' className='NavbarLink' style={{ textDecoration: 'none' }} >
+                                    <MenuItem onClick={ handleClose } sx={{ color:"#111164", fontFamily:"monospace", fontWeight: 'bold', transitionDuration: '0.6s', '&:hover': {opacity: [0.5], }, }}> 
+                                        <HandymanIcon style={{fontSize: '25px', marginRight: '5%'}} />
+                                        Utility
+                                    </MenuItem>
+                                </Link>
+                                <Link to='/gallery' className='NavbarLink' style={{ textDecoration: 'none' }} >
+                                    <MenuItem onClick={ handleClose } sx={{ color:"#111164", fontFamily:"monospace", fontWeight: 'bold', transitionDuration: '0.6s', '&:hover': {opacity: [0.5], }, }}> 
+                                        <CameraIcon style={{fontSize: '25px', marginRight: '5%'}} />
+                                        Gallery
+                                    </MenuItem>
+                                </Link>
+                            </Menu>
                         </Stack>
 
-                        
-                        <Grid container direction="row" justifyContent="center" alignItems="center">
-                            <Stack direction="row" spacing={15} sx={{marginLeft: '10%', marginRight: '-5%', position: 'relative', boxSizing:'border-box', '@media (max-width:754px)':{display:'none'}, }}>
-                                <NavStyles.NavPages> {/* NOTE: could avoid this repetition via Box */}
-                                    <Link to='/' className='NavbarLink'> 
-                                        <Button size='small' disableRipple='true' style={{color: "#EEEE9B"}}
+                        {/* ########################### */}
+                        {/* ####### NAV MENU (pages) */}
+                        <Grid container direction="row" justifyContent="center" alignItems="center" >
+                            <Stack direction="row" spacing={innerWidth / 80} sx={{marginLeft: '12%', position: 'relative', boxSizing:'border-box', '@media (max-width:816px)':{display:'none'}, }}>
+                                
+                                
+                                <NavStyles.NavPages>
+                                    <Link to='/' className='NavbarLink' style={{ textDecoration: 'none' }} > 
+                                    <Button size='small' disableRipple='true' style={{color: "#EEEE9B"}} 
                                             onMouseEnter = {handleHomeHover}
                                             onMouseLeave = {handleHomeHover}
                                         >
-                                            {homeHovered ? <NavStyles.PageLinkStyle> Home </NavStyles.PageLinkStyle> : <HomeIcon style={{fontSize: '40px'}}/>}
+                                            {homeHovered ? <NavStyles.PageLinkStyle > Home </NavStyles.PageLinkStyle> : <HomeIcon style={{fontSize: '40px'}} />}
                                         </Button>
+
                                     </Link>
                                 </NavStyles.NavPages>
                                 
+
                                 <NavStyles.NavPages>
-                                    <Link to='/projects' className='NavbarLink'> 
-                                        <Button size='small' disableRipple='true' style={{color: "#EEEE9B"}}
+                                    <Link to='/projects' className='NavbarLink' style={{ textDecoration: 'none' }} > 
+                                        <Button size='small' disableRipple='true' style={{color: "#EEEE9B"}} 
                                             onMouseEnter = {handleProjectsHover}
                                             onMouseLeave = {handleProjectsHover}
                                         >
-                                            {projectsHovered ? <NavStyles.PageLinkStyle> Projects </NavStyles.PageLinkStyle> : <EngineeringIcon style={{fontSize: '40px'}}/>}
+                                            {projectsHovered ? <NavStyles.PageLinkStyle> Projects </NavStyles.PageLinkStyle> : <EngineeringIcon style={{fontSize: '40px'}} />}
                                         </Button>
                                     </Link>
                                 </NavStyles.NavPages>
                                 
                                 <NavStyles.NavPages>
-                                    <Link to='/utility' className='NavbarLink'> 
+                                    <Link to='/utility' className='NavbarLink' style={{ textDecoration: 'none' }} > 
                                         <Button size='small' disableRipple='true' style={{color: "#EEEE9B"}}
                                             onMouseEnter = {handleUtilityHover}
                                             onMouseLeave = {handleUtilityHover}
                                         >
-                                            {utilityHovered ? <NavStyles.PageLinkStyle> Utility </NavStyles.PageLinkStyle> : <HandymanIcon style={{fontSize: '40px'}}/>}
+                                            {utilityHovered ? <NavStyles.PageLinkStyle> Utility </NavStyles.PageLinkStyle> : <HandymanIcon style={{fontSize: '40px'}} />}
+                                        </Button>
+                                    </Link>
+                                </NavStyles.NavPages>
+
+                                <NavStyles.NavPages> 
+                                    <Link to='/gallery' className='NavbarLink' style={{ textDecoration: 'none' }} > 
+                                        <Button size='small' disableRipple='true' style={{color: "#EEEE9B"}}
+                                            onMouseEnter = {handleGalleryHover}
+                                            onMouseLeave = {handleGalleryHover}
+                                        >
+                                            {galleryHovered ? <NavStyles.PageLinkStyle> Gallery </NavStyles.PageLinkStyle> : <CameraIcon style={{fontSize: '40px'}} />}
                                         </Button>
                                     </Link>
                                 </NavStyles.NavPages>
                             </Stack>
                         </Grid>
 
-                        <img src={HarbourBridge} style={{height: '62px', width: '400px', maxWidth:'400px'}}/>
+                        {/* ########################### */}
+                        {/* ####### BRIDGE image box */}
+                        <img src={HarbourBridge} alt='Bridge' style={{ height: '62px', width: '400px', maxWidth:'400px' }}/>
 
                     </Toolbar>
                 </AppBar>

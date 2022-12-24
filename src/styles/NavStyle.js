@@ -1,5 +1,5 @@
 // Styling related to the Navigation Bar
-import { styled, IconButton } from '@mui/material';
+import { styled, IconButton, createTheme, Menu, makeStyles } from '@mui/material';
 import { Link } from 'react-router-dom'
 
 const NavContainerLEGACY = styled('nav')({
@@ -21,6 +21,7 @@ const NavContainerLEGACY = styled('nav')({
     }
 */
 
+
 const NavPages = styled('div')({
     // // POSITIONING
     // paddingLeft: '12.5px',
@@ -33,14 +34,24 @@ const NavPages = styled('div')({
     width: '50px',
 
     // backgroundColor: 'red',
-})
+});
 
 
 const PageLinkStyle = styled('p1')({
     fontSize: '23px',
     fontWeight: 'bold',
-    fontFamily: ["Arial"],
+    fontFamily: ["monospace"],
 });
+
+// const PageLinkStyle2 = styled('p1')(({ theme }) => ({
+//     cursor:'pointer',
+//     transition: theme.transitions.create(['transform'], {
+//         duration: theme.transitions.duration.standard,
+//     }),
+//     '&:hover': {
+//         transform: 
+//     }
+// }));
 
 const TransIconButton = styled(IconButton)(({ theme }) => ({
     cursor: 'pointer',
@@ -56,7 +67,19 @@ const TransIconButton = styled(IconButton)(({ theme }) => ({
 }));
 
 
+const NavMenuStyles = styled("div")({
+    logo: {
+        fontSize: 10, 
+    }
+});
+// const NavMenuStyles = styled("div")(({ theme }) => ({
+//     firstChild: {
+//         displa
+//     },
+//     lastChild: {
 
+//     }
+// }));
 
 
 const NavStyles = {
@@ -64,6 +87,7 @@ const NavStyles = {
     NavPages,
     PageLinkStyle,
     TransIconButton,
-}
+    NavMenuStyles
+};
 
 export default NavStyles;
