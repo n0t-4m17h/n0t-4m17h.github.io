@@ -43,7 +43,7 @@ const TransHoverButton = styled(Button)(({ theme }) => ({
 
 
 // Change MUI Button's text color to black
-const ColorHoverButton = styled(Button) `
+const ColorHoverButton = styled(Button)`
     :hover {
         color: black;
     } 

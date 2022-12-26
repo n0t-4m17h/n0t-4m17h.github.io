@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
-import { AppBar, Toolbar, Stack, Grid, Button, ButtonBase, Menu, MenuItem } from '@mui/material';
+import { AppBar, Toolbar, Stack, Grid, Button, ButtonBase, IconButton, Menu, MenuItem } from '@mui/material';
 import Box from '@mui/system/Box'
 import { Zoom } from '@mui/material';
 
@@ -13,10 +13,7 @@ import HandymanIcon from '@mui/icons-material/HandymanRounded';
 import CameraIcon from '@mui/icons-material/PartyModeRounded';
 
 import NavStyles from '../styles/NavStyle';
-
 import PrisonMike from '../assets/images/prison-mike.jpg'
-// import VividSydney from '../assets/images/vividSydney.jpg'
-// import NightCity from '../assets/images/city.jpg'
 import HarbourBridge from '../assets/images/bridge.png'
 
 
@@ -53,27 +50,6 @@ const Navbar = () => {
         return () => window.removeEventListener("resize", updateDimensions);
     }, []);
 
-
-    // ######## The NavMenu icons state handling
-    const [homeHovered, setHomeHovered] = useState(false);
-    function handleHomeHover() {
-        setHomeHovered(!homeHovered);
-    }
-    
-    const [projectsHovered, setProjectsHovered] = useState(false);
-    function handleProjectsHover() {
-        setProjectsHovered(!projectsHovered);
-    }
-    
-    const [utilityHovered, setUtilityHovered] = useState(false);
-    function handleUtilityHover() {
-        setUtilityHovered(!utilityHovered);
-    }
-    
-    const [galleryHovered, setGalleryHovered] = useState(false);
-    function handleGalleryHover() {
-        setGalleryHovered(!galleryHovered);
-    }
     
 
 
@@ -143,50 +119,35 @@ const Navbar = () => {
                         <Grid container direction="row" justifyContent="center" alignItems="center" >
                             <Stack direction="row" spacing={innerWidth / 80} sx={{marginLeft: '12%', position: 'relative', boxSizing:'border-box', '@media (max-width:816px)':{display:'none'}, }}>
                                 
-                                
                                 <NavStyles.NavPages>
                                     <Link to='/' className='NavbarLink' style={{ textDecoration: 'none' }} > 
-                                    <Button size='small' disableRipple='true' style={{color: "#EEEE9B"}} 
-                                            onMouseEnter = {handleHomeHover}
-                                            onMouseLeave = {handleHomeHover}
-                                        >
-                                            {homeHovered ? <NavStyles.PageLinkStyle > Home </NavStyles.PageLinkStyle> : <HomeIcon style={{fontSize: '40px'}} />}
-                                        </Button>
-
+                                        <IconButton size='small' disableRipple='true' style={{color: "#EEEE9B"}} >
+                                            <HomeIcon style={{fontSize: '40px'}} />
+                                        </IconButton>
                                     </Link>
                                 </NavStyles.NavPages>
                                 
-
                                 <NavStyles.NavPages>
                                     <Link to='/projects' className='NavbarLink' style={{ textDecoration: 'none' }} > 
-                                        <Button size='small' disableRipple='true' style={{color: "#EEEE9B"}} 
-                                            onMouseEnter = {handleProjectsHover}
-                                            onMouseLeave = {handleProjectsHover}
-                                        >
-                                            {projectsHovered ? <NavStyles.PageLinkStyle> Projects </NavStyles.PageLinkStyle> : <EngineeringIcon style={{fontSize: '40px'}} />}
-                                        </Button>
+                                        <IconButton size='small' disableRipple='true' style={{color: "#EEEE9B"}} >
+                                            <EngineeringIcon style={{fontSize: '40px'}} />
+                                        </IconButton>
                                     </Link>
                                 </NavStyles.NavPages>
                                 
                                 <NavStyles.NavPages>
                                     <Link to='/utility' className='NavbarLink' style={{ textDecoration: 'none' }} > 
-                                        <Button size='small' disableRipple='true' style={{color: "#EEEE9B"}}
-                                            onMouseEnter = {handleUtilityHover}
-                                            onMouseLeave = {handleUtilityHover}
-                                        >
-                                            {utilityHovered ? <NavStyles.PageLinkStyle> Utility </NavStyles.PageLinkStyle> : <HandymanIcon style={{fontSize: '40px'}} />}
-                                        </Button>
+                                        <IconButton size='small' disableRipple='true' style={{color: "#EEEE9B"}} >
+                                            <HandymanIcon style={{fontSize: '40px'}} />
+                                        </IconButton>
                                     </Link>
                                 </NavStyles.NavPages>
 
                                 <NavStyles.NavPages> 
                                     <Link to='/gallery' className='NavbarLink' style={{ textDecoration: 'none' }} > 
-                                        <Button size='small' disableRipple='true' style={{color: "#EEEE9B"}}
-                                            onMouseEnter = {handleGalleryHover}
-                                            onMouseLeave = {handleGalleryHover}
-                                        >
-                                            {galleryHovered ? <NavStyles.PageLinkStyle> Gallery </NavStyles.PageLinkStyle> : <CameraIcon style={{fontSize: '40px'}} />}
-                                        </Button>
+                                        <IconButton size='small' disableRipple='true' style={{color: "#EEEE9B"}} >
+                                            <CameraIcon style={{fontSize: '40px'}} />
+                                        </IconButton>
                                     </Link>
                                 </NavStyles.NavPages>
                             </Stack>

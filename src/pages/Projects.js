@@ -10,11 +10,9 @@ import PageStyles from '../styles/PageStyle';
 const Projects = () => {
 
     return (
-        <>
-            <h1 style={{ border: '5px solid pink', display: 'flex', justifyContent: 'center' }}> 
-                Projects Page
-            </h1>
-        </>
+        <div>
+            <PageStyles.Title> Projects Page </PageStyles.Title>
+        </div>
     )
 }
 

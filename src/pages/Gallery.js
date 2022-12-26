@@ -6,15 +6,14 @@ import React from 'react';
 // import ButtonBase from '@mui/material/ButtonBase';
 // import Grid --> ##### all imgs are grids of diff sizes !!
 
+import PageStyles from '../styles/PageStyle';
 
 const Gallery = () => {
 
     return (
-        <>
-            <h1 style={{ border: '5px solid pink', display: 'flex', justifyContent: 'center' }}> 
-                Gallery Page
-            </h1>
-        </>
+        <div>
+            <PageStyles.Title> Gallery Page </PageStyles.Title>
+        </div>
     )
 }
 
