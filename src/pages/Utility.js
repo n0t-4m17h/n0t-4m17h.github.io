@@ -17,7 +17,7 @@ const Utility = () => {
 
     return (
         <div className="Utility">
-            <PageStyles.Title> Utility Page </PageStyles.Title>
+            <PageStyles.Title> Utilities </PageStyles.Title>
 
 
 			<div style={{marginLeft: '1%', flex: 2}}>

@@ -11,7 +11,7 @@ const Projects = () => {
 
     return (
         <div>
-            <PageStyles.Title> Projects Page </PageStyles.Title>
+            <PageStyles.Title> Projects </PageStyles.Title>
         </div>
     )
 }

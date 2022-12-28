@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
-import { AppBar, Toolbar, Stack, Grid, Button, ButtonBase, IconButton, Menu, MenuItem } from '@mui/material';
+import { AppBar, Toolbar, Stack, Grid, ButtonBase, IconButton, Menu, MenuItem } from '@mui/material';
 import Box from '@mui/system/Box'
 import { Zoom } from '@mui/material';
 
@@ -17,11 +17,11 @@ import PrisonMike from '../assets/images/prison-mike.jpg'
 import HarbourBridge from '../assets/images/bridge.png'
 
 
-const Navbar = () => {
-    //                   NAVBAR    SIDEBAR   SIDEBAR(2) PAGE(Light) PAGE(Dark) PAGE(MID)  MUI(Prim) SoftYellow CONSIDER-THIS
-    const VIP_COLORS = ["#153454", "#063970","#002884", "#0d539E", "#1E3247", "#204063", "#257DE8", "#EEEE9B", "#0a427e"];
-    const XTRA_COLORS = ["#111164", "#8f5a24", "#202062"]
-    const PAGE_LIST = ['Home', 'Projects', 'Utility', 'Gallery']
+const Navbar = ( ) => {
+    //                      NAVBAR    SIDEBAR   SIDEBAR(2) PAGE(Light) PAGE(Dark) PAGE(MID)  MUI(Prim) SoftYellow CONSIDER-THIS
+    // const VIP_COLORS = ["#153454", "#063970","#002884", "#0d539E", "#1E3247", "#204063", "#257DE8", "#EEEE9B", "#0a427e"];
+    // const XTRA_COLORS = ["#111164", "#8f5a24", "#202062"]
+    // const PAGE_LIST = ['Home', 'Projects', 'Utility', 'Gallery']
     
 
     // ######## The SideMenu state handling
@@ -50,8 +50,12 @@ const Navbar = () => {
         return () => window.removeEventListener("resize", updateDimensions);
     }, []);
 
-    
 
+    // ####### Used so animations can be reset when returning to a page
+    // function refreshPage() {
+    //     window.location.reload(true);
+    // }
+    
 
     return (
         <div>
@@ -61,19 +65,19 @@ const Navbar = () => {
 
                         {/* ########################### */}
                         {/* ####### LHS Box (avatar + sidemenu) */}
-                        <Stack component="NavbarLogo" direction="row" sx={{ justifyContent:"flex-start"}} >
+                        <Stack component="navbarLogo" direction="row" sx={{ justifyContent:"flex-start" }} >
                             <Box sx={{transitionDuration: '0.375s', '&:hover': {opacity: [0.7],}, }} > 
-                                <a href='https://youtu.be/a7RoP1LKMeM?t=112' target="_blank">
-                                    <img src={PrisonMike} alt='AJK' style={{height: '55px', borderRadius: 35, border: '2px solid #EEEE9B', display: 'flex' }}/>
+                                <a href='https://youtu.be/a7RoP1LKMeM?t=112' target="_blank" rel="noreferrer">
+                                    <img src={PrisonMike} alt='AJK' style={{height: '55px', borderRadius: 35, border: '2px solid #EEEE9B', display: 'flex' }} />
                                 </a>
                             </Box>
                             
                             <NavStyles.TransIconButton color='primary' aria-label='MenuLogo' disableRipple='true' style={{color: "#EEEE9B"}}
                             >
-                                <ButtonBase disableRipple 
+                                <ButtonBase disableRipple
                                     onClick={handleClick} 
                                 >
-                                    {clicked ? <ExpandMoreIcon style={{fontSize: '28px'}} /> : <ExpandCircleDownIcon style={{fontSize: '28px'}} />}
+                                    {clicked ? <ExpandMoreIcon style={{fontSize: '29px'}} /> : <ExpandCircleDownIcon style={{fontSize: '29px'}} />}
                                 </ButtonBase>
                             </NavStyles.TransIconButton>
 

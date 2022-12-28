@@ -1,82 +1,135 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 
-import { Grid, Divider } from '@mui/material';
+import { Grid, Divider, Button, ButtonBase, Avatar, Container } from '@mui/material';
 import { Box } from '@mui/system'
 
+import { GitHub, LinkedIn, Instagram } from '@mui/icons-material';
+
 import PageStyles from '../styles/PageStyle';
-import '../styles/TypeWriter.css'
+import '../styles/Home.css';
+
 
 const Home = () => {
     // document.body.style.backgroundColor="#257DE8";
 
-    const hello = "Hello world!";
+    const hello = ">\thello, world ";
     var i = 0;
-    var speed = 100;
+    var speed = 135;
     const typeWriter = () => {
         document.querySelector("#typeWriter").innerHTML = hello.substring(0, i) + "<span>\u25ae</span>";
-        if (i++ != hello.length) {
+        if (i++ !== hello.length) {
             setTimeout(typeWriter, speed);
         }
     }
-    window.addEventListener("load", typeWriter);
 
+    const summary = `My name's Amith.\n Currently a third year CSE student at UNSW, aiming to be the next Sundar Pichai ;)\n
+        80% of the time, I'm busy engaging in cse-related stuff, such as personal projects, and expanding my knowledge across multiple areas of study in CS, including AI (ML) and cyber security (shoutout to Computerphile), whilst also keeping upto date with the latest news on frontend dev.\n
+        19% of my time is spent religiously pumping some iron.\n
+        The other 1% is spent doing literally anything and everything.`;
+    var j = 0;
+    var speedJ = 40;
+    const typeWriterJ = () => {
+        document.querySelector("#typeWriterJ").innerHTML = summary.substring(0, j);
+        if (j++ !== summary.length) {
+            setTimeout(typeWriterJ, speedJ);
+        }
+    }
 
-    const summary = `
-        A third year CSE student at UNSW, aiming to be the next Sundar Pichai ;)\n
-        80% of the time, I'm busy engaging in cse-related stuff, such as personal projects, and expanding my knowledge across multiple areas of study in CS, including AI (ML) and cyber security (shoutout Computerphile), whilst also keeping upto date with the latest news on frontend dev.\n
-        19% of the time is spent religiously pumping some iron.\n
-        The other 1% is spent doing literally anything and everything. 
-    `;
+    useEffect(() => {
+        window.addEventListener("load", typeWriter);
+        // window.addEventListener("click", typeWriter);
+
+        window.addEventListener("load", typeWriterJ);
+        // window.addEventListener("click", typeWriterJ);
+
+        return () => {
+            window.removeEventListener("load", typeWriter);
+            // window.removeEventListener("click", typeWriter);
+
+            window.removeEventListener("load", typeWriterJ);
+            // window.removeEventListener("click", typeWriterJ);
+        }
+    });
+
 
 
     return (
         <div>
             {/* <PageStyles.Title> Home Page </PageStyles.Title> */}
             <h1> {'\n'} </h1>
-
+        
             <Box sx={{ 
                     display:'flex',
                     justifyContent:'center',
                     alignItems:'center',
                     minHeight:'50vh',
                     border: '3px solid pink',
-                    marginBottom: '2.5%'
+                    marginBottom: '2%'
                     }} 
             >
                 **INSERT ANIMATION**
             </Box>
 
-            {/* UTILISE DIVIDERS */}
 
             <Box sx={{ width: '100%'}} >
-                {/* NOTE: the "md: <x>" in columnSpacing determines width of the box/grid, see it via border*/}
-                <Grid container justifyContent='center' rowSpacing={2} columnSpacing={{ xs: 1, sm: 1, md: 10 }} >
-                    {/* NOTE: this "xs={{<x>}}" determines the width of each item !!! */}
-                    <Grid item xs={7}>
-                        <PageStyles.StdParagraph sx={{fontSize: '25px', fontWeight: 'bold',}} >
-                            <p id="typeWriter" > </p>
-                        </PageStyles.StdParagraph>
+                <Grid container justifyContent='center' rowSpacing={2} columnSpacing={{ xs: 1, sm: 1, md: 18 }} >
+                    
+                    <Grid item xs={12} sm={6.5}>
+                        <Box sx={{margin: 'auto', maxWidth: '450px', marginBottom: '2%'}}>
+                            <PageStyles.RetroTerminal>
+                                {/* this "home" class (from css file) prevents blinking effect applying to all page's span tags */}
+                                <p id="typeWriter" class="home1" > </p>
+                            </PageStyles.RetroTerminal>
+                        </Box>
                     </Grid>
 
-                    <Grid item xs={6} >
+                    <Grid item xs={7.5} >
                         <Divider variant='middle' sx={{ bgcolor: "secondary.light" }} />
                     </Grid>
 
-                    <Grid item xs={9}>
-                        <PageStyles.StdParagraph>
-                        {summary}
-                        </PageStyles.StdParagraph>
-                    </Grid>
-
-                    <Grid item xs={6} >
-                        <Divider variant='middle' sx={{ bgcolor: "secondary.light" }} />
-                    </Grid>
-
-                    <Grid item xs={7}>
-                        <Box sx={{minHeight: '4vh'}}>
+                    <Grid item xs={12} sm={7}>
+                        <Box sx={{margin: 'auto', maxWidth: '1000px'}}>
                             <PageStyles.StdParagraph>
-                                **insert LI & GH**
+                                {/* {summary} */}
+                                <p id="typeWriterJ" class="home1"> </p>
                             </PageStyles.StdParagraph>
+                        </Box>
+                    </Grid>
+
+                    <Grid item xs={7.5} >
+                        <Divider variant='middle' sx={{ bgcolor: "secondary.light", minHeight:'0.5px' }} />
+                    </Grid>
+
+                    <Grid item xs={7}>
+                        <Box sx={{minHeight: '4vh', margin: 'auto', maxWidth: '1000px'}}>
+                            <PageStyles.IconContainer>
+
+                                <PageStyles.TransIconButton color='inherit' disableRipple='true'>
+                                    <ButtonBase disableRipple href='https://github.com/n0t-4m17h' target="_blank" 
+                                                sx={{ transitionDuration: '0.6s', '&:hover': {opacity: [0.4], }, }}
+                                    >
+                                        <GitHub style={{fontSize: '50px'}} />
+                                    </ButtonBase>
+                                </PageStyles.TransIconButton>
+
+                                <PageStyles.TransIconButton color='inherit' disableRipple='true'>
+                                    <ButtonBase disableRipple href='https://www.linkedin.com/in/amith-jacob-kovoor/' target="_blank" 
+                                                sx={{ transitionDuration: '0.6s', '&:hover': {opacity: [0.4], }, }}
+                                    >
+                                        <LinkedIn style={{fontSize: '50px'}} />
+                                    </ButtonBase>
+                                </PageStyles.TransIconButton>
+
+                                <PageStyles.TransIconButton color='inherit' disableRipple='true'>
+                                    <ButtonBase disableRipple href='https://www.instagram.com/hasbulla.hushetskiy/' target="_blank" 
+                                                sx={{ transitionDuration: '0.6s', '&:hover': {opacity: [0.4], }, }} 
+                                    >
+                                        <Instagram style={{fontSize: '50px'}} />
+                                    </ButtonBase>
+                                </PageStyles.TransIconButton>
+
+                            </PageStyles.IconContainer>
+
                         </Box>
                     </Grid>
 

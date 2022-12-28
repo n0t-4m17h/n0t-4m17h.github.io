@@ -12,7 +12,7 @@ const Gallery = () => {
 
     return (
         <div>
-            <PageStyles.Title> Gallery Page </PageStyles.Title>
+            <PageStyles.Title> Gallery </PageStyles.Title>
         </div>
     )
 }
