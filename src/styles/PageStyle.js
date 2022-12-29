@@ -1,9 +1,13 @@
 // General style of a standard Page and it's header types
-import { styled, IconButton } from '@mui/material';
+import { styled, IconButton, Card } from '@mui/material';
+
+const LineBreak = () => {
+    return <div> <h4>{'\n'}</h4> </div>
+};
 
 const Title = styled('h1')({
     color:"#EEEE9B", 
-    border: '5px solid pink',
+    // border: '5px solid pink',
     display: 'flex',
     justifyContent: 'center',
     fontFamily: 'monospace',
@@ -86,14 +90,69 @@ const TransIconButton = styled(IconButton)(({ theme }) => ({
 
 
 
+const TransCard = styled(Card)({
+    borderRadius: 10,
+    cursor: 'pointer',
+    '&:hover': {
+        animation: "jump 1.5s ease-in-out infinite",
+    },
+    "@keyframes jump": {
+        "0%": {
+            transform: "translate(0px, 0px)",
+        },
+        "50%": {
+            transform: "translate(0px, -40px)",
+        },
+        "100%": {
+            transform: "translate(0px, 0px)",
+        },
+    },
+});
+
+const CardCaptionTitle = styled('p1')({
+    fontSize: '25px',
+    fontFamily: ["monospace"],
+    color: 'navy',
+    // border: '5px solid pink',
+    fontWeight: 'bold',
+    textTransform: 'lowercase',
+    textShadow:'0px 0px 4px #EEEE9B', 
+});
+
+const CardCaptionLabel = styled('p1')({
+    fontSize: '15px',
+    fontFamily: ["monospace"],
+    color: 'black',
+    // border: '5px solid pink',
+    fontStyle: 'italic',
+    textTransform: 'lowercase',
+    marginTop:'3%',
+    backgroundColor: '#EEEE9B',
+    borderRadius: 7,
+});
+
+const CardPopup = styled('p1')({
+    fontSize: '18px',
+    fontFamily: ["monospace"],
+    color: 'navy',
+    // border: '5px solid pink',
+    textTransform: 'lowercase',
+    // marginTop:'2.5%'
+});
+
 
 const PageStyles = {
+    LineBreak,
     Title,
     AnimationContainer,
     StdParagraph,
     RetroTerminal,
     IconContainer,
     TransIconButton,
+    TransCard,
+    CardCaptionTitle,
+    CardCaptionLabel,
+    CardPopup
 };
 
 export default PageStyles;

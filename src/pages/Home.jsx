@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 
-import { Grid, Divider, Button, ButtonBase, Avatar, Container } from '@mui/material';
+import { Grid, Divider, ButtonBase } from '@mui/material';
 import { Box } from '@mui/system'
 
 import { GitHub, LinkedIn, Instagram } from '@mui/icons-material';
@@ -22,6 +22,7 @@ const Home = () => {
         }
     }
 
+
     const summary = `My name's Amith.\n Currently a third year CSE student at UNSW, aiming to be the next Sundar Pichai ;)\n
         80% of the time, I'm busy engaging in cse-related stuff, such as personal projects, and expanding my knowledge across multiple areas of study in CS, including AI (ML) and cyber security (shoutout to Computerphile), whilst also keeping upto date with the latest news on frontend dev.\n
         19% of my time is spent religiously pumping some iron.\n
@@ -34,6 +35,8 @@ const Home = () => {
             setTimeout(typeWriterJ, speedJ);
         }
     }
+
+
 
     useEffect(() => {
         window.addEventListener("load", typeWriter);
@@ -56,7 +59,7 @@ const Home = () => {
     return (
         <div>
             {/* <PageStyles.Title> Home Page </PageStyles.Title> */}
-            <h1> {'\n'} </h1>
+            <PageStyles.LineBreak />
         
             <Box sx={{ 
                     display:'flex',
@@ -73,7 +76,7 @@ const Home = () => {
 
             <Box sx={{ width: '100%'}} >
                 <Grid container justifyContent='center' rowSpacing={2} columnSpacing={{ xs: 1, sm: 1, md: 18 }} >
-                    
+
                     <Grid item xs={12} sm={6.5}>
                         <Box sx={{margin: 'auto', maxWidth: '450px', marginBottom: '2%'}}>
                             <PageStyles.RetroTerminal>
@@ -106,23 +109,23 @@ const Home = () => {
 
                                 <PageStyles.TransIconButton color='inherit' disableRipple='true'>
                                     <ButtonBase disableRipple href='https://github.com/n0t-4m17h' target="_blank" 
-                                                sx={{ transitionDuration: '0.6s', '&:hover': {opacity: [0.4], }, }}
+                                                sx={{ transitionDuration: '0.6s', '&:hover': {opacity: [0.6], }, }}
                                     >
                                         <GitHub style={{fontSize: '50px'}} />
                                     </ButtonBase>
                                 </PageStyles.TransIconButton>
 
-                                <PageStyles.TransIconButton color='inherit' disableRipple='true'>
+                                <PageStyles.TransIconButton color='info' disableRipple='true'>
                                     <ButtonBase disableRipple href='https://www.linkedin.com/in/amith-jacob-kovoor/' target="_blank" 
-                                                sx={{ transitionDuration: '0.6s', '&:hover': {opacity: [0.4], }, }}
+                                                sx={{ transitionDuration: '0.6s', '&:hover': {opacity: [0.6], }, }}
                                     >
                                         <LinkedIn style={{fontSize: '50px'}} />
                                     </ButtonBase>
                                 </PageStyles.TransIconButton>
 
-                                <PageStyles.TransIconButton color='inherit' disableRipple='true'>
+                                <PageStyles.TransIconButton color='warning' disableRipple='true'>
                                     <ButtonBase disableRipple href='https://www.instagram.com/hasbulla.hushetskiy/' target="_blank" 
-                                                sx={{ transitionDuration: '0.6s', '&:hover': {opacity: [0.4], }, }} 
+                                                sx={{ transitionDuration: '0.6s', '&:hover': {opacity: [0.6], }, }} 
                                     >
                                         <Instagram style={{fontSize: '50px'}} />
                                     </ButtonBase>
