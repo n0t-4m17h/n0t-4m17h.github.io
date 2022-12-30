@@ -1,21 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
-import { Grid, Divider, ButtonBase, Card, CardContent, CardMedia, CardActionArea, Popover, Modal, Typography, Zoom, Fade } from '@mui/material';
+import { Grid, Divider, ButtonBase, CardContent, CardMedia, CardActionArea, Modal, Fade } from '@mui/material';
 import { Box } from '@mui/system'
 
-import { OpenInNewRounded, Pages } from '@mui/icons-material';
+import { OpenInNewRounded } from '@mui/icons-material';
 
 import PageStyles from '../styles/PageStyle';
-// import '../styles/Utility.css';
 import musickBotImg from '../assets/images/musickBotDiscord.jpg';
 import unswStreamsImg from '../assets/images/unswStreams.jpg';
 import socketForumImg from '../assets/images/socketForum1.jpg';
 import dungeonManiaImg from '../assets/images/dungeonManiaNaruto1.jpg';
-
-
-// import Box from '@mui/material/Box';
-// ########## USE THIS 'Complex Button' TO MAKE THE PROJECT CARDS expansive & CLICKABLE (to your github link) 
-//                                     --> @ bottom of: https://mui.com/material-ui/react-button/ 
 
 
 const Projects = () => {
@@ -34,7 +28,7 @@ const Projects = () => {
         },
         "μsickBot": {
             "title": "μsick Bot",
-            "desc": "A multipurpose Discord bot that has a music playback system, utilises certain APIs for data retrieving etc.",
+            "desc": "A multipurpose Discord bot that has a music playback system, utilises outsourced data from APIs etc.",
             "srcDesc": "Link to GitHub repo ",
             "img": musickBotImg,
             "src": "https://github.com/m4ch374/mu_sick_bot",
@@ -52,7 +46,7 @@ const Projects = () => {
         },
         "DungeonMania": {
             "title": "Dungeon Mania",
-            "desc": "A 'Pixel Dungeon' type of web game (with mazes, battling different enemies, looting etc) that's Naruto themed. Contributed to backend work; Java code",
+            "desc": "A Naruto themed 'Pixel Dungeon' type of web game (with mazes, battling different enemies, looting etc). Contributed to backend work; Java code",
             "srcDesc": "Since it's a uni project, source code is unavailable, but... ",
             "img": dungeonManiaImg,
             "src": "https://www.youtube.com/watch?v=Rt_Ctu3tUJY&ab_channel=AmithKovoor",

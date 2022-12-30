@@ -1,20 +1,24 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, createRef } from 'react';
 
 import { Grid, Divider, ButtonBase } from '@mui/material';
 import { Box } from '@mui/system'
-
 import { GitHub, LinkedIn, Instagram } from '@mui/icons-material';
+
+import lottie from 'lottie-web';
 
 import PageStyles from '../styles/PageStyle';
 import '../styles/Home.css';
+// import '../assets/animations/lottie';
+// import '../assets/animations/script';
+import animation from '../assets/animations/data.json';
 
 
 const Home = () => {
     // document.body.style.backgroundColor="#257DE8";
-
+    
     const hello = ">\thello, world ";
     var i = 0;
-    var speed = 135;
+    const speed = 135;
     const typeWriter = () => {
         document.querySelector("#typeWriter").innerHTML = hello.substring(0, i) + "<span>\u25ae</span>";
         if (i++ !== hello.length) {
@@ -22,56 +26,58 @@ const Home = () => {
         }
     }
 
-
+    
     const summary = `My name's Amith.\n Currently a third year CSE student at UNSW, aiming to be the next Sundar Pichai ;)\n
         80% of the time, I'm busy engaging in cse-related stuff, such as personal projects, and expanding my knowledge across multiple areas of study in CS, including AI (ML) and cyber security (shoutout to Computerphile), whilst also keeping upto date with the latest news on frontend dev.\n
         19% of my time is spent religiously pumping some iron.\n
         The other 1% is spent doing literally anything and everything.`;
     var j = 0;
-    var speedJ = 40;
+    const speedJ = 40;
     const typeWriterJ = () => {
         document.querySelector("#typeWriterJ").innerHTML = summary.substring(0, j);
         if (j++ !== summary.length) {
             setTimeout(typeWriterJ, speedJ);
         }
     }
-
-
-
+    
+    
+    
+    let animationContainer = createRef();
+    // THIS OCCURS TWICE
     useEffect(() => {
+        let ani = lottie.loadAnimation({
+            // container: document.getElementById('anim'),
+            container: animationContainer.current,
+            animationData: animation,
+            renderer: 'svg',
+            loop: true,
+            autoplay: true,
+            // path:'../assets/animation/data.json',
+            onComplete: lottie.destroy() // NOTE: this is needed due to Strict mode's double rendering
+        });
+        console.log("LOADED")
         window.addEventListener("load", typeWriter);
-        // window.addEventListener("click", typeWriter);
-
+        window.addEventListener("click", typeWriter);
+        
         window.addEventListener("load", typeWriterJ);
-        // window.addEventListener("click", typeWriterJ);
-
+        window.addEventListener("click", typeWriterJ);
+        
         return () => {
             window.removeEventListener("load", typeWriter);
-            // window.removeEventListener("click", typeWriter);
-
+            window.removeEventListener("click", typeWriter);
+            
             window.removeEventListener("load", typeWriterJ);
-            // window.removeEventListener("click", typeWriterJ);
-        }
+            window.removeEventListener("click", typeWriterJ);
+        };
     });
-
 
 
     return (
         <div>
             {/* <PageStyles.Title> Home Page </PageStyles.Title> */}
-            <PageStyles.LineBreak />
+            {/* <PageStyles.LineBreak /> */}
         
-            <Box sx={{ 
-                    display:'flex',
-                    justifyContent:'center',
-                    alignItems:'center',
-                    minHeight:'50vh',
-                    border: '3px solid pink',
-                    marginBottom: '2%'
-                    }} 
-            >
-                **INSERT ANIMATION**
-            </Box>
+            <PageStyles.AnimationContainer id='anim' ref={animationContainer} />
 
 
             <Box sx={{ width: '100%'}} >

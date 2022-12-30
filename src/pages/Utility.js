@@ -7,7 +7,7 @@ import RandomStuff from '../components/RandomStuff';
 import RandomStyles from '../styles/RandomStyles';
 
 
-/* ###########  The Page that contains the randomest shit ############ */
+/* ###########  The Page that contains the most randomest shit ############ */
 
 const Utility = () => {
 	const pageSummary = "**ignore this page for now**\nPLAN: add a bunch of useful tools, for e.g. a stock tracker. Also is a playground for jsx, mui etc";

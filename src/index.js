@@ -7,6 +7,7 @@ import App from './App';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+    // this strict mode naturally makes poor useEffects occur multiple times !!!
     <React.StrictMode>
         <App />
     </React.StrictMode>

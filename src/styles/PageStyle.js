@@ -15,9 +15,16 @@ const Title = styled('h1')({
 });
 
 const AnimationContainer = styled('div')({
-    border: '3px solid pink',
+    // border: '3px solid pink',
     display:'flex',
     justifyContent: 'center',
+    alignItems:'center',
+    // minHeight:'25vh',
+    // maxWidth: '400px',
+    height: '350px',
+    width: '350px',
+    margin:'auto',
+    marginBottom: '1%'
 });
 
 const StdParagraph = styled('p1')({
