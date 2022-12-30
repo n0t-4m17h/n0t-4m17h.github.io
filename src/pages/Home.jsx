@@ -105,7 +105,7 @@ const Home = () => {
 
                     <Grid item xs={7}>
                         <Box sx={{minHeight: '4vh', margin: 'auto', maxWidth: '1000px'}}>
-                            <PageStyles.IconContainer>
+                            <PageStyles.SocialsContainer>
 
                                 <PageStyles.TransIconButton color='inherit' disableRipple='true'>
                                     <ButtonBase disableRipple href='https://github.com/n0t-4m17h' target="_blank" 
@@ -131,7 +131,7 @@ const Home = () => {
                                     </ButtonBase>
                                 </PageStyles.TransIconButton>
 
-                            </PageStyles.IconContainer>
+                            </PageStyles.SocialsContainer>
 
                         </Box>
                     </Grid>

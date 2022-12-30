@@ -55,7 +55,7 @@ const RetroTerminal = styled(StdParagraph)({
 })
 
 
-const IconContainer = styled('div')({
+const SocialsContainer = styled('div')({
     display:'flex',
     justifyContent: 'center',
     gap: '1rem',
@@ -91,7 +91,10 @@ const TransIconButton = styled(IconButton)(({ theme }) => ({
 
 
 const TransCard = styled(Card)({
+    minWidth: '281px',
+    maxWidth: '281px',
     borderRadius: 10,
+    boxShadow: '2px 2px 6px #EEEE9B',
     cursor: 'pointer',
     '&:hover': {
         animation: "jump 1.5s ease-in-out infinite",
@@ -140,18 +143,56 @@ const CardPopup = styled('p1')({
     // marginTop:'2.5%'
 });
 
+const CardModalStyle = {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    maxWidth: 450,
+    minWidth: 300,
+    bgcolor: '#222',
+    border: '2px solid #EEEE9B',
+    borderRadius: 4,
+    boxShadow: '0px 0px 4px #EEEE9B',
+    p: 4,
+};
+
+const CardModalTitle = styled('h1')({
+    fontSize: '25px',
+    fontFamily: ["monospace"],
+    color: '#eee',
+    // border: '5px solid pink',
+    lineHeight: '40px',
+});
+
+const CardModalRef = styled('p1')({
+    fontSize: '18px',
+    fontFamily: ["monospace"],
+    color: '#eee',
+    // border: '5px solid pink',
+    // fontWeight: 'bold',
+    fontStyle: 'italic', 
+    mt: 2,
+});
+
 
 const PageStyles = {
     LineBreak,
     Title,
-    AnimationContainer,
     StdParagraph,
+
+    AnimationContainer,
     RetroTerminal,
-    IconContainer,
+    SocialsContainer,
     TransIconButton,
+
     TransCard,
     CardCaptionTitle,
     CardCaptionLabel,
+    CardModalStyle,
+    CardModalTitle,
+    CardModalRef,
+
     CardPopup
 };
 
