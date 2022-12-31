@@ -10,7 +10,7 @@ import RandomStyles from '../styles/RandomStyles';
 /* ###########  The Page that contains the most randomest shit ############ */
 
 const Utility = () => {
-	const pageSummary = "**ignore this page for now**\nPLAN: add a bunch of useful tools, for e.g. a stock tracker. Also is a playground for jsx, mui etc";
+	const pageSummary = "PLAN:\nadd a bunch of useful tools, for e.g. a stock tracker. Also is a playground for jsx, mui etc";
 
     // useEffect(() => {alert("big man ting yeah")}, [counter]) // everytime the counter state is altered, the first arg is ran
 	

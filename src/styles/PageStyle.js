@@ -24,7 +24,8 @@ const AnimationContainer = styled('div')({
     height: '350px',
     width: '350px',
     margin:'auto',
-    marginBottom: '1%'
+    marginBottom: '-1%',
+    marginTop: '-1%',
 });
 
 const StdParagraph = styled('p1')({
@@ -134,6 +135,7 @@ const CardCaptionLabel = styled('p1')({
     fontFamily: ["monospace"],
     color: 'black',
     // border: '5px solid pink',
+    fontWeight: 'bold',
     fontStyle: 'italic',
     textTransform: 'lowercase',
     marginTop:'3%',
@@ -141,14 +143,7 @@ const CardCaptionLabel = styled('p1')({
     borderRadius: 7,
 });
 
-const CardPopup = styled('p1')({
-    fontSize: '18px',
-    fontFamily: ["monospace"],
-    color: 'navy',
-    // border: '5px solid pink',
-    textTransform: 'lowercase',
-    // marginTop:'2.5%'
-});
+
 
 const CardModalStyle = {
     position: 'absolute',
@@ -200,7 +195,7 @@ const PageStyles = {
     CardModalTitle,
     CardModalRef,
 
-    CardPopup
+    
 };
 
 export default PageStyles;

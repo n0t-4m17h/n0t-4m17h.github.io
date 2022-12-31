@@ -9,12 +9,10 @@ import lottie from 'lottie-web';
 import PageStyles from '../styles/PageStyle';
 import '../styles/Home.css';
 // import '../assets/animations/lottie';
-// import '../assets/animations/script';
 import animation from '../assets/animations/data.json';
 
 
 const Home = () => {
-    // document.body.style.backgroundColor="#257DE8";
     
     const hello = ">\thello, world ";
     var i = 0;
@@ -25,7 +23,6 @@ const Home = () => {
             setTimeout(typeWriter, speed);
         }
     }
-
     
     const summary = `My name's Amith.\n Currently a third year CSE student at UNSW, aiming to be the next Sundar Pichai ;)\n
         80% of the time, I'm busy engaging in cse-related stuff, such as personal projects, and expanding my knowledge across multiple areas of study in CS, including AI (ML) and cyber security (shoutout to Computerphile), whilst also keeping upto date with the latest news on frontend dev.\n
@@ -41,9 +38,8 @@ const Home = () => {
     }
     
     
-    
     let animationContainer = createRef();
-    // THIS OCCURS TWICE
+    
     useEffect(() => {
         let ani = lottie.loadAnimation({
             // container: document.getElementById('anim'),

@@ -6,10 +6,10 @@ import { Box } from '@mui/system'
 import { OpenInNewRounded } from '@mui/icons-material';
 
 import PageStyles from '../styles/PageStyle';
-import musickBotImg from '../assets/images/musickBotDiscord.jpg';
-import unswStreamsImg from '../assets/images/unswStreams.jpg';
-import socketForumImg from '../assets/images/socketForum1.jpg';
-import dungeonManiaImg from '../assets/images/dungeonManiaNaruto1.jpg';
+import musickBotImg from '../assets/images/projects/musickBotDiscord.jpg';
+import unswStreamsImg from '../assets/images/projects/unswStreams.jpg';
+import socketForumImg from '../assets/images/projects/socketForum1.jpg';
+import dungeonManiaImg from '../assets/images/projects/dungeonManiaNaruto1.jpg';
 
 
 const Projects = () => {
@@ -19,7 +19,7 @@ const Projects = () => {
     const projectsInfoDict = {
         "UNSWStreams": {
             "title": "UNSW Streams",
-            "desc": "A less sophisticated version of MS Teams. Contributed to backend work; Python code.",
+            "desc": "A less sophisticated version of MS Teams. Contributed to backend Python code.",
             "srcDesc": "Since it's a uni project, source code is unavailable, but... ",
             "img": unswStreamsImg,
             "src": "https://www.reddit.com/r/unsw/comments/uq3eef/is_the_trimester_system_still_bad/",
@@ -46,7 +46,7 @@ const Projects = () => {
         },
         "DungeonMania": {
             "title": "Dungeon Mania",
-            "desc": "A Naruto themed 'Pixel Dungeon' type of web game (with mazes, battling different enemies, looting etc). Contributed to backend work; Java code",
+            "desc": "A Naruto themed 'Pixel Dungeon' type of web game (with mazes, battling different enemies, looting etc). Contributed to backend Java code.",
             "srcDesc": "Since it's a uni project, source code is unavailable, but... ",
             "img": dungeonManiaImg,
             "src": "https://www.youtube.com/watch?v=Rt_Ctu3tUJY&ab_channel=AmithKovoor",
