@@ -1,22 +1,20 @@
 import React from 'react';
-// import Box from '@mui/material/Box';
-// ########## USE THIS 'Complex Button' TO MAKE THE PROJECT CARDS expansive & CLICKABLE (to your github link) 
-//                                     --> @ bottom of: https://mui.com/material-ui/react-button/ 
-// import ButtonBase from '@mui/material/ButtonBase';
-// import Grid --> ##### all imgs are grids of diff sizes !!
+import { Helmet } from 'react-helmet';
 
-
-import { Grid, Stack, Divider, ImageList, ImageListItem } from '@mui/material';
+import { Divider, ImageList, ImageListItem } from '@mui/material';
 import { Box } from '@mui/system'
 
 import PageStyles from '../styles/PageStyle';
+
 import huntervalley from '../assets/images/gallery/huntervalley.png';
 import lightshow from '../assets/images/gallery/lightshow.png';
+import vivid2 from '../assets/images/gallery/vivid2.png';
 import wollongong from '../assets/images/gallery/wollongong.jpg';
 import macHeights2 from '../assets/images/gallery/macHeights2.png';
 import vivid1 from '../assets/images/gallery/vivid1.png';
+// import macHeights1 from '../assets/images/gallery/macHeights1.png';
 
-// `${imgs.img}?w=164&h=164fit=crop&auto=format&dpr=2`
+
 const Gallery = () => {
 
     const pageSummary = "\"Pictures of you, pictures of me,\nhung upon your wall, for the world to see\"";
@@ -41,11 +39,20 @@ const Gallery = () => {
         "vivid1": {
             'img': vivid1,
             'title': 'vivid1',
+        },
+        "vivid2": {
+            'img': vivid2,
+            'title': 'vivid2',
         }
     }
 
     return (
-        <div>
+        <div className="Gallery">
+            <Helmet>
+                <title>ajk ~ gallery</title>
+                <meta name="description" content="amith's gallery" />
+            </Helmet>
+
             <PageStyles.Title> Gallery </PageStyles.Title>
 
             <Box sx={{margin: 'auto', maxWidth: '500px', marginBottom: '2%',}}>
@@ -75,29 +82,40 @@ const Gallery = () => {
                     <ImageListItem key={imgsInfo['huntervalley']['img']} cols={4} rows={4} >
                         <img src={imgsInfo['huntervalley']['img']} 
                             alt='huntervalley' 
-                            loading='lazy' />
+                            loading='lazy' 
+                        />
                     </ImageListItem>
                     <ImageListItem key={imgsInfo['lightshow']['img']} cols={2} rows={2} >
                         <img src={imgsInfo['lightshow']['img']} 
                             alt='lightshow' 
-                            loading='lazy' />
+                            loading='lazy' 
+                        />
+                    </ImageListItem>
+                    <ImageListItem key={imgsInfo['vivid2']['img']} cols={2} rows={4} >
+                        <img src={imgsInfo['vivid2']['img']} 
+                            alt='vivid2' 
+                            loading='lazy'
+                            style={{ objectPosition: '100% 15%', objectFit: 'fill' }}
+                        />
                     </ImageListItem>
                     <ImageListItem key={imgsInfo['wollongong']['img']} cols={2} rows={4} >
                         <img src={imgsInfo['wollongong']['img']} 
                             alt='wollongong' 
-                            loading='lazy' />
+                            loading='lazy' 
+                        />
                     </ImageListItem>
                     <ImageListItem key={imgsInfo['macHeights2']['img']} cols={2} rows={2} >
                         <img src={imgsInfo['macHeights2']['img']} 
                             alt='macHeights2' 
-                            loading='lazy' />
+                            loading='lazy' 
+                        />
                     </ImageListItem>
                     <ImageListItem key={imgsInfo['vivid1']['img']} cols={4} rows={2} >
                         <img src={imgsInfo['vivid1']['img']} 
                             alt='vivid1' 
                             loading='lazy' 
-                            style={{ objectPosition: '10% 15%' }}
-                            />
+                            style={{ objectPosition: '100% 15%' }}
+                        />
                     </ImageListItem>
 
 

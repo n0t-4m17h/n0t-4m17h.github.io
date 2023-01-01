@@ -1,4 +1,5 @@
 import React, { useEffect, createRef } from 'react';
+// import { Helmet } from 'react-helmet';
 
 import { Grid, Divider, ButtonBase } from '@mui/material';
 import { Box } from '@mui/system'
@@ -41,7 +42,7 @@ const Home = () => {
     let animationContainer = createRef();
     
     useEffect(() => {
-        let ani = lottie.loadAnimation({
+        lottie.loadAnimation({
             // container: document.getElementById('anim'),
             container: animationContainer.current,
             animationData: animation,
@@ -69,10 +70,15 @@ const Home = () => {
 
 
     return (
-        <div>
+        <div className="Home">
+            {/* <Helmet>
+                <title>ajk ~ home</title>
+                <meta name="description" content="amith's home page" />
+            </Helmet> */}
+
             {/* <PageStyles.Title> Home Page </PageStyles.Title> */}
             {/* <PageStyles.LineBreak /> */}
-        
+
             <PageStyles.AnimationContainer id='anim' ref={animationContainer} />
 
 

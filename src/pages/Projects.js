@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet';
 
 import { Grid, Divider, ButtonBase, CardContent, CardMedia, CardActionArea, Modal, Fade } from '@mui/material';
 import { Box } from '@mui/system'
@@ -81,7 +82,12 @@ const Projects = () => {
 
 
     return (
-        <div>
+        <div className="Projects">
+            <Helmet>
+                <title>ajk ~ projects</title>
+                <meta name="description" content="amith's projects" />
+            </Helmet>
+
             <PageStyles.Title> Projects </PageStyles.Title>
 
             <Box sx={{margin: 'auto', maxWidth: '500px', marginBottom: '2%', minHeight:'5vh',}}>

@@ -1,4 +1,6 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
+
 import { Divider } from '@mui/material';
 import { Box } from '@mui/system'
 
@@ -21,6 +23,11 @@ const Utility = () => {
 
     return (
         <div className="Utility">
+			<Helmet>
+                <title>ajk ~ utility</title>
+                <meta name="description" content="amith's utilities" />
+            </Helmet>
+
             <PageStyles.Title> Utilities </PageStyles.Title>
 
 			<Box sx={{margin: 'auto', maxWidth: '500px', marginBottom: '2%',}}>
