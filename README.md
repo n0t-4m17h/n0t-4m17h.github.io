@@ -1,5 +1,5 @@
 # [n0t-4m17h.github.io](www.n0t-4m17h.github.io)
-*cname => [not-amith.nr](not-amith.nr)*
+<!-- *cname => [not-amith.nr](not-amith.nr)* -->
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
