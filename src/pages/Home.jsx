@@ -38,7 +38,6 @@ const Home = () => {
         }
     }
     
-    
     let animationContainer = createRef();
     
     useEffect(() => {
@@ -60,11 +59,13 @@ const Home = () => {
         window.addEventListener("click", typeWriterJ);
         
         return () => {
+            
             window.removeEventListener("load", typeWriter);
             window.removeEventListener("click", typeWriter);
             
             window.removeEventListener("load", typeWriterJ);
             window.removeEventListener("click", typeWriterJ);
+
         };
     });
 
@@ -89,7 +90,7 @@ const Home = () => {
                         <Box sx={{margin: 'auto', maxWidth: '450px', marginBottom: '2%'}}>
                             <PageStyles.RetroTerminal>
                                 {/* this "home" class (from css file) prevents blinking effect applying to all page's span tags */}
-                                <p id="typeWriter" class="home1" > </p>
+                                <p id="typeWriter" className="home1" > </p>
                             </PageStyles.RetroTerminal>
                         </Box>
                     </Grid>
@@ -102,7 +103,7 @@ const Home = () => {
                         <Box sx={{margin: 'auto', maxWidth: '1000px'}}>
                             <PageStyles.StdParagraph>
                                 {/* {summary} */}
-                                <p id="typeWriterJ" class="home1"> </p>
+                                <p id="typeWriterJ" className="home1"> </p>
                             </PageStyles.StdParagraph>
                         </Box>
                     </Grid>
