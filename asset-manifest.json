@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/n0t-4m17h.github.io/static/css/main.1d234764.css",
-    "main.js": "/n0t-4m17h.github.io/static/js/main.4940fe11.js",
-    "static/media/vivid1.png": "/n0t-4m17h.github.io/static/media/vivid1.3bd607edf91a8df2b1f3.png",
-    "static/media/vivid2.png": "/n0t-4m17h.github.io/static/media/vivid2.9ccc1518e1aafde016a7.png",
-    "static/media/lightshow.png": "/n0t-4m17h.github.io/static/media/lightshow.451beb5673e5723e5d25.png",
-    "static/media/huntervalley.png": "/n0t-4m17h.github.io/static/media/huntervalley.768ad0450b8c5f6abdba.png",
-    "static/media/macHeights2.png": "/n0t-4m17h.github.io/static/media/macHeights2.165125dc930656138e5c.png",
-    "static/media/dungeonManiaNaruto1.jpg": "/n0t-4m17h.github.io/static/media/dungeonManiaNaruto1.342e73c309a83e1bf068.jpg",
-    "static/media/wollongong.jpg": "/n0t-4m17h.github.io/static/media/wollongong.caf4b2d9f34163e07a3d.jpg",
-    "static/media/bridge.png": "/n0t-4m17h.github.io/static/media/bridge.46bb456f8cd4fcf5c00e.png",
-    "static/media/socketForum1.jpg": "/n0t-4m17h.github.io/static/media/socketForum1.4028b8be2f63edb98dd3.jpg",
-    "static/media/prison-mike.jpg": "/n0t-4m17h.github.io/static/media/prison-mike.ea22b1c69a1363bd140c.jpg",
-    "static/media/unswStreams.jpg": "/n0t-4m17h.github.io/static/media/unswStreams.63c1b32f715fb76f742d.jpg",
-    "static/media/musickBotDiscord.jpg": "/n0t-4m17h.github.io/static/media/musickBotDiscord.e3fe5726a4fef8f576f6.jpg",
-    "index.html": "/n0t-4m17h.github.io/index.html",
-    "main.1d234764.css.map": "/n0t-4m17h.github.io/static/css/main.1d234764.css.map",
-    "main.4940fe11.js.map": "/n0t-4m17h.github.io/static/js/main.4940fe11.js.map"
+    "main.css": "/static/css/main.1d234764.css",
+    "main.js": "/static/js/main.bdeb025b.js",
+    "static/media/vivid1.png": "/static/media/vivid1.3bd607edf91a8df2b1f3.png",
+    "static/media/vivid2.png": "/static/media/vivid2.9ccc1518e1aafde016a7.png",
+    "static/media/lightshow.png": "/static/media/lightshow.451beb5673e5723e5d25.png",
+    "static/media/huntervalley.png": "/static/media/huntervalley.768ad0450b8c5f6abdba.png",
+    "static/media/macHeights2.png": "/static/media/macHeights2.165125dc930656138e5c.png",
+    "static/media/dungeonManiaNaruto1.jpg": "/static/media/dungeonManiaNaruto1.342e73c309a83e1bf068.jpg",
+    "static/media/wollongong.jpg": "/static/media/wollongong.caf4b2d9f34163e07a3d.jpg",
+    "static/media/bridge.png": "/static/media/bridge.46bb456f8cd4fcf5c00e.png",
+    "static/media/socketForum1.jpg": "/static/media/socketForum1.4028b8be2f63edb98dd3.jpg",
+    "static/media/prison-mike.jpg": "/static/media/prison-mike.ea22b1c69a1363bd140c.jpg",
+    "static/media/unswStreams.jpg": "/static/media/unswStreams.63c1b32f715fb76f742d.jpg",
+    "static/media/musickBotDiscord.jpg": "/static/media/musickBotDiscord.e3fe5726a4fef8f576f6.jpg",
+    "index.html": "/index.html",
+    "main.1d234764.css.map": "/static/css/main.1d234764.css.map",
+    "main.bdeb025b.js.map": "/static/js/main.bdeb025b.js.map"
   },
   "entrypoints": [
     "static/css/main.1d234764.css",
-    "static/js/main.4940fe11.js"
+    "static/js/main.bdeb025b.js"
   ]
 }
