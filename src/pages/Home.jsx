@@ -10,7 +10,7 @@ import lottie from 'lottie-web';
 import PageStyles from '../styles/PageStyle';
 import '../styles/Home.css';
 // import '../assets/animations/lottie';
-import animation from '../assets/animations/data.json';
+import animation from '../assets/animations/coder1.json';
 
 
 const Home = () => {

@@ -24,8 +24,8 @@ const AnimationContainer = styled('div')({
     height: '350px',
     width: '350px',
     margin:'auto',
-    marginBottom: '-1%',
-    marginTop: '-1%',
+    marginBottom: '1%',
+    marginTop: '1%',
 });
 
 const StdParagraph = styled('p1')({

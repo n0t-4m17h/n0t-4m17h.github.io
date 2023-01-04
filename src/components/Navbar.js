@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, createRef } from 'react'
 import { Link } from 'react-router-dom'
 
 import { AppBar, Toolbar, Stack, Grid, ButtonBase, IconButton, Menu, MenuItem } from '@mui/material';
@@ -12,9 +12,12 @@ import EngineeringIcon from '@mui/icons-material/Engineering';
 import HandymanIcon from '@mui/icons-material/HandymanRounded';
 import CameraIcon from '@mui/icons-material/PartyModeRounded';
 
+// import lottie from 'lottie-web';
+
 import NavStyles from '../styles/NavStyle';
 import PrisonMike from '../assets/images/prison-mike.jpg'
 import HarbourBridge from '../assets/images/bridge.png'
+// import animation from '../assets/animations/data.json';
 
 
 const Navbar = ( ) => {
@@ -45,16 +48,22 @@ const Navbar = ( ) => {
     const updateDimensions = () => {
         setWidth(window.innerWidth);
     }
+    // let animationContainer = createRef();
     useEffect(() => {
+        // lottie.loadAnimation({
+        //     // container: document.getElementById('anim'),
+        //     container: animationContainer.current,
+        //     animationData: animation,
+        //     renderer: 'svg',
+        //     loop: true,
+        //     autoplay: true,
+        //     // path:'../assets/animation/data.json',
+        //     onComplete: lottie.destroy() // NOTE: this is needed due to Strict mode's double rendering
+        // });
+
         window.addEventListener("resize", updateDimensions);
         return () => window.removeEventListener("resize", updateDimensions);
-    }, []);
-
-
-    // ####### Used so animations can be reset when returning to a page
-    // function refreshPage() {
-    //     window.location.reload(true);
-    // }
+    });
     
 
     return (
@@ -66,6 +75,8 @@ const Navbar = ( ) => {
                         {/* ########################### */}
                         {/* ####### LHS Box (avatar + sidemenu) */}
                         <Stack component="navbarLogo" direction="row" sx={{ justifyContent:"flex-start" }} >
+                            {/* width: '60px', height: '60px', border: '2px solid pink' */}
+                            {/* <div id='anim' ref={animationContainer}/> */}
                             <Box sx={{transitionDuration: '0.375s', '&:hover': {opacity: [0.7],}, }} > 
                                 <a href='https://youtu.be/a7RoP1LKMeM?t=112' target="_blank" rel="noreferrer">
                                     <img src={PrisonMike} alt='AJK' style={{height: '55px', borderRadius: 35, border: '2px solid #EEEE9B', display: 'flex' }} />
