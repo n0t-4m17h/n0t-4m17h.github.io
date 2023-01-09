@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.1d234764.css",
-    "main.js": "/static/js/main.efc47c1a.js",
+    "main.js": "/static/js/main.d837a66c.js",
     "static/media/vivid1.png": "/static/media/vivid1.3bd607edf91a8df2b1f3.png",
     "static/media/vivid2.png": "/static/media/vivid2.9ccc1518e1aafde016a7.png",
     "static/media/lightshow.png": "/static/media/lightshow.451beb5673e5723e5d25.png",
@@ -11,15 +11,14 @@
     "static/media/wollongong.jpg": "/static/media/wollongong.caf4b2d9f34163e07a3d.jpg",
     "static/media/bridge.png": "/static/media/bridge.46bb456f8cd4fcf5c00e.png",
     "static/media/socketForum1.jpg": "/static/media/socketForum1.4028b8be2f63edb98dd3.jpg",
-    "static/media/prison-mike.jpg": "/static/media/prison-mike.ea22b1c69a1363bd140c.jpg",
     "static/media/unswStreams.jpg": "/static/media/unswStreams.63c1b32f715fb76f742d.jpg",
     "static/media/musickBotDiscord.jpg": "/static/media/musickBotDiscord.e3fe5726a4fef8f576f6.jpg",
     "index.html": "/index.html",
     "main.1d234764.css.map": "/static/css/main.1d234764.css.map",
-    "main.efc47c1a.js.map": "/static/js/main.efc47c1a.js.map"
+    "main.d837a66c.js.map": "/static/js/main.d837a66c.js.map"
   },
   "entrypoints": [
     "static/css/main.1d234764.css",
-    "static/js/main.efc47c1a.js"
+    "static/js/main.d837a66c.js"
   ]
 }
