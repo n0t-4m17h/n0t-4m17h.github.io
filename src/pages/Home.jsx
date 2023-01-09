@@ -1,4 +1,4 @@
-import React, { useEffect, createRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 // import { Helmet } from 'react-helmet';
 
 import { Grid, Divider, ButtonBase } from '@mui/material';
@@ -38,18 +38,20 @@ const Home = () => {
         }
     }
     
-    let animationContainer = createRef();
+    const animationContainer = useRef(null);
     
     useEffect(() => {
         lottie.loadAnimation({
             // container: document.getElementById('anim'),
+            name:'coder',
             container: animationContainer.current,
             animationData: animation,
             renderer: 'svg',
             loop: true,
             autoplay: true,
+            prerender:true,
             // path:'../assets/animation/data.json',
-            onComplete: lottie.destroy() // NOTE: this is needed due to Strict mode's double rendering
+            // onComplete: lottie.destroy() // NOTE: this is needed due to Strict mode's double rendering
         });
         console.log("LOADED")
         window.addEventListener("load", typeWriter);
@@ -59,7 +61,8 @@ const Home = () => {
         window.addEventListener("click", typeWriterJ);
         
         return () => {
-            
+            lottie.destroy("coder");
+
             window.removeEventListener("load", typeWriter);
             window.removeEventListener("click", typeWriter);
             
@@ -141,7 +144,6 @@ const Home = () => {
                                 </PageStyles.TransIconButton>
 
                             </PageStyles.SocialsContainer>
-
                         </Box>
                     </Grid>
 

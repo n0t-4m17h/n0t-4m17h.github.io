@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 
 import { AppBar, Toolbar, Stack, Grid, ButtonBase, IconButton, Menu, MenuItem } from '@mui/material';
@@ -12,12 +12,13 @@ import EngineeringIcon from '@mui/icons-material/Engineering';
 import HandymanIcon from '@mui/icons-material/HandymanRounded';
 import CameraIcon from '@mui/icons-material/PartyModeRounded';
 
-// import lottie from 'lottie-web';
 
 import NavStyles from '../styles/NavStyle';
 import PrisonMike from '../assets/images/prison-mike.jpg'
 import HarbourBridge from '../assets/images/bridge.png'
-// import animation from '../assets/animations/data.json';
+
+import lottie from 'lottie-web';
+import animation2 from '../assets/animations/data.json';
 
 
 const Navbar = ( ) => {
@@ -48,21 +49,27 @@ const Navbar = ( ) => {
     const updateDimensions = () => {
         setWidth(window.innerWidth);
     }
-    // let animationContainer = createRef();
+
+    let animationContainer2 = useRef(null);
+
     useEffect(() => {
-        // lottie.loadAnimation({
-        //     // container: document.getElementById('anim'),
-        //     container: animationContainer.current,
-        //     animationData: animation,
-        //     renderer: 'svg',
-        //     loop: true,
-        //     autoplay: true,
-        //     // path:'../assets/animation/data.json',
-        //     onComplete: lottie.destroy() // NOTE: this is needed due to Strict mode's double rendering
-        // });
+        lottie.loadAnimation({
+            name:'ajk',
+            container: animationContainer2.current,
+            animationData: animation2,
+            renderer: 'svg',
+            loop: true,
+            autoplay: true,
+            // onComplete: lottie.destroy() // NOTE: this is needed due to Strict mode's double rendering
+        });
 
         window.addEventListener("resize", updateDimensions);
-        return () => window.removeEventListener("resize", updateDimensions);
+        
+        return () => {
+            lottie.destroy("ajk");
+            window.removeEventListener("resize", updateDimensions);
+        }
+            
     });
     
 
@@ -73,16 +80,19 @@ const Navbar = ( ) => {
                     <Toolbar variant='regular' disableGutters >
 
                         {/* ########################### */}
-                        {/* ####### LHS Box (avatar + sidemenu) */}
+                        {/* ####### LHS Box (animation + sidemenu) */}
                         <Stack component="navbarLogo" direction="row" sx={{ justifyContent:"flex-start" }} >
                             {/* width: '60px', height: '60px', border: '2px solid pink' */}
-                            {/* <div id='anim' ref={animationContainer}/> */}
-                            <Box sx={{transitionDuration: '0.375s', '&:hover': {opacity: [0.7],}, }} > 
+                            <Box sx={{transitionDuration: '0.375s', '&:hover': {opacity: [0.7],},  width: '80px', height: '80px', marginBottom: '-6%', marginTop:'-6%'}} > 
                                 <a href='https://youtu.be/a7RoP1LKMeM?t=112' target="_blank" rel="noreferrer">
-                                    <img src={PrisonMike} alt='AJK' style={{height: '55px', borderRadius: 35, border: '2px solid #EEEE9B', display: 'flex' }} />
+                                    <div ref={animationContainer2}/>
+                                    {/* <img src={PrisonMike} alt='AJK' style={{height: '55px', borderRadius: 35, border: '2px solid #EEEE9B', display: 'flex' }} /> */}
                                 </a>
                             </Box>
                             
+
+                            {/* ################### */}
+                            {/* #### SIDE MENU (dropdown pages) */}
                             <NavStyles.TransIconButton color='primary' aria-label='MenuLogo' disableRipple='true' style={{color: "#EEEE9B"}}
                             >
                                 <ButtonBase disableRipple
@@ -92,8 +102,6 @@ const Navbar = ( ) => {
                                 </ButtonBase>
                             </NavStyles.TransIconButton>
 
-                            {/* ################### */}
-                            {/* #### SIDE MENU (dropdown pages) */}
                             <Menu
                                 anchorEl={anchorEl}
                                 open={open}
