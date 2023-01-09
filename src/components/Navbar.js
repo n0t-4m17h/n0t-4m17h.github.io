@@ -14,7 +14,7 @@ import CameraIcon from '@mui/icons-material/PartyModeRounded';
 
 
 import NavStyles from '../styles/NavStyle';
-import PrisonMike from '../assets/images/prison-mike.jpg'
+// import PrisonMike from '../assets/images/prison-mike.jpg'
 import HarbourBridge from '../assets/images/bridge.png'
 
 import lottie from 'lottie-web';
