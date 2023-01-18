@@ -17,9 +17,9 @@ const Utility = () => {
     // useEffect(() => {alert("big man ting yeah")}, [counter]) // everytime the counter state is altered, the first arg is ran
 	
 	const LineBreak = () => {return <div> <h4>{'\n'}</h4> </div>};
-	const PrintName = (props) => {return <h3>Hello there "{props.title}", it's {new Date().toLocaleTimeString()}</h3>};
+	const PrintName = (props) => {return <h3>Hello there, "{props.title}", it's {new Date().toLocaleTimeString()}</h3>};
 	// const userName = prompt("What is your name?", "Name");
-	const userName = "General Kenobi";
+	const userName = "Skywalker";
 
     return (
         <div className="Utility">
