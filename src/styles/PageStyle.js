@@ -178,6 +178,21 @@ const CardModalRef = styled('p1')({
 });
 
 
+const ThreeDContainer = styled('div')({
+    // border: '3px solid pink',
+    display:'flex',
+    justifyContent: 'center',
+    alignItems:'center',
+    height:'800px',
+    width: '99vw',
+    // height: '350px',
+    // width: '350px',
+    margin:'auto',
+    marginBottom: '-5%',
+    marginTop: '-5%',
+});
+
+
 const PageStyles = {
     LineBreak,
     Title,
@@ -195,7 +210,7 @@ const PageStyles = {
     CardModalTitle,
     CardModalRef,
 
-    
+    ThreeDContainer,
 };
 
 export default PageStyles;
