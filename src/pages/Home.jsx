@@ -30,7 +30,7 @@ const Home = () => {
         19% of my time is spent religiously pumping some iron.\n
         The other 1% is spent doing literally anything and everything.`;
     var j = 0;
-    const speedJ = 40;
+    const speedJ = 30;
     const typeWriterJ = () => {
         document.querySelector("#typeWriterJ").innerHTML = summary.substring(0, j);
         if (j++ !== summary.length) {

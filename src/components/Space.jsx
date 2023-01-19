@@ -7,18 +7,19 @@ Source: https://sketchfab.com/3d-models/need-some-space-d6521362b37b48e3a82bce49
 Title: Need some space?
 */
 
-import React, { useRef } from 'react'
-import { useGLTF } from '@react-three/drei'
+import React from 'react'
+import { useGLTF, PointMaterial } from '@react-three/drei'
 
 
 const gltfLOCATION = 'space/space.gltf';
 
 export default function Space(props) {
   const { nodes, materials } = useGLTF(gltfLOCATION)
-  const group = useRef()
   return (
-    <group ref={group} {...props} dispose={null}>
-      <points geometry={nodes.Object_2.geometry} material={materials['Scene_-_Root']} rotation={[-Math.PI / 2, 0, 0]} scale={1} />
+    <group {...props} dispose={null}>
+      <points geometry={nodes.Object_2.geometry} material={materials['Scene_-_Root']} rotation={[-Math.PI / 2, 0, 0]} scale={1}>
+      <PointMaterial transparent vertexColors size={2} sizeAttenuation={false} depthWrite={false} />
+      </points>
     </group>
   )
 }

@@ -7,17 +7,18 @@ import { Box } from '@mui/system'
 import PageStyles from '../styles/PageStyle';
 import RandomStuff from '../components/RandomStuff';
 import RandomStyles from '../styles/RandomStyles';
-import Space from '../components/Space'
+// import Space from '../components/Space'
+import Thefuture from '../components/Thefuture'
 
 // import * as THREE from 'three';
 import { Canvas } from '@react-three/fiber'
-import { BakeShadows, OrbitControls, Stage } from '@react-three/drei';
+import { OrbitControls, Stage } from '@react-three/drei';
 // import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 
 /* ###########  The Page that contains the most randomest shit ############ */
 
 const Utility = () => {
-	const pageSummary = "PLAN:\nadd a bunch of useful tools, for e.g. a stock tracker. Also is a playground for jsx, mui etc";
+	const pageSummary = "PLAN:\nTo feature a bunch of useful tools. Also is a coding playground ";
 
     // useEffect(() => {alert("big man ting yeah")}, [counter]) // everytime the counter state is altered, the first arg is ran
 	const LineBreak = () => {return <div> <h4>{'\n'}</h4> </div>};
@@ -25,34 +26,6 @@ const Utility = () => {
 	// const userName = prompt("What is your name?", "Name");
 	const userName = "Skywalker";
 
-
-	// const renderer = new THREE.WebGL1Renderer();
-	// renderer.setSize(window.innerWidth, window.innerHeight);
-	// document.body.appendChild(renderer.domElement);
-
-	// const scene = new THREE.Scene();
-	// const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-	// const orbit = new OrbitControls(camera, renderer.domElement);
-
-	// const loader = new GLTFLoader();
-
-	// loader.load('space/space.gltf', function ( gltf ) {
-	// 	scene.add( gltf.scene );
-	// }, undefined, function ( error ) {
-	// 	console.error( "ERROR: " + error );
-	// });
-
-	// camera.position.set(0,0,10);
-	// camera.lookAt(0,0,0);
-	// orbit.update();
-
-	// function animate(){
-	// 	requestAnimationFrame(animate);
-	// 	renderer.render(scene, camera);
-
-	// 	renderer.dispose()
-	// 	renderer.forceContextLoss()
-	// }
 
     return (
         <div className="Utility">
@@ -72,22 +45,25 @@ const Utility = () => {
             <Box sx={{margin: 'auto', maxWidth: '500px', }}>
                 <Divider variant='middle' sx={{ bgcolor: "secondary.light", display: 'flex', alignContent:'center', }} />
             </Box>
-            
+
+
+            {/* CC0 + CC BY + CC BY-SA */}
 			<PageStyles.ThreeDContainer>
-				{console.log("1")}
-				<Canvas>
-					{/* <Suspense> */}
-						<Stage>
-							<Space />
-						</Stage>
-						{/* <BakeShadows /> */}
-					{/* </Suspense> */}
+				<Canvas camera={{fov: 30}} >
+					<ambientLight intensity={1.25} />
+					<spotLight intensity={0.5} angle={0.1} penumbra={1} position={[10, 15, 10]} castShadow />
 					<OrbitControls autoRotate />
+					<Suspense fallback={null}>
+						<boxGeometry />
+							<Stage>
+								<Thefuture />
+							</Stage>
+					</Suspense>
 				</Canvas>
-				{/* <Space /> */}
-				{console.log("2")}
 			</PageStyles.ThreeDContainer>
 			
+
+
 			<Box sx={{margin: 'auto', maxWidth: '500px', marginBottom: '2.5%'}}>
                 <Divider variant='middle' sx={{ bgcolor: "secondary.light", display: 'flex', alignContent:'center', }} />
             </Box>

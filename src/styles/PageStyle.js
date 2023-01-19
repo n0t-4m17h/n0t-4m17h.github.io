@@ -183,13 +183,13 @@ const ThreeDContainer = styled('div')({
     display:'flex',
     justifyContent: 'center',
     alignItems:'center',
-    height:'800px',
-    width: '99vw',
+    height:'700px',
+    width: '90vw',
     // height: '350px',
     // width: '350px',
     margin:'auto',
-    marginBottom: '-5%',
-    marginTop: '-5%',
+    // marginBottom: '-5%',
+    // marginTop: '-5%',
 });
 
 
