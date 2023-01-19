@@ -183,7 +183,7 @@ const ThreeDContainer = styled('div')({
     display:'flex',
     justifyContent: 'center',
     alignItems:'center',
-    height:'700px',
+    height:'50vh',
     width: '90vw',
     // height: '350px',
     // width: '350px',
@@ -191,6 +191,8 @@ const ThreeDContainer = styled('div')({
     // marginBottom: '-5%',
     // marginTop: '-5%',
 });
+
+
 
 
 const PageStyles = {

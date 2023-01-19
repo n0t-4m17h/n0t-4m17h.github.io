@@ -4,19 +4,19 @@ import { Helmet } from 'react-helmet';
 import { Divider } from '@mui/material';
 import { Box } from '@mui/system'
 
+import { Canvas } from '@react-three/fiber'
+import { OrbitControls, Stage } from '@react-three/drei';
+
 import PageStyles from '../styles/PageStyle';
 import RandomStuff from '../components/RandomStuff';
 import RandomStyles from '../styles/RandomStyles';
 // import Space from '../components/Space'
 import Thefuture from '../components/Thefuture'
+// import Soulless from '../components/Soulless'
 
-// import * as THREE from 'three';
-import { Canvas } from '@react-three/fiber'
-import { OrbitControls, Stage } from '@react-three/drei';
-// import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
+
 
 /* ###########  The Page that contains the most randomest shit ############ */
-
 const Utility = () => {
 	const pageSummary = "PLAN:\nTo feature a bunch of useful tools. Also is a coding playground ";
 
@@ -26,7 +26,9 @@ const Utility = () => {
 	// const userName = prompt("What is your name?", "Name");
 	const userName = "Skywalker";
 
-
+	// const LazyLoadModel = dynamic(() => import('../components/MiniModel'), {
+	// 	loading: () => <ModelLoadPlaceholder />,
+	// })
     return (
         <div className="Utility">
 			<Helmet>
@@ -49,9 +51,10 @@ const Utility = () => {
 
             {/* CC0 + CC BY + CC BY-SA */}
 			<PageStyles.ThreeDContainer>
-				<Canvas camera={{fov: 30}} >
+				{/* border: '3px solid pink' */}
+				<Canvas camera={{ fov: 1 }} style={{height: '500px', width:'400px' }}>
 					<ambientLight intensity={1.25} />
-					<spotLight intensity={0.5} angle={0.1} penumbra={1} position={[10, 15, 10]} castShadow />
+					<spotLight intensity={10} angle={360} penumbra={1} position={[10, 15, 10]} castShadow />
 					<OrbitControls autoRotate />
 					<Suspense fallback={null}>
 						<boxGeometry />
