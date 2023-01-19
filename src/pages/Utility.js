@@ -11,8 +11,8 @@ import PageStyles from '../styles/PageStyle';
 import RandomStuff from '../components/RandomStuff';
 import RandomStyles from '../styles/RandomStyles';
 // import Space from '../components/Space'
-import Thefuture from '../components/Thefuture'
-// import Soulless from '../components/Soulless'
+// import Thefuture from '../components/Thefuture'
+import Soulless from '../components/Soulless'
 
 
 
@@ -59,7 +59,7 @@ const Utility = () => {
 					<Suspense fallback={null}>
 						<boxGeometry />
 							<Stage>
-								<Thefuture />
+								<Soulless />
 							</Stage>
 					</Suspense>
 				</Canvas>
