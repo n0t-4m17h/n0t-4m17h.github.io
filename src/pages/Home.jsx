@@ -31,7 +31,13 @@ const Home = () => {
         The other 1% is spent doing literally anything and everything.`;
     var j = 0;
     const speedJ = 30;
-    const typeWriterJ = () => {
+    // const typeWriterJ = () => {
+    //     document.querySelector("#typeWriterJ").innerHTML = summary.substring(0, j);
+    //     if (j++ !== summary.length) {
+    //         setTimeout(typeWriterJ, speedJ);
+    //     }
+    // }
+    function typeWriterJ () {
         document.querySelector("#typeWriterJ").innerHTML = summary.substring(0, j);
         if (j++ !== summary.length) {
             setTimeout(typeWriterJ, speedJ);
@@ -53,13 +59,15 @@ const Home = () => {
             // path:'../assets/animation/data.json',
             // onComplete: lottie.destroy() // NOTE: this is needed due to Strict mode's double rendering
         });
-        console.log("LOADED")
+        // console.log("LOADED")
         window.addEventListener("load", typeWriter);
         window.addEventListener("click", typeWriter);
         
         window.addEventListener("load", typeWriterJ);
         window.addEventListener("click", typeWriterJ);
         
+        // window.onlowad = function(){typeWriterJ()}
+        // window.onclick = function(){typeWriterJ()}
         return () => {
             lottie.destroy("coder");
 
@@ -71,6 +79,7 @@ const Home = () => {
 
         };
     });
+
 
 
     return (

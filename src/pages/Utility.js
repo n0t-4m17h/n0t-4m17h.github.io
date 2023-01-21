@@ -26,9 +26,7 @@ const Utility = () => {
 	// const userName = prompt("What is your name?", "Name");
 	const userName = "Skywalker";
 
-	// const LazyLoadModel = dynamic(() => import('../components/MiniModel'), {
-	// 	loading: () => <ModelLoadPlaceholder />,
-	// })
+	
     return (
         <div className="Utility">
 			<Helmet>
