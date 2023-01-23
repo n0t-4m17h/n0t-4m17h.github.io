@@ -76,7 +76,7 @@ const Navbar = ( ) => {
     return (
         <div>
             <Box sx={{ flexGrow: 1 }}>
-                <AppBar position="static" variant='elevation' color='transparent' enableColorOnDark sx={{ background: "#153454"}}> {/* display: 'center' */}
+                <AppBar position="fixed" variant='elevation' color='transparent' enableColorOnDark sx={{ background: "#153454"}}> {/* display: 'center' */}
                     <Toolbar variant='regular' disableGutters >
 
                         {/* ########################### */}

@@ -29,7 +29,7 @@ const Projects = () => {
         },
         "μsickBot": {
             "title": "μsick Bot",
-            "desc": "A multipurpose Discord bot that has a music playback system, utilises outsourced data from APIs etc.",
+            "desc": "A multipurpose Discord bot featuring a music playback system, utilises outsourced data from APIs and much more.",
             "srcDesc": "Link to GitHub repo ",
             "img": musickBotImg,
             "src": "https://github.com/m4ch374/mu_sick_bot",
@@ -59,7 +59,8 @@ const Projects = () => {
 
     
 
-    // Same Logic as Navbar's SideMenu, but times by the no. of projects (lmfao this not good)
+    // Same Logic as Navbar's SideMenu, but multiply by the no. of projects (NOTE: lmao this not good)
+    // Unsw Streams -->
     const [open, setOpen] = useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
@@ -90,13 +91,13 @@ const Projects = () => {
 
             <PageStyles.Title> Projects </PageStyles.Title>
 
-            <Box sx={{margin: 'auto', maxWidth: '500px', marginBottom: '2%', minHeight:'5vh',}}>
+            <Box sx={{margin: 'auto', maxWidth: '500px', marginBottom: '30px', minHeight:'5vh',}}>
                 <PageStyles.StdParagraph>
                     {pageSummary}
                 </PageStyles.StdParagraph>
             </Box>
 
-            <Box sx={{margin: 'auto', maxWidth: '500px', marginBottom: '2.5%'}}>
+            <Box sx={{margin: 'auto', maxWidth: '500px', marginBottom: '50px'}}>
                 <Divider variant='middle' sx={{ bgcolor: "secondary.light", display: 'flex', alignContent:'center', }} />
             </Box>
 

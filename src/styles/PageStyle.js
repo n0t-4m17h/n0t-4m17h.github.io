@@ -1,9 +1,7 @@
 // General style of a standard Page and it's header types
 import { styled, IconButton, Card } from '@mui/material';
 
-const LineBreak = () => {
-    return <div> <h4>{'\n'}</h4> </div>
-};
+// const LineBreak =  <div> <h4>{'\n'}</h4> </div>
 
 const Title = styled('h1')({
     color:"#EEEE9B", 
@@ -11,7 +9,8 @@ const Title = styled('h1')({
     display: 'flex',
     justifyContent: 'center',
     fontFamily: 'monospace',
-    letterSpacing: '4px'
+    letterSpacing: '4px',
+    marginTop: '95px', // NOTE: pixels instead of percentage ensure elem doesn't move as page resizes
 });
 
 const AnimationContainer = styled('div')({
@@ -24,8 +23,8 @@ const AnimationContainer = styled('div')({
     height: '350px',
     width: '350px',
     margin:'auto',
-    marginBottom: '1%',
-    marginTop: '1%',
+    marginBottom: '10px',
+    marginTop: '65px', // NOTE: pixels instead of percentage ensure elem doesn't move as page resizes
 });
 
 const StdParagraph = styled('p1')({
@@ -196,7 +195,7 @@ const ThreeDContainer = styled('div')({
 
 
 const PageStyles = {
-    LineBreak,
+    // LineBreak,
     Title,
     StdParagraph,
 

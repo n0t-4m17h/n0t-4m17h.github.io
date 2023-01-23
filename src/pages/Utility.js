@@ -35,14 +35,14 @@ const Utility = () => {
             </Helmet>
 
             <PageStyles.Title> Utilities </PageStyles.Title>
-
-			<Box sx={{margin: 'auto', maxWidth: '500px', marginBottom: '2%',}}>
+			{/* <br /> */}
+			<Box sx={{margin: 'auto', maxWidth: '500px', marginBottom: '40px',}}>
                 <PageStyles.StdParagraph>
                     {pageSummary}
                 </PageStyles.StdParagraph>
             </Box>
 
-            <Box sx={{margin: 'auto', maxWidth: '500px', }}>
+            <Box sx={{margin: 'auto', maxWidth: '500px', marginBottom: '20px'}}>
                 <Divider variant='middle' sx={{ bgcolor: "secondary.light", display: 'flex', alignContent:'center', }} />
             </Box>
 

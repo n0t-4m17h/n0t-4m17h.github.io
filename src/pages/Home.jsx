@@ -1,15 +1,14 @@
 import React, { useEffect, useRef } from 'react';
 // import { Helmet } from 'react-helmet';
 
-import { Grid, Divider, ButtonBase } from '@mui/material';
+import { Divider, ButtonBase } from '@mui/material';
 import { Box } from '@mui/system'
 import { GitHub, LinkedIn, Instagram } from '@mui/icons-material';
 
 import lottie from 'lottie-web';
 
-import PageStyles from '../styles/PageStyle';
 import '../styles/Home.css';
-// import '../assets/animations/lottie';
+import PageStyles from '../styles/PageStyle';
 import animation from '../assets/animations/coder1.json';
 
 
@@ -31,12 +30,6 @@ const Home = () => {
         The other 1% is spent doing literally anything and everything.`;
     var j = 0;
     const speedJ = 30;
-    // const typeWriterJ = () => {
-    //     document.querySelector("#typeWriterJ").innerHTML = summary.substring(0, j);
-    //     if (j++ !== summary.length) {
-    //         setTimeout(typeWriterJ, speedJ);
-    //     }
-    // }
     function typeWriterJ () {
         document.querySelector("#typeWriterJ").innerHTML = summary.substring(0, j);
         if (j++ !== summary.length) {
@@ -84,81 +77,62 @@ const Home = () => {
 
     return (
         <div className="Home">
-            {/* <Helmet>
-                <title>ajk ~ home</title>
-                <meta name="description" content="amith's home page" />
-            </Helmet> */}
-
-            {/* <PageStyles.Title> Home Page </PageStyles.Title> */}
-            {/* <PageStyles.LineBreak /> */}
-
             <PageStyles.AnimationContainer id='anim' ref={animationContainer} />
 
-
             <Box sx={{ width: '100%'}} >
-                <Grid container justifyContent='center' rowSpacing={2} columnSpacing={{ xs: 1, sm: 1, md: 18 }} >
 
-                    <Grid item xs={12} sm={6.5}>
-                        <Box sx={{margin: 'auto', maxWidth: '450px', marginBottom: '2%'}}>
-                            <PageStyles.RetroTerminal>
-                                {/* this "home" class (from css file) prevents blinking effect applying to all page's span tags */}
-                                <p id="typeWriter" className="home1" > </p>
-                            </PageStyles.RetroTerminal>
-                        </Box>
-                    </Grid>
+                <Box sx={{margin: 'auto', maxWidth: '450px', marginBottom: '40px', marginTop: '10px'}}>
+                    <PageStyles.RetroTerminal>
+                        {/* this "home" class (from css file) prevents blinking effect applying to all page's span tags */}
+                        <p id="typeWriter" className="home1" > </p>
+                    </PageStyles.RetroTerminal>
+                </Box>
 
-                    <Grid item xs={7.5} >
-                        <Divider variant='middle' sx={{ bgcolor: "secondary.light" }} />
-                    </Grid>
+                <Box sx={{margin: 'auto', maxWidth: '700px', marginBottom: '15px'}}>
+                    <Divider variant='middle' sx={{ bgcolor: "secondary.light" }} />
+                </Box>
 
-                    <Grid item xs={12} sm={7}>
-                        <Box sx={{margin: 'auto', maxWidth: '1000px'}}>
-                            <PageStyles.StdParagraph>
-                                {/* {summary} */}
-                                <p id="typeWriterJ" className="home1"> </p>
-                            </PageStyles.StdParagraph>
-                        </Box>
-                    </Grid>
+                <Box sx={{margin: 'auto', width: '80vw', maxWidth: '1000px', marginBottom: '25px', }}>
+                    <PageStyles.StdParagraph>
+                        <p id="typeWriterJ" className="home1"> </p>
+                    </PageStyles.StdParagraph>
+                </Box>
 
-                    <Grid item xs={7.5} >
-                        <Divider variant='middle' sx={{ bgcolor: "secondary.light", minHeight:'0.5px' }} />
-                    </Grid>
+                <Box sx={{margin: 'auto', maxWidth: '700px', marginBottom: '25px'}}>
+                    <Divider variant='middle' sx={{ bgcolor: "secondary.light" }} />
+                </Box>
 
-                    <Grid item xs={7}>
-                        <Box sx={{minHeight: '4vh', margin: 'auto', maxWidth: '1000px'}}>
-                            <PageStyles.SocialsContainer>
+                <Box sx={{ margin: 'auto', maxWidth: '1000px'}}>
+                    <PageStyles.SocialsContainer>
 
-                                <PageStyles.TransIconButton color='inherit' disableRipple='true'>
-                                    <ButtonBase disableRipple href='https://github.com/n0t-4m17h' target="_blank" 
-                                                sx={{ transitionDuration: '0.6s', '&:hover': {opacity: [0.6], }, }}
-                                    >
-                                        <GitHub style={{fontSize: '50px'}} />
-                                    </ButtonBase>
-                                </PageStyles.TransIconButton>
+                        <PageStyles.TransIconButton color='inherit' disableRipple='true'>
+                            <ButtonBase disableRipple href='https://github.com/n0t-4m17h' target="_blank" 
+                                        sx={{ transitionDuration: '0.6s', '&:hover': {opacity: [0.6], }, }}
+                            >
+                                <GitHub style={{fontSize: '50px'}} />
+                            </ButtonBase>
+                        </PageStyles.TransIconButton>
 
-                                <PageStyles.TransIconButton color='info' disableRipple='true'>
-                                    <ButtonBase disableRipple href='https://www.linkedin.com/in/amith-jacob-kovoor/' target="_blank" 
-                                                sx={{ transitionDuration: '0.6s', '&:hover': {opacity: [0.6], }, }}
-                                    >
-                                        <LinkedIn style={{fontSize: '50px'}} />
-                                    </ButtonBase>
-                                </PageStyles.TransIconButton>
+                        <PageStyles.TransIconButton color='info' disableRipple='true'>
+                            <ButtonBase disableRipple href='https://www.linkedin.com/in/amith-jacob-kovoor/' target="_blank" 
+                                        sx={{ transitionDuration: '0.6s', '&:hover': {opacity: [0.6], }, }}
+                            >
+                                <LinkedIn style={{fontSize: '50px'}} />
+                            </ButtonBase>
+                        </PageStyles.TransIconButton>
 
-                                <PageStyles.TransIconButton color='warning' disableRipple='true'>
-                                    <ButtonBase disableRipple href='https://www.instagram.com/hasbulla.hushetskiy/' target="_blank" 
-                                                sx={{ transitionDuration: '0.6s', '&:hover': {opacity: [0.6], }, }} 
-                                    >
-                                        <Instagram style={{fontSize: '50px'}} />
-                                    </ButtonBase>
-                                </PageStyles.TransIconButton>
+                        <PageStyles.TransIconButton color='warning' disableRipple='true'>
+                            <ButtonBase disableRipple href='https://www.instagram.com/hasbulla.hushetskiy/' target="_blank" 
+                                        sx={{ transitionDuration: '0.6s', '&:hover': {opacity: [0.6], }, }} 
+                            >
+                                <Instagram style={{fontSize: '50px'}} />
+                            </ButtonBase>
+                        </PageStyles.TransIconButton>
 
-                            </PageStyles.SocialsContainer>
-                        </Box>
-                    </Grid>
+                    </PageStyles.SocialsContainer>
+                </Box>
 
-                </Grid>
             </Box>
-
 
         </div>
     )
