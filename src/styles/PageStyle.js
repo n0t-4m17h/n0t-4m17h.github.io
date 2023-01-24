@@ -1,11 +1,12 @@
-// General style of a standard Page and it's header types
+/* 
+    General style of a standard Page and it's many header types
+*/
 import { styled, IconButton, Card } from '@mui/material';
 
-// const LineBreak =  <div> <h4>{'\n'}</h4> </div>
 
 const Title = styled('h1')({
     color:"#EEEE9B", 
-    // border: '5px solid pink',
+    // border: '5px solid pink', // ################# HELPFUL FOR DEBUGGING !!!!!!
     display: 'flex',
     justifyContent: 'center',
     fontFamily: 'monospace',
@@ -31,7 +32,6 @@ const StdParagraph = styled('p1')({
     fontSize: '20px',
     fontFamily: ["monospace"],
     color: '#eeee6b',
-    // border: '2px solid pink', // ################# HELPFUL FOR DEBUGGING !!!!!!
     borderWidth: 'thin',
     boxSizing:'content-box',
     display:'flex',
@@ -46,28 +46,30 @@ const StdParagraph = styled('p1')({
 
 // A poor imitation of the classic retro terminal look
 const RetroTerminal = styled(StdParagraph)({
-    // Overwrite specific StdParagraph's edits 
-    textTransform: 'none', 
-    textShadow: 'none',
-    fontSize: '25px', 
-
-    fontWeight: 'bold', 
-    color: '#41FF00',
-    // color: '#5bf870',
     backgroundColor: '#111',
-    // borderColor: '#5bf870',
     border: '2px solid #41FF00 ',
     borderRadius: 3,
     boxShadow: '0px 0px 7px #41FF00',
 })
 
+const RetroParagraph = styled(StdParagraph)({
+    border: '2px solid #111',
+    borderWidth: '25px',
+    // Overwrite StdParagraph's options
+    textTransform: 'none', 
+    textShadow: 'none',
+    fontSize: '25px',
+    color: '#41FF00',
+    // additions
+    fontWeight: 'bold',
+})
 
 const SocialsContainer = styled('div')({
     display:'flex',
     justifyContent: 'center',
     gap: '1rem',
     // minHeight: '7vh',
-    marginBottom:'3%'
+    marginBottom:'5px'
 })
 
 
@@ -201,6 +203,7 @@ const PageStyles = {
 
     AnimationContainer,
     RetroTerminal,
+    RetroParagraph, 
     SocialsContainer,
     TransIconButton,
 

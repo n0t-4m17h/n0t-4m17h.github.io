@@ -7,6 +7,7 @@ import './App.css'; // NOTE: this includes the side scroll bar !!!!
 // Components imports
 import Navbar from './components/Navbar';
 import AnimatedRoutes from './components/AnimatedRoutes';
+import Footer from './components/Footer'
 
 function App() {
 	document.body.style.backgroundColor="#0a427e";
@@ -21,6 +22,7 @@ function App() {
 					<meta name="keywords" content="amith, amith jacob kovoor, ajk" />
 				</Helmet>
 				<AnimatedRoutes />
+				<Footer />
 			</Router>
 		</div>
 	);

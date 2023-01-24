@@ -60,10 +60,11 @@ const Gallery = () => {
 
     return (
         <motion.div className="Gallery"
-            initial={{ translateY: 0, translateX: -1000 }}
+            initial={{ translateY: -1000, translateX: 0 }}
             animate={{ translateY: 0, translateX: 0 }}
-            exit={{ translateY: 0, translateX: 1000 }}
-            transition={{ duration: 0.1 }}
+            exit={{ translateY: -1000, translateX: 0 }}
+            transition={{ duration: 0.175 }}
+            style={{ marginBottom: '70px' }}
         >
             <Helmet>
                 <title>ajk ~ gallery</title>
@@ -95,18 +96,19 @@ const Gallery = () => {
                                 <ImageListItem key={imgs.img} cols={imgs.cols} rows={imgs.rows} >
                                     <img src={imgs.img} 
                                         alt={imgs.title} 
-                                        loading='lazy' />
+                                        loading='lazy' 
+                                    />
                                 </ImageListItem>
                             )
                         : 
                             (
                                 <ImageListItem key={imgs.img} cols={imgs.cols} rows={imgs.rows} >
-                                        <img src={imgs.img} 
-                                            alt={imgs.title} 
-                                            loading='lazy' 
-                                            style={imgs.style}
-                                            />
-                                    </ImageListItem>
+                                    <img src={imgs.img} 
+                                        alt={imgs.title} 
+                                        loading='lazy' 
+                                        style={imgs.style}
+                                    />
+                                </ImageListItem>
                             )
                     })}
 

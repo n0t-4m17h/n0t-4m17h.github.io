@@ -31,10 +31,11 @@ const Utility = () => {
 	
     return (
         <motion.div className="Utility"
-			initial={{ translateY: 0, translateX: -1000 }}
+			initial={{ translateY: -1000, translateX: 0 }}
 			animate={{ translateY: 0, translateX: 0 }}
-			exit={{ translateY: 0, translateX: 1000 }}
-			transition={{ duration: 0.1 }}
+			exit={{ translateY: -1000, translateX: 0 }}
+			transition={{ duration: 0.175 }}
+			style={{ marginBottom: '70px' }}
 		>
 			<Helmet>
                 <title>ajk ~ utility</title>

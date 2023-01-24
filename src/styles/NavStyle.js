@@ -13,19 +13,7 @@ const NavPages = styled('div')({
         transform: "scale(1.5)",
         // opacity: '0.5',
     },
-    // backgroundColor: 'red',
 });
-
-
-// const PageLinkStyle2 = styled('p1')(({ theme }) => ({
-//     cursor:'pointer',
-//     transition: theme.transitions.create(['transform'], {
-//         duration: theme.transitions.duration.standard,
-//     }),
-//     '&:hover': {
-//         transform: 
-//     }
-// }));
 
 const TransIconButton = styled(IconButton)(({ theme }) => ({
     cursor: 'pointer',
@@ -37,9 +25,6 @@ const TransIconButton = styled(IconButton)(({ theme }) => ({
     },
 
 }));
-
-
-
 
 
 
