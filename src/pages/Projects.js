@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 
+import { motion } from 'framer-motion';
+
 import { Grid, Divider, ButtonBase, CardContent, CardMedia, CardActionArea, Modal, Fade } from '@mui/material';
 import { Box } from '@mui/system'
-
 import { OpenInNewRounded } from '@mui/icons-material';
 
 import PageStyles from '../styles/PageStyle';
@@ -83,7 +84,12 @@ const Projects = () => {
 
 
     return (
-        <div className="Projects">
+        <motion.div className="Projects"
+            initial={{ translateY: 0, translateX: -1000 }}
+            animate={{ translateY: 0, translateX: 0 }}
+            exit={{ translateY: 0, translateX: 1000 }}
+            transition={{ duration: 0.35 }}
+        >
             <Helmet>
                 <title>ajk ~ projects</title>
                 <meta name="description" content="amith's projects" />
@@ -282,7 +288,7 @@ const Projects = () => {
 
                 </Grid>
             </Box>
-        </div>
+        </motion.div>
     )
 }
 

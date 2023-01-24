@@ -1,6 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 // import { Helmet } from 'react-helmet';
 
+import { motion } from 'framer-motion';
+
 import { Divider, ButtonBase } from '@mui/material';
 import { Box } from '@mui/system'
 import { GitHub, LinkedIn, Instagram } from '@mui/icons-material';
@@ -97,7 +99,12 @@ const Home = () => {
 
 
     return (
-        <div className="Home">
+        <motion.div className="Home"
+            initial={{ scale: 0, rotate: 0 }}
+            animate={{ scale: 1, rotate: 0 }}
+            exit={{ scale: 0, rotate: 0 }}
+            transition={{ duration: 0.5 }}
+        >
             <PageStyles.AnimationContainer id='anim' ref={animationContainer} />
 
             <Box sx={{ width: '100%'}} >
@@ -141,7 +148,7 @@ const Home = () => {
 
             </Box>
 
-        </div>
+        </motion.div>
     )
 }
 

@@ -1,6 +1,8 @@
 import React, { Suspense } from 'react';
 import { Helmet } from 'react-helmet';
 
+import { motion } from 'framer-motion';
+
 import { Divider } from '@mui/material';
 import { Box } from '@mui/system'
 
@@ -28,7 +30,12 @@ const Utility = () => {
 
 	
     return (
-        <div className="Utility">
+        <motion.div className="Utility"
+			initial={{ translateY: 0, translateX: -1000 }}
+			animate={{ translateY: 0, translateX: 0 }}
+			exit={{ translateY: 0, translateX: 1000 }}
+			transition={{ duration: 0.1 }}
+		>
 			<Helmet>
                 <title>ajk ~ utility</title>
                 <meta name="description" content="amith's utilities" />
@@ -84,7 +91,7 @@ const Utility = () => {
 				<LineBreak />
 				<RandomStuff.SearchBar/>
 			</div>
-		</div>       
+		</motion.div>       
     );
 }
 

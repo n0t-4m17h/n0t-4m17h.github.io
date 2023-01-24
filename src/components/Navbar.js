@@ -41,16 +41,16 @@ const Navbar = ( ) => {
             "sideIcon": <EngineeringIcon style={{fontSize: '25px', marginRight: '5%'}} />
         },
         {
-            "title": 'Utility',
-            "link": '/utility',
-            "mainIcon": <HandymanIcon style={{fontSize: '40px'}} />,
-            "sideIcon": <HandymanIcon style={{fontSize: '25px', marginRight: '5%'}} />
-        },
-        {
             "title": 'Gallery',
             "link": '/gallery',
             "mainIcon": <CameraIcon style={{fontSize: '40px'}} />,
             "sideIcon": <CameraIcon style={{fontSize: '25px', marginRight: '5%'}} />
+        },
+        {
+            "title": 'Utility',
+            "link": '/utility',
+            "mainIcon": <HandymanIcon style={{fontSize: '40px'}} />,
+            "sideIcon": <HandymanIcon style={{fontSize: '25px', marginRight: '5%'}} />
         },
     ]
 
@@ -155,7 +155,7 @@ const Navbar = ( ) => {
                                 {pagesInfo.map((pages) => (
                                     <NavStyles.NavPages>
                                         <Link to={pages.link} className='NavbarLink' style={{ textDecoration: 'none' }} > 
-                                            <IconButton size='small' disableRipple='true' style={{color: "#EEEE9B"}} >
+                                            <IconButton size='small' disableRipple='true' style={{color: "#EEEE9B" }} >
                                                 {pages.mainIcon}
                                             </IconButton>
                                         </Link>

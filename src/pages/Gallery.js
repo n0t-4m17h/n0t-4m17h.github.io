@@ -1,6 +1,8 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 
+import { motion } from 'framer-motion';
+
 import { Divider, ImageList, ImageListItem } from '@mui/material';
 import { Box } from '@mui/system'
 
@@ -57,7 +59,12 @@ const Gallery = () => {
 
 
     return (
-        <div className="Gallery">
+        <motion.div className="Gallery"
+            initial={{ translateY: 0, translateX: -1000 }}
+            animate={{ translateY: 0, translateX: 0 }}
+            exit={{ translateY: 0, translateX: 1000 }}
+            transition={{ duration: 0.1 }}
+        >
             <Helmet>
                 <title>ajk ~ gallery</title>
                 <meta name="description" content="amith's gallery" />
@@ -105,7 +112,7 @@ const Gallery = () => {
 
                 </ImageList>
             </Box>
-        </div>
+        </motion.div>
     )
 }
 
