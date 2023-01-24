@@ -27,6 +27,33 @@ const Navbar = ( ) => {
     // const XTRA_COLORS = ["#111164", "#8f5a24", "#202062"]
     // const PAGE_LIST = ['Home', 'Projects', 'Utility', 'Gallery']
     
+    const pagesInfo = [
+        {
+            "title": 'Home',
+            "link": '/',
+            "mainIcon": <HomeIcon style={{fontSize: '40px'}} />,
+            "sideIcon": <HomeIcon style={{fontSize: '25px', marginRight: '5%'}} />
+        },
+        {
+            "title": 'Projects',
+            "link": '/projects',
+            "mainIcon": <EngineeringIcon style={{fontSize: '40px'}} />,
+            "sideIcon": <EngineeringIcon style={{fontSize: '25px', marginRight: '5%'}} />
+        },
+        {
+            "title": 'Utility',
+            "link": '/utility',
+            "mainIcon": <HandymanIcon style={{fontSize: '40px'}} />,
+            "sideIcon": <HandymanIcon style={{fontSize: '25px', marginRight: '5%'}} />
+        },
+        {
+            "title": 'Gallery',
+            "link": '/gallery',
+            "mainIcon": <CameraIcon style={{fontSize: '40px'}} />,
+            "sideIcon": <CameraIcon style={{fontSize: '25px', marginRight: '5%'}} />
+        },
+    ]
+
 
     // ######## The SideMenu state handling
     const [clicked, setClicked] = useState(false); // for chaning the sidebar menu, when clicked
@@ -82,19 +109,16 @@ const Navbar = ( ) => {
                         {/* ########################### */}
                         {/* ####### LHS Box (animation + sidemenu) */}
                         <Stack component="navbarLogo" direction="row" sx={{ justifyContent:"flex-start" }} >
-                            {/* width: '60px', height: '60px', border: '2px solid pink' */}
                             <Box sx={{transitionDuration: '0.375s', '&:hover': {opacity: [0.7],},  width: '80px', height: '80px', marginBottom: '-6%', marginTop:'-6%'}} > 
                                 <a href='https://youtu.be/a7RoP1LKMeM?t=112' target="_blank" rel="noreferrer">
                                     <div ref={animationContainer2}/>
-                                    {/* <img src={PrisonMike} alt='AJK' style={{height: '55px', borderRadius: 35, border: '2px solid #EEEE9B', display: 'flex' }} /> */}
                                 </a>
                             </Box>
                             
 
                             {/* ################### */}
                             {/* #### SIDE MENU (dropdown pages) */}
-                            <NavStyles.TransIconButton color='primary' aria-label='MenuLogo' disableRipple='true' style={{color: "#EEEE9B"}}
-                            >
+                            <NavStyles.TransIconButton color='primary' aria-label='MenuLogo' disableRipple='true' style={{color: "#EEEE9B"}} >
                                 <ButtonBase disableRipple
                                     onClick={handleClick} 
                                 >
@@ -110,30 +134,16 @@ const Navbar = ( ) => {
                                 transitionDuration={300}
                                 sx={{filter: 'sepia(300%) hue-rotate(320deg) saturate(450%) drop-shadow(3px 3px 3px #ff9933) invert(95%)'}}
                             >
-                                <Link to='/' className='NavbarLink' style={{ textDecoration: 'none' }} > {/* , rotate:["3.14rad"] */}
-                                    <MenuItem onClick={ handleClose } sx={{ color:"#111164", fontFamily:"monospace", fontWeight: 'bold', transitionDuration: '0.6s', '&:hover': {opacity: [0.5], }, }}> 
-                                        <HomeIcon style={{fontSize: '25px', marginRight: '5%'}} />
-                                        Home
-                                    </MenuItem>
-                                </Link>
-                                <Link to='/projects' className='NavbarLink' style={{ textDecoration: 'none' }} >
-                                    <MenuItem onClick={ handleClose } sx={{ color:"#111164", fontFamily:"monospace", fontWeight: 'bold', transitionDuration: '0.6s', '&:hover': {opacity: [0.5], }, }}> 
-                                        <EngineeringIcon style={{fontSize: '25px', marginRight: '5%'}} />
-                                        Projects
-                                    </MenuItem>
-                                </Link>
-                                <Link to='/utility' className='NavbarLink' style={{ textDecoration: 'none' }} >
-                                    <MenuItem onClick={ handleClose } sx={{ color:"#111164", fontFamily:"monospace", fontWeight: 'bold', transitionDuration: '0.6s', '&:hover': {opacity: [0.5], }, }}> 
-                                        <HandymanIcon style={{fontSize: '25px', marginRight: '5%'}} />
-                                        Utility
-                                    </MenuItem>
-                                </Link>
-                                <Link to='/gallery' className='NavbarLink' style={{ textDecoration: 'none' }} >
-                                    <MenuItem onClick={ handleClose } sx={{ color:"#111164", fontFamily:"monospace", fontWeight: 'bold', transitionDuration: '0.6s', '&:hover': {opacity: [0.5], }, }}> 
-                                        <CameraIcon style={{fontSize: '25px', marginRight: '5%'}} />
-                                        Gallery
-                                    </MenuItem>
-                                </Link>
+
+                                {pagesInfo.map((pages) => (
+                                    <Link to={pages.link} className='NavbarLink' style={{ textDecoration: 'none' }} > {/* , rotate:["3.14rad"] */}
+                                        <MenuItem onClick={ handleClose } sx={{ color:"#111164", fontFamily:"monospace", fontWeight: 'bold', transitionDuration: '0.6s', '&:hover': {opacity: [0.5], }, }}>
+                                            {pages.sideIcon}
+                                            {pages.title}
+                                        </MenuItem>
+                                    </Link>
+                                ))}
+
                             </Menu>
                         </Stack>
 
@@ -141,38 +151,17 @@ const Navbar = ( ) => {
                         {/* ####### NAV MENU (pages) */}
                         <Grid container direction="row" justifyContent="center" alignItems="center" >
                             <Stack direction="row" spacing={innerWidth / 80} sx={{marginLeft: '12%', position: 'relative', boxSizing:'border-box', '@media (max-width:816px)':{display:'none'}, }}>
-                                
-                                <NavStyles.NavPages>
-                                    <Link to='/' className='NavbarLink' style={{ textDecoration: 'none' }} > 
-                                        <IconButton size='small' disableRipple='true' style={{color: "#EEEE9B"}} >
-                                            <HomeIcon style={{fontSize: '40px'}} />
-                                        </IconButton>
-                                    </Link>
-                                </NavStyles.NavPages>
-                                
-                                <NavStyles.NavPages>
-                                    <Link to='/projects' className='NavbarLink' style={{ textDecoration: 'none' }} > 
-                                        <IconButton size='small' disableRipple='true' style={{color: "#EEEE9B"}} >
-                                            <EngineeringIcon style={{fontSize: '40px'}} />
-                                        </IconButton>
-                                    </Link>
-                                </NavStyles.NavPages>
-                                
-                                <NavStyles.NavPages>
-                                    <Link to='/utility' className='NavbarLink' style={{ textDecoration: 'none' }} > 
-                                        <IconButton size='small' disableRipple='true' style={{color: "#EEEE9B"}} >
-                                            <HandymanIcon style={{fontSize: '40px'}} />
-                                        </IconButton>
-                                    </Link>
-                                </NavStyles.NavPages>
 
-                                <NavStyles.NavPages> 
-                                    <Link to='/gallery' className='NavbarLink' style={{ textDecoration: 'none' }} > 
-                                        <IconButton size='small' disableRipple='true' style={{color: "#EEEE9B"}} >
-                                            <CameraIcon style={{fontSize: '40px'}} />
-                                        </IconButton>
-                                    </Link>
-                                </NavStyles.NavPages>
+                                {pagesInfo.map((pages) => (
+                                    <NavStyles.NavPages>
+                                        <Link to={pages.link} className='NavbarLink' style={{ textDecoration: 'none' }} > 
+                                            <IconButton size='small' disableRipple='true' style={{color: "#EEEE9B"}} >
+                                                {pages.mainIcon}
+                                            </IconButton>
+                                        </Link>
+                                    </NavStyles.NavPages>
+                                ))}
+
                             </Stack>
                         </Grid>
 

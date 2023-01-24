@@ -50,7 +50,7 @@ const Utility = () => {
             {/* CC0 + CC BY + CC BY-SA */}
 			<PageStyles.ThreeDContainer>
 				{/* border: '3px solid pink' */}
-				<Canvas camera={{ fov: 1 }} style={{height: '500px', width:'400px' }}>
+				<Canvas camera={{ fov: 1 }} style={{height: '50vh', width:'400px'}}>
 					<ambientLight intensity={1.25} />
 					<spotLight intensity={10} angle={360} penumbra={1} position={[10, 15, 10]} castShadow />
 					<OrbitControls autoRotate />

@@ -14,6 +14,28 @@ import animation from '../assets/animations/coder1.json';
 
 const Home = () => {
     
+    const socialsInfo = [
+        {
+            "title": 'GitHub',
+            "color": 'inherit',
+            "link": 'https://github.com/n0t-4m17h',
+            "icon": <GitHub style={{fontSize: '50px'}} />
+        },
+        {
+            "title": 'LinkedIn',
+            "color": 'info',
+            "link": 'https://www.linkedin.com/in/amith-jacob-kovoor/',
+            "icon": <LinkedIn style={{fontSize: '50px'}} />
+        },
+        {
+            "title": 'Instagram',
+            "color": 'warning',
+            "link": 'https://www.instagram.com/hasbulla.hushetskiy/',
+            "icon": <Instagram style={{fontSize: '50px'}} />
+        },
+    ]
+
+
     const hello = ">\thello, world ";
     var i = 0;
     const speed = 135;
@@ -24,6 +46,7 @@ const Home = () => {
         }
     }
     
+
     const summary = `My name's Amith.\n Currently a third year CSE student at UNSW, aiming to be the next Sundar Pichai ;)\n
         80% of the time, I'm busy engaging in cse-related activities, such as personal projects, and expanding my knowledge across multiple areas of study in CS, including AI (ML) and cyber security (shoutout to Computerphile), whilst also keeping upto date with the latest news on frontend dev.\n
         19% of my time is spent religiously pumping some iron.\n
@@ -37,11 +60,12 @@ const Home = () => {
         }
     }
     
+
     const animationContainer = useRef(null);
     
+
     useEffect(() => {
         lottie.loadAnimation({
-            // container: document.getElementById('anim'),
             name:'coder',
             container: animationContainer.current,
             animationData: animation,
@@ -49,18 +73,15 @@ const Home = () => {
             loop: true,
             autoplay: true,
             prerender:true,
-            // path:'../assets/animation/data.json',
             // onComplete: lottie.destroy() // NOTE: this is needed due to Strict mode's double rendering
         });
-        // console.log("LOADED")
+        
         window.addEventListener("load", typeWriter);
         window.addEventListener("click", typeWriter);
         
         window.addEventListener("load", typeWriterJ);
         window.addEventListener("click", typeWriterJ);
         
-        // window.onlowad = function(){typeWriterJ()}
-        // window.onclick = function(){typeWriterJ()}
         return () => {
             lottie.destroy("coder");
 
@@ -105,29 +126,15 @@ const Home = () => {
                 <Box sx={{ margin: 'auto', maxWidth: '1000px'}}>
                     <PageStyles.SocialsContainer>
 
-                        <PageStyles.TransIconButton color='inherit' disableRipple='true'>
-                            <ButtonBase disableRipple href='https://github.com/n0t-4m17h' target="_blank" 
-                                        sx={{ transitionDuration: '0.6s', '&:hover': {opacity: [0.6], }, }}
-                            >
-                                <GitHub style={{fontSize: '50px'}} />
-                            </ButtonBase>
-                        </PageStyles.TransIconButton>
-
-                        <PageStyles.TransIconButton color='info' disableRipple='true'>
-                            <ButtonBase disableRipple href='https://www.linkedin.com/in/amith-jacob-kovoor/' target="_blank" 
-                                        sx={{ transitionDuration: '0.6s', '&:hover': {opacity: [0.6], }, }}
-                            >
-                                <LinkedIn style={{fontSize: '50px'}} />
-                            </ButtonBase>
-                        </PageStyles.TransIconButton>
-
-                        <PageStyles.TransIconButton color='warning' disableRipple='true'>
-                            <ButtonBase disableRipple href='https://www.instagram.com/hasbulla.hushetskiy/' target="_blank" 
-                                        sx={{ transitionDuration: '0.6s', '&:hover': {opacity: [0.6], }, }} 
-                            >
-                                <Instagram style={{fontSize: '50px'}} />
-                            </ButtonBase>
-                        </PageStyles.TransIconButton>
+                        {socialsInfo.map((socials) => (
+                            <PageStyles.TransIconButton color={socials.color} disableRipple='true'>
+                                <ButtonBase disableRipple href={socials.link} target="_blank" 
+                                            sx={{ transitionDuration: '0.6s', '&:hover': {opacity: [0.6], }, }}
+                                >
+                                    {socials.icon}
+                                </ButtonBase>
+                            </PageStyles.TransIconButton>
+                        ))}
 
                     </PageStyles.SocialsContainer>
                 </Box>
