@@ -31,10 +31,10 @@ const Utility = () => {
 	
     return (
         <motion.div className="Utility"
-			initial={{ translateY: -1000, translateX: 0 }}
+			initial={{ translateY: -5000, translateX: 0 }}
 			animate={{ translateY: 0, translateX: 0 }}
-			exit={{ translateY: -1000, translateX: 0 }}
-			transition={{ duration: 0.175 }}
+			exit={{ translateY: -5000, translateX: 0 }}
+			transition={{ duration: 0.25, delay: 0.25 }}
 			style={{ marginBottom: '70px' }}
 		>
 			<Helmet>

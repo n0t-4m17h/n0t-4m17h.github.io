@@ -1,10 +1,15 @@
 import React from 'react';
 
+import { Box, BottomNavigation, createTheme, ThemeProvider, Typography } from '@mui/material';
+
 import { motion } from 'framer-motion';
 
-import { Box, BottomNavigation } from '@mui/material';
-
 import FootStyles from '../styles/FootStyle';
+
+
+
+
+
 
 const Footer = () => {
 
@@ -46,13 +51,33 @@ const Footer = () => {
             "src": "Freddie Mercury",
         },
         {
-            "quote": "\"Note to self: no matter how bad life gets, there’s always beer.\"",
+            "quote": "\"Note to self: no matter how bad life gets, there's always beer.\"",
             "src": "Norm MacDonald",
+        },
+        {
+            "quote": "\"Tatakae!\"",
+            "src": "Eren Yeager",
+        },
+        {
+            "quote": "\"It's foolish to fear what we have yet to see and know.\"",
+            "src": "Itachi Uchiha",
         },
     ]
     // Randomised quote index selection (length exclusive, thus accounting for 0th index)
+    //                                                      for e.g., if array len is 4, range is [0,1,2,3]
     const quoteIndex = Math.floor(Math.random() * quoteBank.length);
     
+    const theme = createTheme({
+        typography: {
+            xsQuote: {
+                fontSize: '10px',
+            },
+            smQuote: {
+                fontSize: '15px',
+            }
+        },
+    });
+
     return (
         <div>
             <Box sx={{ position: 'fixed', bottom: 0, left: 0, right: 0, }} elevation={20}>
@@ -70,19 +95,30 @@ const Footer = () => {
                             exit={{ translateY: 0, translateX: -5000 }}
                             transition={{ duration: 1 }}
                         >
-                            <FootStyles.FootQuote>
-                                {quoteBank[quoteIndex]['quote']}
-                            </FootStyles.FootQuote>
+                            {/* xs   ->   sm   ->   md   ->   lg    ->    xl   */}
+                            {/* 0px+ -> 600px+ -> 900px+ -> 1200px+ -> 1536px+ */}
+                            <ThemeProvider theme={theme}>
+                                <Typography sx={{ typography: { xs: 'xsQuote', sm: 'smQuote' } }} >
+                                    <FootStyles.FootQuote>
+                                        {quoteBank[quoteIndex]['quote']}
+                                    </FootStyles.FootQuote>
+                                </Typography>
+                            </ThemeProvider>
                         </motion.div>
+
                         <motion.div
                             initial={{ translateY: 0, translateX: 5000 }}
                             animate={{ translateY: 0, translateX: 0 }}
                             exit={{ translateY: 0, translateX: 5000 }}
                             transition={{ duration: 1.5 }}
                         >
-                            <FootStyles.FootSrc>
-                                {" ~ " + quoteBank[quoteIndex]['src']}
-                            </FootStyles.FootSrc>
+                            <ThemeProvider theme={theme}>
+                                <Typography sx={{ typography: { xs: 'xsQuote', sm: 'smQuote' } }} >
+                                    <FootStyles.FootSrc>
+                                        {" ~ " + quoteBank[quoteIndex]['src']}
+                                    </FootStyles.FootSrc>
+                                </Typography>
+                            </ThemeProvider>
                         </motion.div>
                     </Box>
                 </BottomNavigation>

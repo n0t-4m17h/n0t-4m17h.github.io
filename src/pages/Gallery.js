@@ -63,7 +63,7 @@ const Gallery = () => {
             initial={{ translateY: -1000, translateX: 0 }}
             animate={{ translateY: 0, translateX: 0 }}
             exit={{ translateY: -1000, translateX: 0 }}
-            transition={{ duration: 0.175 }}
+            transition={{ duration: 0.25, delay: 0.5 }}
             style={{ marginBottom: '70px' }}
         >
             <Helmet>
