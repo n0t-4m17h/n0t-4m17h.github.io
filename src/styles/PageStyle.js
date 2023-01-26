@@ -24,7 +24,6 @@ const AnimationContainer = styled('div')({
     height: '350px',
     width: '350px',
     margin:'auto',
-    marginBottom: '10px',
     marginTop: '65px', // NOTE: pixels instead of percentage ensure elem doesn't move as page resizes
 });
 
@@ -53,8 +52,6 @@ const RetroTerminal = styled(StdParagraph)({
 })
 
 const RetroParagraph = styled(StdParagraph)({
-    border: '2px solid #111',
-    borderWidth: '25px',
     // Overwrite StdParagraph's options
     textTransform: 'none', 
     textShadow: 'none',
@@ -62,6 +59,8 @@ const RetroParagraph = styled(StdParagraph)({
     color: '#41FF00',
     // additions
     fontWeight: 'bold',
+    border: '2px solid #111',
+    borderWidth: '25px',
 })
 
 const SocialsContainer = styled('div')({
@@ -87,14 +86,14 @@ const TransIconButton = styled(IconButton)(({ theme }) => ({
             transform: "rotate(0deg)",
         },
     },
-    // "@keyframes expand": {
-    //     "0%": {
-    //         transform: "scale(1.5)",
-    //     },
-    //     "100%": {
-    //         transform: "scale(1)",
-    //     },
-    // },
+    "@keyframes expand": {
+        "0%": {
+            transform: "scale(1.5)",
+        },
+        "100%": {
+            transform: "scale(1)",
+        },
+    },
 }));
 
 
@@ -152,7 +151,7 @@ const CardModalStyle = {
     left: '50%',
     transform: 'translate(-50%, -50%)',
     maxWidth: 450,
-    minWidth: 300,
+    minWidth: 250,
     bgcolor: '#222',
     border: '2px solid #EEEE9B',
     borderRadius: 4,

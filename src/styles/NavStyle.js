@@ -7,12 +7,6 @@ const NavPages = styled('div')({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'flex-end',
-    // marginLeft: '5%',
-    transitionDuration: '0.5s',
-    '&:hover': {
-        transform: "scale(1.5)",
-        // opacity: '0.5',
-    },
 });
 
 const TransIconButton = styled(IconButton)(({ theme }) => ({

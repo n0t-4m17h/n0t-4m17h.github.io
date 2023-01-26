@@ -12,12 +12,12 @@ import EngineeringIcon from '@mui/icons-material/Engineering';
 import HandymanIcon from '@mui/icons-material/HandymanRounded';
 import CameraIcon from '@mui/icons-material/PartyModeRounded';
 
+import lottie from 'lottie-web';
+
+import { motion } from 'framer-motion';
 
 import NavStyles from '../styles/NavStyle';
-// import PrisonMike from '../assets/images/prison-mike.jpg'
 import HarbourBridge from '../assets/images/bridge.png'
-
-import lottie from 'lottie-web';
 import animation2 from '../assets/animations/data.json';
 
 
@@ -25,7 +25,6 @@ const Navbar = ( ) => {
     //                      NAVBAR    SIDEBAR   SIDEBAR(2) PAGE(Light) PAGE(Dark) PAGE(MID)  MUI(Prim) SoftYellow CONSIDER-THIS
     // const VIP_COLORS = ["#153454", "#063970","#002884", "#0d539E", "#1E3247", "#204063", "#257DE8", "#EEEE9B", "#0a427e"];
     // const XTRA_COLORS = ["#111164", "#8f5a24", "#202062"]
-    // const PAGE_LIST = ['Home', 'Projects', 'Utility', 'Gallery']
     
     const pagesInfo = [
         {
@@ -70,12 +69,19 @@ const Navbar = ( ) => {
         handleMenuClick(); // reverts to ExpandCircleDownIcon
     }
     
-
-    // ######## Used for changing NavMenu pages spacing relative to Window size
-    const [innerWidth, setWidth]   = useState(window.innerWidth);
-    const updateDimensions = () => {
-        setWidth(window.innerWidth);
+    
+    // ###### NavMenu's page Buttons reactions
+    const pagesButtonVariants = {
+        hover: {
+            scale: 1.5,
+            transition: {
+                duration: 0.5,
+                repeat: Infinity,
+                repeatType: 'reverse',
+            }
+        }
     }
+
 
     let animationContainer2 = useRef(null);
 
@@ -89,12 +95,9 @@ const Navbar = ( ) => {
             autoplay: true,
             // onComplete: lottie.destroy() // NOTE: this is needed due to Strict mode's double rendering
         });
-
-        window.addEventListener("resize", updateDimensions);
         
         return () => {
             lottie.destroy("ajk");
-            window.removeEventListener("resize", updateDimensions);
         }
             
     });
@@ -150,16 +153,21 @@ const Navbar = ( ) => {
                         {/* ########################### */}
                         {/* ####### NAV MENU (pages) */}
                         <Grid container direction="row" justifyContent="center" alignItems="center" >
-                            <Stack direction="row" spacing={innerWidth / 80} sx={{marginLeft: '12%', position: 'relative', boxSizing:'border-box', '@media (max-width:816px)':{display:'none'}, }}>
+                            <Stack direction="row" spacing={'10vw'} sx={{marginLeft: '12%', position: 'relative', boxSizing:'border-box', '@media (max-width:816px)':{display:'none'}, }}>
 
                                 {pagesInfo.map((pages) => (
-                                    <NavStyles.NavPages>
-                                        <Link to={pages.link} className='NavbarLink' style={{ textDecoration: 'none' }} > 
-                                            <IconButton size='small' disableRipple='true' style={{color: "#EEEE9B" }} >
-                                                {pages.mainIcon}
-                                            </IconButton>
-                                        </Link>
-                                    </NavStyles.NavPages>
+                                    <motion.div
+                                        variants={pagesButtonVariants}
+                                        whileHover="hover"
+                                    >
+                                        <NavStyles.NavPages>
+                                            <Link to={pages.link} className='NavbarLink' style={{ textDecoration: 'none' }} > 
+                                                <IconButton size='small' disableRipple='true' style={{ color: "#EEEE9B" }} >
+                                                    {pages.mainIcon}
+                                                </IconButton>
+                                            </Link>
+                                        </NavStyles.NavPages>
+                                    </motion.div>
                                 ))}
 
                             </Stack>

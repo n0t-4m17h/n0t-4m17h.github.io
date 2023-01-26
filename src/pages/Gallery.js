@@ -60,11 +60,10 @@ const Gallery = () => {
 
     return (
         <motion.div className="Gallery"
-            initial={{ translateY: -1000, translateX: 0 }}
+            initial={{ translateY: -5000, translateX: 0 }}
             animate={{ translateY: 0, translateX: 0 }}
-            exit={{ translateY: -1000, translateX: 0 }}
+            exit={{ translateY: -5000, translateX: 0 }}
             transition={{ duration: 0.25, delay: 0.5 }}
-            style={{ marginBottom: '70px' }}
         >
             <Helmet>
                 <title>ajk ~ gallery</title>
@@ -85,7 +84,7 @@ const Gallery = () => {
         
             <Box sx={{margin: 'auto', width: '95vw', maxWidth: '1150px', display: 'flex', justifyContent: 'center'}} >
                 <ImageList
-                    sx={{ width: 800, height: 700 }}
+                    sx={{ width: 800, height: '65vh', borderRadius: '10px' }}
                     variant="quilted"
                     cols={4}
                     rowHeight={121}
