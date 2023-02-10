@@ -24,7 +24,8 @@ const Projects = () => {
             "desc": "A less sophisticated version of MS Teams. Contributed to backend Python code 🐍",
             "srcDesc": "Since it's a uni project, source code is unavailable, but... ",
             "img": unswStreamsImg,
-            "src": "https://www.reddit.com/r/unsw/comments/uq3eef/is_the_trimester_system_still_bad/",
+            "stack": "Python, Flask, Requests",
+            "src": "https://youtu.be/eG7Ga9E_f0o",
             "label": "(uni)"
 
         },
@@ -33,6 +34,7 @@ const Projects = () => {
             "desc": "A multipurpose Discord bot🤖 featuring a music playback system, utilises outsourced data from APIs and much more.",
             "srcDesc": "Link to GitHub repo ",
             "img": musickBotImg,
+            "stack": "Python, discord.py",
             "src": "https://github.com/m4ch374/mu_sick_bot",
             "label": "(personal)"
 
@@ -42,6 +44,7 @@ const Projects = () => {
             "desc": "A crappy terminal-based Reddit clone (with minimal features).\nCoded via Python Socket Programming 🐍 and Client-Server architecture.",
             "srcDesc": "Link to GitHub repo ",
             "img": socketForumImg,
+            "stack": "Python, Socket",
             "src": "https://github.com/n0t-4m17h/socket-forum",
             "label": "(personal)"
 
@@ -51,6 +54,7 @@ const Projects = () => {
             "desc": "A Naruto themed 'Pixel Dungeon' type of web game (with mazes, battling different enemies, looting etc).\nContributed to backend Java code ☕",
             "srcDesc": "Since it's a uni project, source code is unavailable, but... ",
             "img": dungeonManiaImg,
+            "stack": "Java, Scintillia",
             "src": "https://www.youtube.com/watch?v=Rt_Ctu3tUJY&ab_channel=AmithKovoor",
             "label": "(uni)"
 
@@ -88,7 +92,7 @@ const Projects = () => {
             initial={{ translateY: -1000, translateX: 0 }}
             animate={{ translateY: 0, translateX: 0 }}
             exit={{ translateY: -1000, translateX: 0 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.25 }}
             style={{ marginBottom: '70px' }}
         >
             <Helmet>
@@ -148,10 +152,13 @@ const Projects = () => {
                                             <PageStyles.CardModalTitle>
                                                 {projectsInfoDict['UNSWStreams']['desc']} 
                                             </PageStyles.CardModalTitle>
+                                            <PageStyles.CardModalStack>
+                                                STACK: {projectsInfoDict['UNSWStreams']['stack']}
+                                            </PageStyles.CardModalStack>
                                             <PageStyles.CardModalRef >
                                                 {projectsInfoDict['UNSWStreams']['srcDesc']} 
                                                 <ButtonBase disableRipple href={projectsInfoDict['UNSWStreams']['src']} target="_blank" >
-                                                    <OpenInNewRounded style={{fontSize: '25px'}} />
+                                                    <OpenInNewRounded style={{fontSize: '18px'}} />
                                                 </ButtonBase>
                                             </PageStyles.CardModalRef>
                                         </Box>
@@ -195,10 +202,13 @@ const Projects = () => {
                                             <PageStyles.CardModalTitle>
                                                 {projectsInfoDict['μsickBot']['desc']} 
                                             </PageStyles.CardModalTitle>
+                                            <PageStyles.CardModalStack>
+                                                STACK: {projectsInfoDict['μsickBot']['stack']}
+                                            </PageStyles.CardModalStack>
                                             <PageStyles.CardModalRef >
                                                 {projectsInfoDict['μsickBot']['srcDesc']} 
                                                 <ButtonBase disableRipple href={projectsInfoDict['μsickBot']['src']} target="_blank" >
-                                                    <OpenInNewRounded style={{fontSize: '25px'}} />
+                                                    <OpenInNewRounded style={{fontSize: '18px'}} />
                                                 </ButtonBase>
                                             </PageStyles.CardModalRef>
                                         </Box>
@@ -243,10 +253,13 @@ const Projects = () => {
                                             <PageStyles.CardModalTitle>
                                                 {projectsInfoDict['SocketForum']['desc']} 
                                             </PageStyles.CardModalTitle>
+                                            <PageStyles.CardModalStack>
+                                                STACK: {projectsInfoDict['SocketForum']['stack']}
+                                            </PageStyles.CardModalStack>
                                             <PageStyles.CardModalRef >
                                                 {projectsInfoDict['SocketForum']['srcDesc']} 
                                                 <ButtonBase disableRipple href={projectsInfoDict['SocketForum']['src']} target="_blank" >
-                                                    <OpenInNewRounded style={{fontSize: '25px'}} />
+                                                    <OpenInNewRounded style={{fontSize: '18px'}} />
                                                 </ButtonBase>
                                             </PageStyles.CardModalRef>
                                         </Box>
@@ -291,10 +304,13 @@ const Projects = () => {
                                             <PageStyles.CardModalTitle>
                                                 {projectsInfoDict['DungeonMania']['desc']} 
                                             </PageStyles.CardModalTitle>
+                                            <PageStyles.CardModalStack>
+                                                STACK: {projectsInfoDict['DungeonMania']['stack']}
+                                            </PageStyles.CardModalStack>
                                             <PageStyles.CardModalRef >
                                                 {projectsInfoDict['DungeonMania']['srcDesc']} 
                                                 <ButtonBase disableRipple href={projectsInfoDict['DungeonMania']['src']} target="_blank" >
-                                                    <OpenInNewRounded style={{fontSize: '25px'}} />
+                                                    <OpenInNewRounded style={{fontSize: '18px'}} />
                                                 </ButtonBase>
                                             </PageStyles.CardModalRef>
                                         </Box>

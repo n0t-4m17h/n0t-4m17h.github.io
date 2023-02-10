@@ -4,69 +4,18 @@ import { Box, BottomNavigation, createTheme, ThemeProvider, Typography } from '@
 
 import { motion } from 'framer-motion';
 
+import quoteBank from '../assets/quotes.json';
 import FootStyles from '../styles/FootStyle';
 
 
 
 
-
-
 const Footer = () => {
-
-    const quoteBank = [
-        {
-            "quote": "\"When you stand before God, you cannot say, 'But I was told by others to do thus,' or that virtue was not convenient at the time. This will not suffice.\"",
-            "src": "King Baldwin IV",
-        },
-        {
-            "quote": "\"...a house divided against itself shall not stand.\"",
-            "src": "Matthew 12:25",
-        },
-        {
-            "quote": "\" 'You miss 100% of the shots you don't take.' - Wayne Gretzky\"",
-            "src": "Michael Scott",
-        },
-        {
-            "quote": "\"Whenever I'm about to do something, I think, 'Would an idiot do that?' And if they would, I do not do that thing.\"",
-            "src": "Dwight Schrute",
-        },
-        {
-            "quote": "\"Never forget what you are, the rest of the world will not. Wear it like armor and it can never be used to hurt you.\"",
-            "src": "Tyrion Lannister",
-        },
-        {
-            "quote": "\"Time is the capital of your life, so spend it wisely.\"",
-            "src": "Tony Robbins",
-        },
-        {
-            "quote": "\"...but are you a different animal and the same beast?\"",
-            "src": "Kobe Bryant",
-        },
-        {
-            "quote": "\"I love sleep; it's my favorite.\"",
-            "src": "Kanye West",
-        },
-        {
-            "quote": "\"I won't be a rock star. I will be a legend.\"",
-            "src": "Freddie Mercury",
-        },
-        {
-            "quote": "\"Note to self: no matter how bad life gets, there's always beer.\"",
-            "src": "Norm MacDonald",
-        },
-        {
-            "quote": "\"Tatakae!\"",
-            "src": "Eren Yeager",
-        },
-        {
-            "quote": "\"It's foolish to fear what we have yet to see and know.\"",
-            "src": "Itachi Uchiha",
-        },
-    ]
     // Randomised quote index selection (length exclusive, thus accounting for 0th index)
-    //                                                      for e.g., if array len is 4, range is [0,1,2,3]
+    //                                  for e.g., if array len is 4, quoteIndex is in [0,1,2,3]
     const quoteIndex = Math.floor(Math.random() * quoteBank.length);
     
+    // Responsive font for quotes, based on viewport's width (look below for more)
     const theme = createTheme({
         typography: {
             xsQuote: {
@@ -77,6 +26,7 @@ const Footer = () => {
             }
         },
     });
+
 
     return (
         <div>

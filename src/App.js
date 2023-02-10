@@ -9,6 +9,18 @@ import Navbar from './components/Navbar';
 import AnimatedRoutes from './components/AnimatedRoutes';
 import Footer from './components/Footer'
 
+
+console.log(`%c  
+
+░█████╗░░░░░░██╗██╗░░██╗
+██╔══██╗░░░░░██║██║░██╔╝
+███████║░░░░░██║█████═╝░
+██╔══██║██╗░░██║██╔═██╗░
+██║░░██║╚█████╔╝██║░╚██╗
+╚═╝░░╚═╝░╚════╝░╚═╝░░╚═╝    
+`, 'font-family:monospace; color: #257DE8;');
+
+
 function App() {
 	document.body.style.backgroundColor="#0a427e";
 

@@ -168,7 +168,7 @@ const CardModalTitle = styled('h1')({
 });
 
 const CardModalRef = styled('p1')({
-    fontSize: '18px',
+    fontSize: '15px',
     fontFamily: ["monospace"],
     color: '#eee',
     // border: '5px solid pink',
@@ -176,6 +176,13 @@ const CardModalRef = styled('p1')({
     fontStyle: 'italic', 
     mt: 2,
 });
+
+const CardModalStack = styled('p')({
+    fontSize: '18px',
+    fontFamily: ["monospace"],
+    color: '#8ac7db',
+
+})
 
 
 const ThreeDContainer = styled('div')({
@@ -212,6 +219,7 @@ const PageStyles = {
     CardModalStyle,
     CardModalTitle,
     CardModalRef,
+    CardModalStack,
 
     ThreeDContainer,
 };
