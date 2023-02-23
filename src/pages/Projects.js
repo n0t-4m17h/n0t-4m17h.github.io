@@ -12,6 +12,7 @@ import musickBotImg from '../assets/images/projects/musickBotDiscord.jpg';
 import unswStreamsImg from '../assets/images/projects/unswStreams.jpg';
 import socketForumImg from '../assets/images/projects/socketForum1.jpg';
 import dungeonManiaImg from '../assets/images/projects/dungeonManiaNaruto1.jpg';
+import algoTradingAdvisorImg from '../assets/images/projects/algoTradingAdvisor.jpg';
 
 
 const Projects = () => {
@@ -59,6 +60,16 @@ const Projects = () => {
             "label": "(uni)"
 
         },
+        "AlgoTradingAdvisor": {
+            "title": "Algo Trading",
+            "desc": "A python bot that utilises quantitative trading strats to provide investment recommendations📈",
+            "srcDesc": "Link to GitHub repo ",
+            "img": algoTradingAdvisorImg,
+            "stack": "Python, IEX Cloud API",
+            "src": "https://github.com/n0t-4m17h/algorithmic-trading-bot",
+            "label": "(personal)"
+
+        },
     };
 
 
@@ -84,6 +95,11 @@ const Projects = () => {
     const [open3, setOpen3] = useState(false);
     const handleOpen3 = () => setOpen3(true);
     const handleClose3 = () => setOpen3(false);
+    
+    // Algo Trading Advisor -->
+    const [open4, setOpen4] = useState(false);
+    const handleOpen4 = () => setOpen4(true);
+    const handleClose4 = () => setOpen4(false);
     
 
 
@@ -117,148 +133,48 @@ const Projects = () => {
                 <Grid container justifyContent='center' rowSpacing={8} columnSpacing={{ xs: 1, sm: 1, md: 8 }}>
                     
 
-                    {/* UNSW STREAMS */}
+                    {/* ALGO TRADING ADVISOR */}
                     <Grid item sx={{ transitionDuration: '1s', '&:hover': {opacity: [0.7], }, }} >
                         <motion.div
                             whileTap={{ scale: 0.9 }}
                         >
                             <PageStyles.TransCard>
-                                <CardActionArea onClick={handleOpen}>
+                                <CardActionArea onClick={handleOpen4}>
                                     <CardMedia
                                         component='img'
                                         height='250'
-                                        image={projectsInfoDict['UNSWStreams']['img']}
-                                        alt='unswStreamsCard'
+                                        image={projectsInfoDict['AlgoTradingAdvisor']['img']} // AlgoTradingAdvisor
+                                        alt='dungeonManiaCard'
                                     />
                                     <CardContent sx={{backgroundColor:'#257DE8'}}>
                                         <Box sx={{ display:'flex', justifyContent: 'space-between', alignContent:'space-evenly'}} >
                                             <PageStyles.CardCaptionTitle> 
-                                                {projectsInfoDict['UNSWStreams']['title']} 
+                                                {projectsInfoDict['AlgoTradingAdvisor']['title']} 
                                             </PageStyles.CardCaptionTitle>
                                             <PageStyles.CardCaptionLabel>
-                                                {projectsInfoDict['UNSWStreams']['label']}
-                                            </PageStyles.CardCaptionLabel>
-                                        </Box>
-                                    </CardContent> 
-                                </CardActionArea>
-                                <Modal open={open} 
-                                        onClose={handleClose} 
-                                        aria-labelledby="modal-modal-title" 
-                                        aria-describedby="modal-modal-description"
-                                        closeAfterTransition
-                                        >
-                                    <Fade in={open}>
-                                        <Box sx={PageStyles.CardModalStyle}>
-                                            <PageStyles.CardModalTitle>
-                                                {projectsInfoDict['UNSWStreams']['desc']} 
-                                            </PageStyles.CardModalTitle>
-                                            <PageStyles.CardModalStack>
-                                                STACK: {projectsInfoDict['UNSWStreams']['stack']}
-                                            </PageStyles.CardModalStack>
-                                            <PageStyles.CardModalRef >
-                                                {projectsInfoDict['UNSWStreams']['srcDesc']} 
-                                                <ButtonBase disableRipple href={projectsInfoDict['UNSWStreams']['src']} target="_blank" >
-                                                    <OpenInNewRounded style={{fontSize: '18px'}} />
-                                                </ButtonBase>
-                                            </PageStyles.CardModalRef>
-                                        </Box>
-                                    </Fade>
-                                </Modal>
-                            </PageStyles.TransCard>
-                        </motion.div>
-                    </Grid>
-                    {/* MUSICK BOT */}
-                    <Grid item sx={{ transitionDuration: '1s', '&:hover': {opacity: [0.7], }, }} >
-                        <motion.div
-                                whileTap={{ scale: 0.9 }}
-                        >
-                            <PageStyles.TransCard>
-                                <CardActionArea onClick={handleOpen1}>
-                                    <CardMedia
-                                        component='img'
-                                        height='250'
-                                        image={projectsInfoDict['μsickBot']['img']}
-                                        alt='μsickBotCard'
-                                    />
-                                    <CardContent sx={{backgroundColor:'#257DE8'}}>
-                                        <Box sx={{ display:'flex', justifyContent: 'space-between', alignContent:'space-evenly'}} >
-                                            <PageStyles.CardCaptionTitle> 
-                                                {projectsInfoDict['μsickBot']['title']} 
-                                            </PageStyles.CardCaptionTitle>
-                                            <PageStyles.CardCaptionLabel>
-                                                {projectsInfoDict['μsickBot']['label']}
-                                            </PageStyles.CardCaptionLabel>
-                                        </Box>
-                                    </CardContent>
-                                </CardActionArea>
-                                <Modal open={open1} 
-                                        onClose={handleClose1} 
-                                        aria-labelledby="modal-modal-title" 
-                                        aria-describedby="modal-modal-description"
-                                        closeAfterTransition
-                                >
-                                    <Fade in={open1}>
-                                        <Box sx={PageStyles.CardModalStyle}>
-                                            <PageStyles.CardModalTitle>
-                                                {projectsInfoDict['μsickBot']['desc']} 
-                                            </PageStyles.CardModalTitle>
-                                            <PageStyles.CardModalStack>
-                                                STACK: {projectsInfoDict['μsickBot']['stack']}
-                                            </PageStyles.CardModalStack>
-                                            <PageStyles.CardModalRef >
-                                                {projectsInfoDict['μsickBot']['srcDesc']} 
-                                                <ButtonBase disableRipple href={projectsInfoDict['μsickBot']['src']} target="_blank" >
-                                                    <OpenInNewRounded style={{fontSize: '18px'}} />
-                                                </ButtonBase>
-                                            </PageStyles.CardModalRef>
-                                        </Box>
-                                    </Fade>
-                                </Modal>
-                            </PageStyles.TransCard>
-                        </motion.div>
-                    </Grid>
-                    {/* SOCKET FORUM */}
-                    <Grid item sx={{ transitionDuration: '1s', '&:hover': {opacity: [0.7], }, }} >
-                        <motion.div
-                            whileTap={{ scale: 0.9 }}
-                        >
-                            <PageStyles.TransCard>
-                                <CardActionArea onClick={handleOpen2}>
-                                    <CardMedia
-                                        component='img'
-                                        height='250'
-                                        image={projectsInfoDict['SocketForum']['img']}
-                                        alt='socketForumCard'
-                                    />
-                                    <CardContent sx={{backgroundColor:'#257DE8'}}>
-                                        <Box sx={{ display:'flex', justifyContent: 'space-between', alignContent:'space-evenly'}} >
-                                            <PageStyles.CardCaptionTitle> 
-                                                {projectsInfoDict['SocketForum']['title']} 
-                                            </PageStyles.CardCaptionTitle>
-                                            <PageStyles.CardCaptionLabel>
-                                                {projectsInfoDict['SocketForum']['label']}
+                                                {projectsInfoDict['AlgoTradingAdvisor']['label']}
                                             </PageStyles.CardCaptionLabel>
 
                                         </Box>
                                     </CardContent> 
                                 </CardActionArea>
-                                <Modal open={open2} 
-                                        onClose={handleClose2} 
+                                <Modal open={open4} 
+                                        onClose={handleClose4} 
                                         aria-labelledby="modal-modal-title" 
                                         aria-describedby="modal-modal-description"
                                         closeAfterTransition
                                 >
-                                    <Fade in={open2}>
+                                    <Fade in={open4}>
                                         <Box sx={PageStyles.CardModalStyle}>
                                             <PageStyles.CardModalTitle>
-                                                {projectsInfoDict['SocketForum']['desc']} 
+                                                {projectsInfoDict['AlgoTradingAdvisor']['desc']} 
                                             </PageStyles.CardModalTitle>
                                             <PageStyles.CardModalStack>
-                                                STACK: {projectsInfoDict['SocketForum']['stack']}
+                                                STACK: {projectsInfoDict['AlgoTradingAdvisor']['stack']}
                                             </PageStyles.CardModalStack>
                                             <PageStyles.CardModalRef >
-                                                {projectsInfoDict['SocketForum']['srcDesc']} 
-                                                <ButtonBase disableRipple href={projectsInfoDict['SocketForum']['src']} target="_blank" >
+                                                {projectsInfoDict['AlgoTradingAdvisor']['srcDesc']} 
+                                                <ButtonBase disableRipple href={projectsInfoDict['AlgoTradingAdvisor']['src']} target="_blank" >
                                                     <OpenInNewRounded style={{fontSize: '18px'}} />
                                                 </ButtonBase>
                                             </PageStyles.CardModalRef>
@@ -268,6 +184,8 @@ const Projects = () => {
                             </PageStyles.TransCard>
                         </motion.div>
                     </Grid>
+
+
                     {/* DUNGEON MANIA */}
                     <Grid item sx={{ transitionDuration: '1s', '&:hover': {opacity: [0.7], }, }} >
                         <motion.div
@@ -319,9 +237,160 @@ const Projects = () => {
                             </PageStyles.TransCard>
                         </motion.div>
                     </Grid>
-                    {/* ML??? */}
 
+                    {/* SOCKET FORUM */}
+                    <Grid item sx={{ transitionDuration: '1s', '&:hover': {opacity: [0.7], }, }} >
+                        <motion.div
+                            whileTap={{ scale: 0.9 }}
+                        >
+                            <PageStyles.TransCard>
+                                <CardActionArea onClick={handleOpen2}>
+                                    <CardMedia
+                                        component='img'
+                                        height='250'
+                                        image={projectsInfoDict['SocketForum']['img']}
+                                        alt='socketForumCard'
+                                    />
+                                    <CardContent sx={{backgroundColor:'#257DE8'}}>
+                                        <Box sx={{ display:'flex', justifyContent: 'space-between', alignContent:'space-evenly'}} >
+                                            <PageStyles.CardCaptionTitle> 
+                                                {projectsInfoDict['SocketForum']['title']} 
+                                            </PageStyles.CardCaptionTitle>
+                                            <PageStyles.CardCaptionLabel>
+                                                {projectsInfoDict['SocketForum']['label']}
+                                            </PageStyles.CardCaptionLabel>
 
+                                        </Box>
+                                    </CardContent> 
+                                </CardActionArea>
+                                <Modal open={open2} 
+                                        onClose={handleClose2} 
+                                        aria-labelledby="modal-modal-title" 
+                                        aria-describedby="modal-modal-description"
+                                        closeAfterTransition
+                                >
+                                    <Fade in={open2}>
+                                        <Box sx={PageStyles.CardModalStyle}>
+                                            <PageStyles.CardModalTitle>
+                                                {projectsInfoDict['SocketForum']['desc']} 
+                                            </PageStyles.CardModalTitle>
+                                            <PageStyles.CardModalStack>
+                                                STACK: {projectsInfoDict['SocketForum']['stack']}
+                                            </PageStyles.CardModalStack>
+                                            <PageStyles.CardModalRef >
+                                                {projectsInfoDict['SocketForum']['srcDesc']} 
+                                                <ButtonBase disableRipple href={projectsInfoDict['SocketForum']['src']} target="_blank" >
+                                                    <OpenInNewRounded style={{fontSize: '18px'}} />
+                                                </ButtonBase>
+                                            </PageStyles.CardModalRef>
+                                        </Box>
+                                    </Fade>
+                                </Modal>
+                            </PageStyles.TransCard>
+                        </motion.div>
+                    </Grid>
+
+                    {/* MUSICK BOT */}
+                    <Grid item sx={{ transitionDuration: '1s', '&:hover': {opacity: [0.7], }, }} >
+                        <motion.div
+                                whileTap={{ scale: 0.9 }}
+                        >
+                            <PageStyles.TransCard>
+                                <CardActionArea onClick={handleOpen1}>
+                                    <CardMedia
+                                        component='img'
+                                        height='250'
+                                        image={projectsInfoDict['μsickBot']['img']}
+                                        alt='μsickBotCard'
+                                    />
+                                    <CardContent sx={{backgroundColor:'#257DE8'}}>
+                                        <Box sx={{ display:'flex', justifyContent: 'space-between', alignContent:'space-evenly'}} >
+                                            <PageStyles.CardCaptionTitle> 
+                                                {projectsInfoDict['μsickBot']['title']} 
+                                            </PageStyles.CardCaptionTitle>
+                                            <PageStyles.CardCaptionLabel>
+                                                {projectsInfoDict['μsickBot']['label']}
+                                            </PageStyles.CardCaptionLabel>
+                                        </Box>
+                                    </CardContent>
+                                </CardActionArea>
+                                <Modal open={open1} 
+                                        onClose={handleClose1} 
+                                        aria-labelledby="modal-modal-title" 
+                                        aria-describedby="modal-modal-description"
+                                        closeAfterTransition
+                                >
+                                    <Fade in={open1}>
+                                        <Box sx={PageStyles.CardModalStyle}>
+                                            <PageStyles.CardModalTitle>
+                                                {projectsInfoDict['μsickBot']['desc']} 
+                                            </PageStyles.CardModalTitle>
+                                            <PageStyles.CardModalStack>
+                                                STACK: {projectsInfoDict['μsickBot']['stack']}
+                                            </PageStyles.CardModalStack>
+                                            <PageStyles.CardModalRef >
+                                                {projectsInfoDict['μsickBot']['srcDesc']} 
+                                                <ButtonBase disableRipple href={projectsInfoDict['μsickBot']['src']} target="_blank" >
+                                                    <OpenInNewRounded style={{fontSize: '18px'}} />
+                                                </ButtonBase>
+                                            </PageStyles.CardModalRef>
+                                        </Box>
+                                    </Fade>
+                                </Modal>
+                            </PageStyles.TransCard>
+                        </motion.div>
+                    </Grid>
+
+                    {/* UNSW STREAMS */}
+                    <Grid item sx={{ transitionDuration: '1s', '&:hover': {opacity: [0.7], }, }} >
+                        <motion.div
+                            whileTap={{ scale: 0.9 }}
+                        >
+                            <PageStyles.TransCard>
+                                <CardActionArea onClick={handleOpen}>
+                                    <CardMedia
+                                        component='img'
+                                        height='250'
+                                        image={projectsInfoDict['UNSWStreams']['img']}
+                                        alt='unswStreamsCard'
+                                    />
+                                    <CardContent sx={{backgroundColor:'#257DE8'}}>
+                                        <Box sx={{ display:'flex', justifyContent: 'space-between', alignContent:'space-evenly'}} >
+                                            <PageStyles.CardCaptionTitle> 
+                                                {projectsInfoDict['UNSWStreams']['title']} 
+                                            </PageStyles.CardCaptionTitle>
+                                            <PageStyles.CardCaptionLabel>
+                                                {projectsInfoDict['UNSWStreams']['label']}
+                                            </PageStyles.CardCaptionLabel>
+                                        </Box>
+                                    </CardContent> 
+                                </CardActionArea>
+                                <Modal open={open} 
+                                        onClose={handleClose} 
+                                        aria-labelledby="modal-modal-title" 
+                                        aria-describedby="modal-modal-description"
+                                        closeAfterTransition
+                                        >
+                                    <Fade in={open}>
+                                        <Box sx={PageStyles.CardModalStyle}>
+                                            <PageStyles.CardModalTitle>
+                                                {projectsInfoDict['UNSWStreams']['desc']} 
+                                            </PageStyles.CardModalTitle>
+                                            <PageStyles.CardModalStack>
+                                                STACK: {projectsInfoDict['UNSWStreams']['stack']}
+                                            </PageStyles.CardModalStack>
+                                            <PageStyles.CardModalRef >
+                                                {projectsInfoDict['UNSWStreams']['srcDesc']} 
+                                                <ButtonBase disableRipple href={projectsInfoDict['UNSWStreams']['src']} target="_blank" >
+                                                    <OpenInNewRounded style={{fontSize: '18px'}} />
+                                                </ButtonBase>
+                                            </PageStyles.CardModalRef>
+                                        </Box>
+                                    </Fade>
+                                </Modal>
+                            </PageStyles.TransCard>
+                        </motion.div>
+                    </Grid>
 
                 </Grid>
             </Box>
