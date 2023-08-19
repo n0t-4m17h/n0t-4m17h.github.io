@@ -13,7 +13,9 @@ import unswStreamsImg from '../assets/images/projects/unswStreams.jpg';
 import socketForumImg from '../assets/images/projects/socketForum1.jpg';
 import dungeonManiaImg from '../assets/images/projects/dungeonManiaNaruto1.jpg';
 import algoTradingAdvisorImg from '../assets/images/projects/algoTradingAdvisor.jpg';
+import onlyGuestsImg from '../assets/images/projects/onlyGuests.jpg';
 
+const project_type = ["uni", "personal", "comp"]
 
 const Projects = () => {
 
@@ -27,7 +29,7 @@ const Projects = () => {
             "img": unswStreamsImg,
             "stack": "Python, Flask, Requests",
             "src": "https://youtu.be/eG7Ga9E_f0o",
-            "label": "(uni)"
+            "label": project_type[0]
 
         },
         "μsickBot": {
@@ -37,17 +39,17 @@ const Projects = () => {
             "img": musickBotImg,
             "stack": "Python, discord.py",
             "src": "https://github.com/m4ch374/mu_sick_bot",
-            "label": "(personal)"
+            "label": project_type[1]
 
         },
         "SocketForum": {
-            "title": "Socket Forum",
+            "title": "Socket Forums",
             "desc": "A crappy terminal-based Reddit clone (with minimal features).\nCoded via Python Socket Programming 🐍 and Client-Server architecture.",
             "srcDesc": "Link to GitHub repo ",
             "img": socketForumImg,
             "stack": "Python, Socket",
             "src": "https://github.com/n0t-4m17h/socket-forum",
-            "label": "(personal)"
+            "label": project_type[1]
 
         },
         "DungeonMania": {
@@ -57,7 +59,7 @@ const Projects = () => {
             "img": dungeonManiaImg,
             "stack": "Java, Scintillia",
             "src": "https://www.youtube.com/watch?v=Rt_Ctu3tUJY&ab_channel=AmithKovoor",
-            "label": "(uni)"
+            "label": project_type[0]
 
         },
         "AlgoTradingAdvisor": {
@@ -67,7 +69,18 @@ const Projects = () => {
             "img": algoTradingAdvisorImg,
             "stack": "Python, IEX Cloud API",
             "src": "https://github.com/n0t-4m17h/algorithmic-trading-bot",
-            "label": "(personal)"
+            "label": project_type[1]
+
+        },
+        "HackathonOnlyGuests": {
+            "title": "CSESoc Hackathon",
+            "desc": "A congregating app that connects individuals with similar travel interests, titled \"OnlyGuests\".",
+            "srcDesc": "Link to GitHub repo ",
+            "srcDesc2": [" and DevPost ", <a href="https://devpost.com/software/linkedout?ref_content=my-projects-tab&ref_feature=my_projects" target="_blank" rel="noreferrer">link</a>],
+            "img": onlyGuestsImg,
+            "stack": "Python, Flask + Typescript, ReactJS, TailwindCSS",
+            "src": "https://github.com/m4ch374/cse_hackachon_2023",
+            "label": project_type[2]
 
         },
     };
@@ -101,6 +114,11 @@ const Projects = () => {
     const handleOpen4 = () => setOpen4(true);
     const handleClose4 = () => setOpen4(false);
     
+    // Only Guests -->
+    const [open5, setOpen5] = useState(false);
+    const handleOpen5 = () => setOpen5(true);
+    const handleClose5 = () => setOpen5(false);
+    
 
 
     return (
@@ -133,6 +151,61 @@ const Projects = () => {
                 <Grid container justifyContent='center' rowSpacing={8} columnSpacing={{ xs: 1, sm: 1, md: 8 }}>
                     
 
+                    {/* ONLY GUESTS */}
+                    <Grid item sx={{ transitionDuration: '1s', '&:hover': {opacity: [0.7], }, }} >
+                        <motion.div
+                            whileTap={{ scale: 0.9 }}
+                        >
+                            <PageStyles.TransCard>
+                                <CardActionArea onClick={handleOpen5}>
+                                    <CardMedia
+                                        component='img'
+                                        height='250'
+                                        image={projectsInfoDict['HackathonOnlyGuests']['img']} // HackathonOnlyGuests
+                                        alt='hackathonOnlyGuestsCard'
+                                    />
+                                    <CardContent sx={{backgroundColor:'#257DE8'}}>
+                                        <Box sx={{ display:'flex', justifyContent: 'space-between', alignContent:'space-evenly'}} >
+                                            <PageStyles.CardCaptionTitle style={{fontSize: '24px'}}> 
+                                                {projectsInfoDict['HackathonOnlyGuests']['title']} 
+                                            </PageStyles.CardCaptionTitle>
+                                            <PageStyles.CardCaptionLabel>
+                                                {projectsInfoDict['HackathonOnlyGuests']['label']}
+                                            </PageStyles.CardCaptionLabel>
+
+                                        </Box>
+                                    </CardContent> 
+                                </CardActionArea>
+                                <Modal open={open5} 
+                                        onClose={handleClose5} 
+                                        aria-labelledby="modal-modal-title" 
+                                        aria-describedby="modal-modal-description"
+                                        closeAfterTransition
+                                >
+                                    <Fade in={open5}>
+                                        <Box sx={PageStyles.CardModalStyle}>
+                                            <PageStyles.CardModalTitle>
+                                                {projectsInfoDict['HackathonOnlyGuests']['desc']} 
+                                            </PageStyles.CardModalTitle>
+                                            <PageStyles.CardModalStack>
+                                                STACK: {projectsInfoDict['HackathonOnlyGuests']['stack']}
+                                            </PageStyles.CardModalStack>
+                                            <PageStyles.CardModalRef >
+                                                {projectsInfoDict['HackathonOnlyGuests']['srcDesc']} 
+                                                <ButtonBase disableRipple href={projectsInfoDict['HackathonOnlyGuests']['src']} target="_blank" >
+                                                    <OpenInNewRounded style={{fontSize: '18px'}} />
+                                                </ButtonBase>
+                                                {projectsInfoDict['HackathonOnlyGuests']['srcDesc2'][0]} 
+                                                {projectsInfoDict['HackathonOnlyGuests']['srcDesc2'][1]}
+                                            </PageStyles.CardModalRef>
+                                        </Box>
+                                    </Fade>
+                                </Modal>
+                            </PageStyles.TransCard>
+                        </motion.div>
+                    </Grid>
+
+
                     {/* ALGO TRADING ADVISOR */}
                     <Grid item sx={{ transitionDuration: '1s', '&:hover': {opacity: [0.7], }, }} >
                         <motion.div
@@ -144,7 +217,7 @@ const Projects = () => {
                                         component='img'
                                         height='250'
                                         image={projectsInfoDict['AlgoTradingAdvisor']['img']} // AlgoTradingAdvisor
-                                        alt='dungeonManiaCard'
+                                        alt='algoTradingAdvisorCard'
                                     />
                                     <CardContent sx={{backgroundColor:'#257DE8'}}>
                                         <Box sx={{ display:'flex', justifyContent: 'space-between', alignContent:'space-evenly'}} >

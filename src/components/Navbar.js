@@ -18,7 +18,7 @@ import { motion } from 'framer-motion';
 
 import NavStyles from '../styles/NavStyle';
 import HarbourBridge from '../assets/images/bridge.png'
-import animation2 from '../assets/animations/data.json';
+import animation2 from '../assets/animations/atom-lottie.json';
 
 
 const Navbar = ( ) => {
@@ -111,10 +111,10 @@ const Navbar = ( ) => {
 
                         {/* ########################### */}
                         {/* ####### LHS Box (animation + sidemenu) */}
-                        <Stack component="navbarLogo" direction="row" sx={{ justifyContent:"flex-start" }} >
+                        <Stack component="navbarLogo" direction="row" sx={{ justifyContent:"flex-start"}} >
                             <Box sx={{transitionDuration: '0.375s', '&:hover': {opacity: [0.7],},  width: '80px', height: '80px', marginBottom: '-6%', marginTop:'-6%'}} > 
-                                <a href='https://youtu.be/a7RoP1LKMeM?t=112' target="_blank" rel="noreferrer">
-                                    <div ref={animationContainer2}/>
+                                <a href='https://youtu.be/a7RoP1LKMeM?t=112' target="_blank" rel="noreferrer" >
+                                    <div ref={animationContainer2} />
                                 </a>
                             </Box>
                             

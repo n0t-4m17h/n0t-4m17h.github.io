@@ -39,10 +39,10 @@ const Home = () => {
 
     const hello = ">\thello, world ";    
 
-    const summary = `My name's Amith.\n Currently a third year CSE student at UNSW 🏫 \n
-        80% of the time, I'm busy engaging in cse-related activities, such as personal projects, and expanding my knowledge across multiple areas of study in CS, including AI (ML) and cyber security (shoutout to Computerphile), whilst also keeping upto date with the latest news on frontend dev 🤖\n
+    const summary = `My name's Amith.\n Currently a penultimate year CSE student at UNSW 🏫 \n
+        80% of the time, I'm busy engaging in cse-related activities, such as personal projects, and expanding my knowledge across multiple areas of study in CS, especially AI and backend dev, whilst also keeping upto date with the latest news on frontend dev 🤖\n
         19% of my time is spent religiously pumping some iron 🏋️‍♂️\n
-        The other 1% is spent doing literally anything and everything `
+        The other 1% is spent doing anything and everything `
     ;
     
     const animationContainer = useRef(null);
