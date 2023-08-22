@@ -74,7 +74,7 @@ const Projects = () => {
         },
         "HackathonOnlyGuests": {
             "title": "CSESoc Hackathon",
-            "desc": "A congregating app that connects individuals with similar travel interests, titled \"OnlyGuests\".",
+            "desc": "A congregating app that connects individuals with similar travel interests, titled \"OnlyGuests\"🛫",
             "srcDesc": "Link to GitHub repo ",
             "srcDesc2": [" and DevPost ", <a href="https://devpost.com/software/linkedout?ref_content=my-projects-tab&ref_feature=my_projects" target="_blank" rel="noreferrer">link</a>],
             "img": onlyGuestsImg,

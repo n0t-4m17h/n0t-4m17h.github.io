@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react';
+import React from 'react';
 import { Helmet } from 'react-helmet';
 
 import { motion } from 'framer-motion';
@@ -7,16 +7,17 @@ import { Divider } from '@mui/material';
 import { Box } from '@mui/system'
 
 import { Canvas } from '@react-three/fiber'
-import { OrbitControls, Stage } from '@react-three/drei';
+import { OrbitControls, Stage, useGLTF } from '@react-three/drei';
 
 import PageStyles from '../styles/PageStyle';
 import RandomStuff from '../components/RandomStuff';
 import RandomStyles from '../styles/RandomStyles';
-// import Space from '../components/Space'
 // import Thefuture from '../components/Thefuture'
-import Soulless from '../components/Soulless'
 
-
+function Model(props) {
+	const { scene } = useGLTF("/doom_slayer.glb");
+	return <primitive object={scene} {...props} />
+}
 
 /* ###########  The Page that contains the most randomest shit ############ */
 const Utility = () => {
@@ -26,7 +27,7 @@ const Utility = () => {
 	const LineBreak = () => {return <div> <h4>{'\n'}</h4> </div>};
 	const PrintName = (props) => {return <h3>Hello there, "{props.title}", it's {new Date().toLocaleTimeString()}</h3>};
 	// const userName = prompt("What is your name?", "Name");
-	const userName = "Skywalker";
+	const userName = "Doomslayer";
 
 	
     return (
@@ -58,16 +59,16 @@ const Utility = () => {
             {/* CC0 + CC BY + CC BY-SA */}
 			<PageStyles.ThreeDContainer>
 				{/* border: '3px solid pink' */}
-				<Canvas camera={{ fov: 1 }} style={{height: '50vh', width:'400px'}}>
+				<Canvas camera={{ fov: 5 }} style={{height: '50vh', width:'100vw'}} >
 					<ambientLight intensity={1.25} />
-					<spotLight intensity={10} angle={360} penumbra={1} position={[10, 15, 10]} castShadow />
-					<OrbitControls autoRotate />
-					<Suspense fallback={null}>
-						<boxGeometry />
-							<Stage>
-								<Soulless />
-							</Stage>
-					</Suspense>
+					{/* Play around with the angles -> https://sbcode.net/react-three-fiber/orbit-controls/ */}
+					<OrbitControls autoRotate 
+						minPolarAngle={Math.PI / 6}
+						maxPolarAngle={Math.PI - Math.PI / 2.70}
+					/>
+					<Stage environment={null} >
+						<Model />
+					</Stage>
 				</Canvas>
 			</PageStyles.ThreeDContainer>
 			

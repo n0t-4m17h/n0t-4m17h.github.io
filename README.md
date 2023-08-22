@@ -4,9 +4,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 <br/>
 
 #### Credits
+- [Yogesh Pal](https://lottiefiles.com/animations/loading-atom-E3SJ4Z7qbK/) ~ navbar's "atom" animation.
 - [Dylan Keopaseuth](https://www.linkedin.com/in/dylan-keopaseuth-b9211723b/) ~ navbar's "AJK" animation.
 - [Sandeep Ram](https://lottiefiles.com/k1i7q4d731txh025) ~ home page's "coding-guy" animation
-- [Ali Rahimi](https://sketchfab.com/3d-models/soulless-1a18f6f206b14073884e1a9c31c03cbc) ~ utility page's 3D "Soulless" model
+- [the_regressor](https://sketchfab.com/3d-models/doom-slayer-0ada84af73084f8a96d7d86d8bafbf1f) ~ utility page's 3D "Doom Slayer" model
 
 <br/>
 <br/>

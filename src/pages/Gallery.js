@@ -21,29 +21,29 @@ const Gallery = () => {
             "style": null
         },
         {
-            'title': 'lightshow',
-            "img": require('../assets/images/gallery/lightshow.png'),
+            'title': 'iss',
+            "img": require('../assets/images/gallery/iss.jpg'),
             "cols": 2,
             "rows": 2,
+            "style": { objectPosition: '100% 40%', objectFit: 'cover' }
+        },
+        {
+            'title': 'nyc',
+            "img": require('../assets/images/gallery/nyc.jpg'),
+            "cols": 2,
+            "rows": 4,
+            "style": { objectPosition: '15% 100%', objectFit: 'cover' }
+        },
+        {
+            'title': 'disneyworld',
+            "img": require('../assets/images/gallery/disneyworld.png'),
+            "cols": 2,
+            "rows": 4,
             "style": null
         },
         {
-            'title': 'vivid2',
-            "img": require('../assets/images/gallery/vivid2.png'),
-            "cols": 2,
-            "rows": 4,
-            "style": { objectPosition: '100% 15%', objectFit: 'fill' }
-        },
-        {
-            'title': 'wollongong',
-            "img": require('../assets/images/gallery/wollongong.jpg'),
-            "cols": 2,
-            "rows": 4,
-            "style": null
-        },
-        {
-            'title': 'macHeights2',
-            "img": require('../assets/images/gallery/macHeights2.png'),
+            'title': 'lightshow',
+            "img": require('../assets/images/gallery/lightshow.png'),
             "cols": 2,
             "rows": 2,
             "style": null
@@ -54,6 +54,27 @@ const Gallery = () => {
             "cols": 4,
             "rows": 2,
             "style": { objectPosition: '100% 15%' }
+        },
+        {
+            'title': 'vivid2',
+            "img": require('../assets/images/gallery/disneyworld2.png'),
+            "cols": 1,
+            "rows": 2,
+            "style": { objectPosition: '100% 100%', objectFit: 'fill' }
+        },
+        {
+            'title': 'macHeights',
+            "img": require('../assets/images/gallery/macHeights2.png'),
+            "cols": 2,
+            "rows": 2,
+            "style": null
+        },
+        {
+            'title': 'wollongong',
+            "img": require('../assets/images/gallery/wollongong.jpg'),
+            "cols": 1,
+            "rows": 2,
+            "style": null
         },
     ]
 
