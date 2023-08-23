@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.08064e3a.css",
-    "main.js": "/static/js/main.0c4827ac.js",
+    "main.js": "/static/js/main.20381c34.js",
     "static/media/vivid1.png": "/static/media/vivid1.3bd607edf91a8df2b1f3.png",
     "static/media/disneyworld.png": "/static/media/disneyworld.9ce0efca53c391fccb2f.png",
     "static/media/lightshow.png": "/static/media/lightshow.451beb5673e5723e5d25.png",
@@ -20,10 +20,10 @@
     "static/media/musickBotDiscord.jpg": "/static/media/musickBotDiscord.e3fe5726a4fef8f576f6.jpg",
     "index.html": "/index.html",
     "main.08064e3a.css.map": "/static/css/main.08064e3a.css.map",
-    "main.0c4827ac.js.map": "/static/js/main.0c4827ac.js.map"
+    "main.20381c34.js.map": "/static/js/main.20381c34.js.map"
   },
   "entrypoints": [
     "static/css/main.08064e3a.css",
-    "static/js/main.0c4827ac.js"
+    "static/js/main.20381c34.js"
   ]
 }
