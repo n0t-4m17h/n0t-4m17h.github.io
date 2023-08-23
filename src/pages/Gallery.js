@@ -103,7 +103,7 @@ const Gallery = () => {
                 <Divider variant='middle' sx={{ bgcolor: "secondary.light", display: 'flex', alignContent:'center', }} />
             </Box>
         
-            <Box sx={{margin: 'auto', width: '95vw', maxWidth: '1150px', display: 'flex', justifyContent: 'center'}} >
+            <Box sx={{margin: 'auto', height: '75vh', width: '95vw', display: 'flex', justifyContent: 'center' }} >
                 <ImageList
                     sx={{ width: 800, height: '65vh', borderRadius: '10px' }}
                     variant="quilted"

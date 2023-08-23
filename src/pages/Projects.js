@@ -152,12 +152,12 @@ const Projects = () => {
                     
 
                     {/* ONLY GUESTS */}
-                    <Grid item sx={{ transitionDuration: '1s', '&:hover': {opacity: [0.7], }, }} >
+                    <Grid item >
                         <motion.div
                             whileTap={{ scale: 0.9 }}
                         >
                             <PageStyles.TransCard>
-                                <CardActionArea onClick={handleOpen5}>
+                                <CardActionArea onClick={handleOpen5} sx={{ transitionDuration: '1s', '&:hover': {opacity: [0.9], }, }} >
                                     <CardMedia
                                         component='img'
                                         height='250'
@@ -207,12 +207,12 @@ const Projects = () => {
 
 
                     {/* ALGO TRADING ADVISOR */}
-                    <Grid item sx={{ transitionDuration: '1s', '&:hover': {opacity: [0.7], }, }} >
+                    <Grid item >
                         <motion.div
                             whileTap={{ scale: 0.9 }}
                         >
                             <PageStyles.TransCard>
-                                <CardActionArea onClick={handleOpen4}>
+                                <CardActionArea onClick={handleOpen4} sx={{ transitionDuration: '1s', '&:hover': {opacity: [0.9], }, }} >
                                     <CardMedia
                                         component='img'
                                         height='250'
@@ -260,12 +260,12 @@ const Projects = () => {
 
 
                     {/* DUNGEON MANIA */}
-                    <Grid item sx={{ transitionDuration: '1s', '&:hover': {opacity: [0.7], }, }} >
+                    <Grid item >
                         <motion.div
                             whileTap={{ scale: 0.9 }}
                         >
                             <PageStyles.TransCard>
-                                <CardActionArea onClick={handleOpen3}>
+                                <CardActionArea onClick={handleOpen3} sx={{ transitionDuration: '1s', '&:hover': {opacity: [0.9], }, }} >
                                     <CardMedia
                                         component='img'
                                         height='250'
@@ -312,12 +312,12 @@ const Projects = () => {
                     </Grid>
 
                     {/* SOCKET FORUM */}
-                    <Grid item sx={{ transitionDuration: '1s', '&:hover': {opacity: [0.7], }, }} >
+                    <Grid item >
                         <motion.div
                             whileTap={{ scale: 0.9 }}
                         >
                             <PageStyles.TransCard>
-                                <CardActionArea onClick={handleOpen2}>
+                                <CardActionArea onClick={handleOpen2} sx={{ transitionDuration: '1s', '&:hover': {opacity: [0.9], }, }} >
                                     <CardMedia
                                         component='img'
                                         height='250'
@@ -364,12 +364,12 @@ const Projects = () => {
                     </Grid>
 
                     {/* MUSICK BOT */}
-                    <Grid item sx={{ transitionDuration: '1s', '&:hover': {opacity: [0.7], }, }} >
+                    <Grid item >
                         <motion.div
                                 whileTap={{ scale: 0.9 }}
                         >
                             <PageStyles.TransCard>
-                                <CardActionArea onClick={handleOpen1}>
+                                <CardActionArea onClick={handleOpen1} sx={{ transitionDuration: '1s', '&:hover': {opacity: [0.9], }, }} >
                                     <CardMedia
                                         component='img'
                                         height='250'
@@ -415,12 +415,12 @@ const Projects = () => {
                     </Grid>
 
                     {/* UNSW STREAMS */}
-                    <Grid item sx={{ transitionDuration: '1s', '&:hover': {opacity: [0.7], }, }} >
+                    <Grid item >
                         <motion.div
                             whileTap={{ scale: 0.9 }}
                         >
                             <PageStyles.TransCard>
-                                <CardActionArea onClick={handleOpen}>
+                                <CardActionArea onClick={handleOpen} sx={{ transitionDuration: '1s', '&:hover': {opacity: [0.9], }, }} >
                                     <CardMedia
                                         component='img'
                                         height='250'

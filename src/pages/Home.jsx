@@ -39,9 +39,9 @@ const Home = () => {
 
     const hello = ">\thello, world ";    
 
-    const summary = `My name's Amith.\n Currently a penultimate year CSE student at UNSW 🏫 \n
-        80% of the time, I'm busy engaging in cse-related activities, such as personal projects, and expanding my knowledge across multiple areas of study in CS, especially AI and backend dev, whilst also keeping upto date with the latest news on frontend dev 🤖\n
-        19% of my time is spent religiously pumping some iron 🏋️‍♂️\n
+    const summary = `My name's Amith.\n Currently a penultimate year CSE student at UNSW ${String.fromCodePoint(0x1F3EB)} \n
+        80% of the time, I'm busy engaging in cse-related activities, such as personal projects, and expanding my knowledge across multiple areas of study in CS, especially AI and backend dev, whilst also keeping upto date with the latest news on frontend dev ${String.fromCodePoint(0x1F916)}\n
+        19% of my time is spent religiously pumping some iron ${String.fromCodePoint(0x1F3CB)}\n
         The other 1% is spent doing anything and everything `
     ;
     
