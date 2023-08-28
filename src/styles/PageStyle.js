@@ -165,6 +165,7 @@ const CardModalTitle = styled('h1')({
     color: '#eee',
     // border: '5px solid pink',
     lineHeight: '40px',
+    whiteSpace: 'pre-line' // allows for newlines "\n" to actually work on display
 });
 
 const CardModalRef = styled('p1')({
