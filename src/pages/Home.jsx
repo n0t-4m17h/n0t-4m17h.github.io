@@ -112,21 +112,15 @@ const Home = () => {
                 </Box>
 
                 <Box sx={{margin: 'auto', width: '80vw', maxWidth: '1000px', marginBottom: '25px', }}>
-                    <PageStyles.StdParagraph>
-                        <Typewriter
-                            onInit={(typewriter) => {
-                                typewriter
-                                    .typeString(" ")
-                                    .pauseFor(1750)
-                                    .typeString(summary)
-                                    .start();
-                            }}
-                            options={{
-                                delay: 25,
-                                cursor:'ಠ_ಠ' //⚛
-                            }}
-                        />
-                    </PageStyles.StdParagraph>
+                    <motion.div
+                        initial={{ y: -50, opacity: 0}}
+                        animate={{ y: 0, opacity: 1 }}
+                        transition={{ delay: 2, duration: 1.5, ease: [0, 0.71, 0.2, 1.01] }}
+                    >
+                        <PageStyles.StdParagraph>
+                            {summary}
+                        </PageStyles.StdParagraph>
+                    </motion.div>
                 </Box>
 
                 <Box sx={{margin: 'auto', maxWidth: '700px', marginBottom: '16px'}}>

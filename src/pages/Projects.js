@@ -80,7 +80,7 @@ const Projects = () => {
 
 
     // init all project modal open state as false (used to keep track of each project modal's state)
-    const [modalStates, setModalStates] = useState(projectsInfoLIST.map(() => false)); // .reverse() THIS !!######################################
+    const [modalStates, setModalStates] = useState(projectsInfoLIST.map(() => false));
     // open the clicked-on modal by changing its state to true
     const handleOpen = (index) => {
         const newModalStates = [...modalStates];
