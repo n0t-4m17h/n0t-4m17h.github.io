@@ -14,6 +14,7 @@ import socketForumImg from '../assets/images/projects/socketForum1.jpg';
 import dungeonManiaImg from '../assets/images/projects/dungeonManiaNaruto1.jpg';
 import algoTradingAdvisorImg from '../assets/images/projects/algoTradingAdvisor.jpg';
 import onlyGuestsImg from '../assets/images/projects/onlyGuests.jpg';
+import gigConnectImg from '../assets/images/projects/gigconnect-square.jpg';
 
 const project_type = ["uni", "personal", "comp"]
 
@@ -75,6 +76,15 @@ const Projects = () => {
             "stack": "Python, Flask + Typescript, ReactJS, TailwindCSS",
             "src": "https://github.com/m4ch374/cse_hackachon_2023",
             "label": project_type[2]
+        },
+        {
+            "title": "GigConnect",
+            "desc": "A capstone project web platform that connects professionals with companies offering projects⚡\nContributed to the backend.",
+            "srcDesc": "Since it's a uni project, source code is unavailable, but... ",
+            "img": gigConnectImg,
+            "stack": "Typescript, Express, Prisma, ReactJS, TailwindCSS",
+            "src": "https://youtu.be/xXSV1hMa3L0",
+            "label": project_type[0]
         },
     ];
 
