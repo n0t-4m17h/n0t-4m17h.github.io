@@ -79,7 +79,7 @@ const Projects = () => {
         },
         {
             "title": "GigConnect",
-            "desc": "A capstone project web platform that connects professionals with companies offering projects⚡\nContributed to the backend.",
+            "desc": "A capstone project web platform that connects professionals with companies offering projects⚡\nContributed to the backend design and dev.",
             "srcDesc": "Since it's a uni project, source code is unavailable, but... ",
             "img": gigConnectImg,
             "stack": "Typescript, Express, Prisma, ReactJS, TailwindCSS",
@@ -152,7 +152,7 @@ const Projects = () => {
                                                 />
                                                 <CardContent sx={{backgroundColor:'#257DE8'}}>
                                                     <Box sx={{ display:'flex', justifyContent: 'space-between', alignContent:'space-evenly'}} >
-                                                    {/* onlyguests requires smaller font */}
+                                                    {/* the following is because onlyguests requires smaller font */}
                                                     {project.title === "CSESoc Hackathon" ?
                                                         <PageStyles.CardCaptionTitle style={{fontSize: '24px'}} > 
                                                             {project.title}
@@ -183,7 +183,7 @@ const Projects = () => {
                                                             STACK: {project.stack}
                                                         </PageStyles.CardModalStack>
                                                         <PageStyles.CardModalRef >
-                                                            {/* onlyguests's "srcDesc" key is a list */}
+                                                            {/* the following logic is such because onlyguests's "srcDesc" key is a list */}
                                                             {Array.isArray(project.srcDesc) ?
                                                                 (<>
                                                                     {project.srcDesc[0]}
