@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.08064e3a.css",
-    "main.js": "/static/js/main.1805db50.js",
+    "main.js": "/static/js/main.9a943a13.js",
     "static/media/vivid1.png": "/static/media/vivid1.3bd607edf91a8df2b1f3.png",
     "static/media/disneyworld.png": "/static/media/disneyworld.9ce0efca53c391fccb2f.png",
     "static/media/lightshow.png": "/static/media/lightshow.451beb5673e5723e5d25.png",
@@ -15,15 +15,16 @@
     "static/media/bridge.png": "/static/media/bridge.46bb456f8cd4fcf5c00e.png",
     "static/media/onlyGuests.jpg": "/static/media/onlyGuests.b8b533ebb0a28808ecba.jpg",
     "static/media/algoTradingAdvisor.jpg": "/static/media/algoTradingAdvisor.591a9b21ce2cdc38525a.jpg",
+    "static/media/gigconnect-square.jpg": "/static/media/gigconnect-square.e5ec176fddb4fb5b85dc.jpg",
     "static/media/socketForum1.jpg": "/static/media/socketForum1.4028b8be2f63edb98dd3.jpg",
     "static/media/unswStreams.jpg": "/static/media/unswStreams.63c1b32f715fb76f742d.jpg",
     "static/media/musickBotDiscord.jpg": "/static/media/musickBotDiscord.e3fe5726a4fef8f576f6.jpg",
     "index.html": "/index.html",
     "main.08064e3a.css.map": "/static/css/main.08064e3a.css.map",
-    "main.1805db50.js.map": "/static/js/main.1805db50.js.map"
+    "main.9a943a13.js.map": "/static/js/main.9a943a13.js.map"
   },
   "entrypoints": [
     "static/css/main.08064e3a.css",
-    "static/js/main.1805db50.js"
+    "static/js/main.9a943a13.js"
   ]
 }
